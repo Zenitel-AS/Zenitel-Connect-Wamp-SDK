@@ -6,5 +6,5 @@ LogManager/obj/
 WampClient/bin/
 WampClient/obj/
 
-ZenitelConnectSdk/bin/
-ZenitelConnectSdk/obj/
+ZenitelConnectWampSdk/bin/
+ZenitelConnectWampSdk/obj/
