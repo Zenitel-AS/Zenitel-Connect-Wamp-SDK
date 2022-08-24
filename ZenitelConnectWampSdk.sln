@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32413.511
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZenitelConnectWampGui", "ZenitelConnectWampSdk\ZenitelConnectWampGui.csproj", "{DD1F5EF5-178F-4EC0-9E50-21C3F95E2DD7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogManager", "LogManager\LogManager.csproj", "{3AB3E158-BC10-482E-B9C6-3C6536884D9E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WampClient", "WampClient\WampClient.csproj", "{A42427C2-3EFE-45C4-86FD-5388B8135DDB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DD1F5EF5-178F-4EC0-9E50-21C3F95E2DD7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD1F5EF5-178F-4EC0-9E50-21C3F95E2DD7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD1F5EF5-178F-4EC0-9E50-21C3F95E2DD7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD1F5EF5-178F-4EC0-9E50-21C3F95E2DD7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3AB3E158-BC10-482E-B9C6-3C6536884D9E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3AB3E158-BC10-482E-B9C6-3C6536884D9E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3AB3E158-BC10-482E-B9C6-3C6536884D9E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3AB3E158-BC10-482E-B9C6-3C6536884D9E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A42427C2-3EFE-45C4-86FD-5388B8135DDB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A42427C2-3EFE-45C4-86FD-5388B8135DDB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A42427C2-3EFE-45C4-86FD-5388B8135DDB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A42427C2-3EFE-45C4-86FD-5388B8135DDB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5A14ABF8-3D97-4D71-B935-1F4589499AB9}
+	EndGlobalSection
+EndGlobal

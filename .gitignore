@@ -1,0 +1,10 @@
+.vs
+
+LogManager/bin/
+LogManager/obj/
+
+WampClient/bin/
+WampClient/obj/
+
+ZenitelConnectSdk/bin/
+ZenitelConnectSdk/obj/
