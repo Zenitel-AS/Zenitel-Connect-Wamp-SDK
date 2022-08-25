@@ -37,7 +37,6 @@
             this.labUserName = new System.Windows.Forms.Label();
             this.edtPassword = new System.Windows.Forms.TextBox();
             this.labPassword = new System.Windows.Forms.Label();
-            this.labWampPort = new System.Windows.Forms.Label();
             this.edtWampRealm = new System.Windows.Forms.TextBox();
             this.labWampRealm = new System.Windows.Forms.Label();
             this.btnGETDeviceAccounts = new System.Windows.Forms.Button();
@@ -65,7 +64,6 @@
             this.gbxSwaggerSystem = new System.Windows.Forms.GroupBox();
             this.btnGETNetInterface = new System.Windows.Forms.Button();
             this.gbxAuthentication = new System.Windows.Forms.GroupBox();
-            this.cmbxWampPort = new System.Windows.Forms.ComboBox();
             this.blConnectionStatus = new System.Windows.Forms.Label();
             this.tbxConnectionStatus = new System.Windows.Forms.TextBox();
             this.gbxDevice = new System.Windows.Forms.GroupBox();
@@ -106,6 +104,9 @@
             this.NetMACaddr = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NetName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NetState = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.labEncryption = new System.Windows.Forms.Label();
+            this.chbxEncrypted = new System.Windows.Forms.CheckBox();
+            this.chbxUnencrypted = new System.Windows.Forms.CheckBox();
             this.grbEvent.SuspendLayout();
             this.gbxCallControl.SuspendLayout();
             this.gbxSwaggerSystem.SuspendLayout();
@@ -126,7 +127,7 @@
             // 
             this.btnWampConnect.BackColor = System.Drawing.SystemColors.ControlLight;
             this.btnWampConnect.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnWampConnect.Location = new System.Drawing.Point(781, 31);
+            this.btnWampConnect.Location = new System.Drawing.Point(909, 12);
             this.btnWampConnect.Name = "btnWampConnect";
             this.btnWampConnect.Size = new System.Drawing.Size(100, 46);
             this.btnWampConnect.TabIndex = 0;
@@ -137,7 +138,7 @@
             // btnWampDisconnect
             // 
             this.btnWampDisconnect.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnWampDisconnect.Location = new System.Drawing.Point(904, 32);
+            this.btnWampDisconnect.Location = new System.Drawing.Point(911, 64);
             this.btnWampDisconnect.Name = "btnWampDisconnect";
             this.btnWampDisconnect.Size = new System.Drawing.Size(98, 46);
             this.btnWampDisconnect.TabIndex = 1;
@@ -203,20 +204,10 @@
             this.labPassword.TabIndex = 7;
             this.labPassword.Text = "Password";
             // 
-            // labWampPort
-            // 
-            this.labWampPort.AutoSize = true;
-            this.labWampPort.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labWampPort.Location = new System.Drawing.Point(387, 29);
-            this.labWampPort.Name = "labWampPort";
-            this.labWampPort.Size = new System.Drawing.Size(67, 14);
-            this.labWampPort.TabIndex = 9;
-            this.labWampPort.Text = "WAMP port";
-            // 
             // edtWampRealm
             // 
             this.edtWampRealm.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.edtWampRealm.Location = new System.Drawing.Point(549, 48);
+            this.edtWampRealm.Location = new System.Drawing.Point(405, 48);
             this.edtWampRealm.Name = "edtWampRealm";
             this.edtWampRealm.Size = new System.Drawing.Size(110, 23);
             this.edtWampRealm.TabIndex = 12;
@@ -226,7 +217,7 @@
             // 
             this.labWampRealm.AutoSize = true;
             this.labWampRealm.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labWampRealm.Location = new System.Drawing.Point(549, 32);
+            this.labWampRealm.Location = new System.Drawing.Point(405, 32);
             this.labWampRealm.Name = "labWampRealm";
             this.labWampRealm.Size = new System.Drawing.Size(76, 14);
             this.labWampRealm.TabIndex = 11;
@@ -525,7 +516,9 @@
             // 
             // gbxAuthentication
             // 
-            this.gbxAuthentication.Controls.Add(this.cmbxWampPort);
+            this.gbxAuthentication.Controls.Add(this.chbxUnencrypted);
+            this.gbxAuthentication.Controls.Add(this.chbxEncrypted);
+            this.gbxAuthentication.Controls.Add(this.labEncryption);
             this.gbxAuthentication.Controls.Add(this.blConnectionStatus);
             this.gbxAuthentication.Controls.Add(this.tbxConnectionStatus);
             this.gbxAuthentication.Controls.Add(this.btnWampDisconnect);
@@ -538,30 +531,19 @@
             this.gbxAuthentication.Controls.Add(this.labPassword);
             this.gbxAuthentication.Controls.Add(this.labWampRealm);
             this.gbxAuthentication.Controls.Add(this.edtPassword);
-            this.gbxAuthentication.Controls.Add(this.labWampPort);
             this.gbxAuthentication.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbxAuthentication.Location = new System.Drawing.Point(13, 14);
+            this.gbxAuthentication.Location = new System.Drawing.Point(13, 4);
             this.gbxAuthentication.Name = "gbxAuthentication";
-            this.gbxAuthentication.Size = new System.Drawing.Size(1025, 106);
+            this.gbxAuthentication.Size = new System.Drawing.Size(1025, 116);
             this.gbxAuthentication.TabIndex = 38;
             this.gbxAuthentication.TabStop = false;
             this.gbxAuthentication.Text = "Authentication";
-            // 
-            // cmbxWampPort
-            // 
-            this.cmbxWampPort.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbxWampPort.FormattingEnabled = true;
-            this.cmbxWampPort.Location = new System.Drawing.Point(390, 47);
-            this.cmbxWampPort.Margin = new System.Windows.Forms.Padding(2);
-            this.cmbxWampPort.Name = "cmbxWampPort";
-            this.cmbxWampPort.Size = new System.Drawing.Size(147, 24);
-            this.cmbxWampPort.TabIndex = 16;
             // 
             // blConnectionStatus
             // 
             this.blConnectionStatus.AutoSize = true;
             this.blConnectionStatus.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.blConnectionStatus.Location = new System.Drawing.Point(662, 31);
+            this.blConnectionStatus.Location = new System.Drawing.Point(783, 31);
             this.blConnectionStatus.Name = "blConnectionStatus";
             this.blConnectionStatus.Size = new System.Drawing.Size(108, 14);
             this.blConnectionStatus.TabIndex = 14;
@@ -571,7 +553,7 @@
             // 
             this.tbxConnectionStatus.Enabled = false;
             this.tbxConnectionStatus.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxConnectionStatus.Location = new System.Drawing.Point(665, 48);
+            this.tbxConnectionStatus.Location = new System.Drawing.Point(786, 48);
             this.tbxConnectionStatus.Name = "tbxConnectionStatus";
             this.tbxConnectionStatus.Size = new System.Drawing.Size(110, 23);
             this.tbxConnectionStatus.TabIndex = 15;
@@ -1008,6 +990,42 @@
             this.NetState.Name = "NetState";
             this.NetState.Width = 125;
             // 
+            // labEncryption
+            // 
+            this.labEncryption.AutoSize = true;
+            this.labEncryption.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labEncryption.Location = new System.Drawing.Point(545, 17);
+            this.labEncryption.Name = "labEncryption";
+            this.labEncryption.Size = new System.Drawing.Size(119, 14);
+            this.labEncryption.TabIndex = 17;
+            this.labEncryption.Text = "Encryption Selection";
+            // 
+            // chbxEncrypted
+            // 
+            this.chbxEncrypted.AutoSize = true;
+            this.chbxEncrypted.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chbxEncrypted.Location = new System.Drawing.Point(548, 35);
+            this.chbxEncrypted.Margin = new System.Windows.Forms.Padding(2);
+            this.chbxEncrypted.Name = "chbxEncrypted";
+            this.chbxEncrypted.Size = new System.Drawing.Size(198, 21);
+            this.chbxEncrypted.TabIndex = 29;
+            this.chbxEncrypted.Text = "Encrypted (Port 443/8086)";
+            this.chbxEncrypted.UseVisualStyleBackColor = true;
+            this.chbxEncrypted.CheckedChanged += new System.EventHandler(this.chbxEncrypted_CheckedChanged);
+            // 
+            // chbxUnencrypted
+            // 
+            this.chbxUnencrypted.AutoSize = true;
+            this.chbxUnencrypted.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chbxUnencrypted.Location = new System.Drawing.Point(548, 64);
+            this.chbxUnencrypted.Margin = new System.Windows.Forms.Padding(2);
+            this.chbxUnencrypted.Name = "chbxUnencrypted";
+            this.chbxUnencrypted.Size = new System.Drawing.Size(206, 21);
+            this.chbxUnencrypted.TabIndex = 30;
+            this.chbxUnencrypted.Text = "Unencrypted (Port 80/8087)";
+            this.chbxUnencrypted.UseVisualStyleBackColor = true;
+            this.chbxUnencrypted.CheckedChanged += new System.EventHandler(this.chbxUnencrypted_CheckedChanged);
+            // 
             // ZenitelConnectWampGui
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1060,7 +1078,6 @@
         private System.Windows.Forms.Label labUserName;
         private System.Windows.Forms.TextBox edtPassword;
         private System.Windows.Forms.Label labPassword;
-        private System.Windows.Forms.Label labWampPort;
         private System.Windows.Forms.TextBox edtWampRealm;
         private System.Windows.Forms.Label labWampRealm;
         private System.Windows.Forms.Button btnGETDeviceAccounts;
@@ -1128,7 +1145,9 @@
         private System.Windows.Forms.Button btnPOSTcallId;
         private System.Windows.Forms.ComboBox cmbxAction;
         private System.Windows.Forms.Label lblAction;
-        private System.Windows.Forms.ComboBox cmbxWampPort;
+        private System.Windows.Forms.CheckBox chbxUnencrypted;
+        private System.Windows.Forms.CheckBox chbxEncrypted;
+        private System.Windows.Forms.Label labEncryption;
     }
 }
 
