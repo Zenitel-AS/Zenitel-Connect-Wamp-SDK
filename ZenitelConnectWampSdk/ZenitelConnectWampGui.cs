@@ -50,11 +50,10 @@ namespace Zenitel.Connect.Wamp.Sdk
 
             UpdateConnectState();
 
-            cmbxWampPort.Items.Insert(0, WampConnection.WampEncryptedPort + " Encrypted");
-            cmbxWampPort.Items.Insert(1, WampConnection.WampUnencryptedPort + " Unencrypted");
+            chbxEncrypted.Checked = true;
+            chbxUnencrypted.Checked = false;
 
             cmbxAction.SelectedIndex = 0;
-            cmbxWampPort.SelectedIndex = 0;
         }
 
 
@@ -82,13 +81,13 @@ namespace Zenitel.Connect.Wamp.Sdk
                 _wampConnection.Password = edtPassword.Text;
 
  
-                if (cmbxWampPort.SelectedItem.ToString().Contains(WampConnection.WampEncryptedPort))
+                if (chbxUnencrypted.Checked)
                 {
-                    _wampConnection.WampPort = WampConnection.WampEncryptedPort;
+                    _wampConnection.WampPort = WampConnection.WampUnencryptedPort;
                 }
                 else
                 {
-                    _wampConnection.WampPort = WampConnection.WampUnencryptedPort;
+                    _wampConnection.WampPort = WampConnection.WampEncryptedPort;
                 }
 
                 _wampConnection.WampRealm = edtWampRealm.Text;
@@ -1472,9 +1471,36 @@ namespace Zenitel.Connect.Wamp.Sdk
             dgrdNetInterfaces.Rows.Clear();
         }
 
-        private void tbxGPODevice_TextChanged(object sender, EventArgs e)
+
+        /***********************************************************************************************************************/
+        private void chbxEncrypted_CheckedChanged(object sender, EventArgs e)
+        /***********************************************************************************************************************/
         {
+            if (chbxEncrypted.Checked)
+            {
+                chbxUnencrypted.Checked = false;
+            }
+            else
+            {
+                chbxUnencrypted.Checked = true;
+            }
+        }
+
+
+        /***********************************************************************************************************************/
+        private void chbxUnencrypted_CheckedChanged(object sender, EventArgs e)
+        /***********************************************************************************************************************/
+        {
+            if (chbxUnencrypted.Checked)
+            {
+                chbxEncrypted.Checked = false;
+            }
+            else
+            {
+                chbxEncrypted.Checked = true;
+            }
 
         }
+
     }
 }

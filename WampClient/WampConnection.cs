@@ -1,6 +1,8 @@
 ﻿using System;
 using System.IO;
 using System.Net;
+using System.Net.Security;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading;
 using WampSharp.Core.Listener;
@@ -27,6 +29,12 @@ namespace Wamp.Client
 
         /// <summary>This string defines the port number used for WAMP unencrypted communication</summary>
         public const string WampUnencryptedPort = "8087";
+
+        /// <summary>This string defines the port number used for HTTPS communication</summary>
+        public string HttpEncryptedPort = "443";
+
+        /// <summary>This string defines the port number used for HTTP communication</summary>
+        public string HttpUnencryptedPort = "80";
 
 
         //SYSTEM:
@@ -202,6 +210,15 @@ namespace Wamp.Client
 
         #region internal connect
 
+
+        /***********************************************************************************************************************/
+        private bool ValidateRemoteCertificate(object sender, X509Certificate certificate, X509Chain chain, SslPolicyErrors policyErrors)
+        /***********************************************************************************************************************/
+        {
+            return true;
+        }
+
+
         /***********************************************************************************************************************/
         private void StartReconnect()
         /***********************************************************************************************************************/
@@ -212,7 +229,14 @@ namespace Wamp.Client
                 {
                     try
                     {
-                        Uri uri = new Uri("http://" + WampServerAddr + "/api/auth/login");
+                        bool useEncryption = WampPort.Equals(WampEncryptedPort);
+
+                         // Authentication is HTTP / HTTPS 
+                         string uri_str = ((useEncryption) ? ("https://" + WampServerAddr + ":" + HttpEncryptedPort) :
+                                                             ("http://"  + WampServerAddr)) +
+                                                              "/api/auth/login";
+                        Uri uri = new Uri(uri_str);
+
                         HttpWebRequest rq = (HttpWebRequest)WebRequest.Create(uri);
                         rq.Method = "POST";
                         rq.ContentType = "application/json";
@@ -224,13 +248,14 @@ namespace Wamp.Client
 
                         rq.Headers.Add("Authorization", "Basic " + encoded);
 
+                        ServicePointManager.ServerCertificateValidationCallback += new RemoteCertificateValidationCallback(ValidateRemoteCertificate);
+
                         HttpWebResponse res = (HttpWebResponse)rq.GetResponse();
                         if (res.StatusCode == HttpStatusCode.OK)
                         {
                             var resstring = new StreamReader(res.GetResponseStream()).ReadToEnd();
 
-                            json_login_result json_result = Newtonsoft.Json.JsonConvert.
-                                DeserializeObject<json_login_result>(resstring);
+                            json_login_result json_result = Newtonsoft.Json.JsonConvert.DeserializeObject<json_login_result>(resstring);
 
                             if (json_result == null)
                             {
