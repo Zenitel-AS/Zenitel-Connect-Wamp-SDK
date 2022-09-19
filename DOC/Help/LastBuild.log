@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<shfbBuild product="Sandcastle Help File Builder and Tools" version="2019.11.17.0" projectFile="C:\Projects\Connect Platform\Work\ZenitelConnectWampSdk\DOC\Zenitel.Connect.Wamp.Sdk.shfbproj" started="24/08/2022 09.59.25">
+<shfbBuild product="Sandcastle Help File Builder and Tools" version="2019.11.17.0" projectFile="C:\Projects\Connect Platform\Work\ZenitelConnectWampSdk\DOC\Zenitel.Connect.Wamp.Sdk.shfbproj" started="19/09/2022 09.54.39">
 <buildStep step="Initializing">
 Finding tools...
 The Sandcastle tools are located in &#39;C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\&#39;
@@ -16,6 +16,9 @@ Lightweight Website Style Version 2019.11.17.0
 Copyright &#169; 2006-2019, Eric Woodruff, All Rights Reserved
 Portions Copyright &#169; 2014, Sam Harwell, All Rights Reserved
 </buildStep>
+<buildStep step="ClearWorkFolder">
+Clearing working folder...
+</buildStep>
 <buildStep step="ValidatingDocumentationSources">
 Validating and copying documentation source information
 Source: C:\Projects\Connect Platform\Work\ZenitelConnectWampSdk\ZenitelConnectWampSdk\bin\Release\WampClient.dll
@@ -31,16 +34,16 @@ Copying XML comments files
 <buildStep step="GenerateSharedContent">
 Generating shared content files (en-US, English (United States))...
 <plugIn name="Lightweight Website Style" behavior="After" priority="1000">
-</plugIn>    Last step completed in 00:00:00,0060
+</plugIn>    Last step completed in 00:00:00,0190
 </buildStep>
 <buildStep step="GenerateApiFilter">
 Generating API filter for MRefBuilder...
-    Last step completed in 00:00:00,0000
+    Last step completed in 00:00:00,0053
 </buildStep>
 <buildStep step="GenerateReflectionInfo">
 Generating reflection information...
 [C:\Program Files (x86)\MSBuild\14.0\bin\amd64\MSBuild.exe - GenerateRefInfo.proj]
-Build started 24/08/2022 09.59.26.
+Build started 19/09/2022 09.54.40.
 Project &quot;C:\Projects\Connect Platform\Work\ZenitelConnectWampSdk\DOC\Help\Working\GenerateRefInfo.proj&quot; on node 1 (default targets).
 PrepareForBuild:
   Creating directory &quot;obj\Debug\&quot;.
@@ -50,7 +53,7 @@ GenerateRefInfo:
   Portions Copyright &#184; 2006-2019, Eric Woodruff, All Rights Reserved.
   No source code context base path specified.  Source context information is unavailable.
   Loaded 1 assemblies for reflection and 2 dependency assemblies.
-  Wrote information on 1 namespaces, 10 types, and 127 members
+  Wrote information on 1 namespaces, 11 types, and 131 members
   Copying file from &quot;reflection.org&quot; to &quot;reflection.all&quot;.
   XslTransform (v2019.11.17.0)
   Copyright &#184; 2006-2019, Microsoft Corporation, All Rights Reserved.
@@ -60,13 +63,13 @@ Done Building Project &quot;C:\Projects\Connect Platform\Work\ZenitelConnectWamp
 
 Build succeeded.
 
-Time Elapsed 00:00:00.60
-    Last step completed in 00:00:01,1372
+Time Elapsed 00:00:00.65
+    Last step completed in 00:00:01,1813
 </buildStep>
 <buildStep step="TransformReflectionInfo">
 Transforming reflection output...
 [C:\Program Files (x86)\MSBuild\14.0\bin\amd64\MSBuild.exe - TransformManifest.proj]
-Build started 24/08/2022 09.59.27.
+Build started 19/09/2022 09.54.41.
 Project &quot;C:\Projects\Connect Platform\Work\ZenitelConnectWampSdk\DOC\Help\Working\TransformManifest.proj&quot; on node 1 (default targets).
 TransformManifest:
   XslTransform (v2019.11.17.0)
@@ -86,17 +89,17 @@ Done Building Project &quot;C:\Projects\Connect Platform\Work\ZenitelConnectWamp
 
 Build succeeded.
 
-Time Elapsed 00:00:00.53
-    Last step completed in 00:00:01,0417
+Time Elapsed 00:00:00.86
+    Last step completed in 00:00:01,3341
 </buildStep>
 <buildStep step="GenerateNamespaceSummaries">
 Generating namespace summary information...
-    Last step completed in 00:00:00,0060
+    Last step completed in 00:00:00,0170
 </buildStep>
 <buildStep step="CopyAdditionalContent">
 Copying additional content files...
 No additional content to copy
-    Last step completed in 00:00:00,0000
+    Last step completed in 00:00:00,0020
 </buildStep>
 <buildStep step="MergeTablesOfContents">
 Merging conceptual and additional tables of contents...
@@ -105,7 +108,7 @@ Merging conceptual and additional tables of contents...
 <buildStep step="GenerateIntermediateTableOfContents">
 Generating intermediate table of contents file...
 [C:\Program Files (x86)\MSBuild\14.0\bin\amd64\MSBuild.exe - GenerateIntermediateTOC.proj]
-Build started 24/08/2022 09.59.28.
+Build started 19/09/2022 09.54.42.
 Project &quot;C:\Projects\Connect Platform\Work\ZenitelConnectWampSdk\DOC\Help\Working\GenerateIntermediateTOC.proj&quot; on node 1 (default targets).
 GenerateIntermediateTOC:
   XslTransform (v2019.11.17.0)
@@ -118,24 +121,24 @@ Build succeeded.
 
 Time Elapsed 00:00:00.13
 Generating conceptual content intermediate TOC file...
-    Last step completed in 00:00:00,6807
+    Last step completed in 00:00:00,6217
 </buildStep>
 <buildStep step="CreateBuildAssemblerConfigs">
 Creating Sandcastle configuration files...
     sandcastle.config
-    Last step completed in 00:00:00,1490
+    Last step completed in 00:00:00,1543
 </buildStep>
 <buildStep step="MergeCustomConfigs">
 Merging custom build component configurations
 C:\Projects\Connect Platform\Work\ZenitelConnectWampSdk\DOC\Help\Working\sandcastle.config
   Updating reference topic configurations.
   No conceptual content.  Removing conceptual content components.
-    Last step completed in 00:00:00,0050
+    Last step completed in 00:00:00,0080
 </buildStep>
 <buildStep step="BuildTopics">
 Building help topics...
 [C:\Program Files (x86)\MSBuild\14.0\bin\amd64\MSBuild.exe - BuildTopics.proj]
-Build started 24/08/2022 09.59.29.
+Build started 19/09/2022 09.54.43.
 Project &quot;C:\Projects\Connect Platform\Work\ZenitelConnectWampSdk\DOC\Help\Working\BuildTopics.proj&quot; on node 1 (default targets).
 BuildTopics:
   BuildAssembler (v2019.11.17.0)
@@ -144,7 +147,7 @@ BuildTopics:
   Loading configuration...
   Processing topics...
 BuildAssembler : warning : ShowMissingComponent: [N:Wamp.Client] Missing &lt;summary&gt; documentation [C:\Projects\Connect Platform\Work\ZenitelConnectWampSdk\DOC\Help\Working\BuildTopics.proj]
-  Processed 156 topic(s)
+  Processed 159 topic(s)
   1 warning(s)
   CopyFromIndexComponent: &quot;reflection&quot; in-memory cache entries used: 3 of 15.
   CopyFromIndexComponent: &quot;comments&quot; in-memory cache entries used: 2 of 30.
@@ -152,12 +155,12 @@ Done Building Project &quot;C:\Projects\Connect Platform\Work\ZenitelConnectWamp
 
 Build succeeded.
 
-Time Elapsed 00:00:07.06
-    Last step completed in 00:00:07,7022
+Time Elapsed 00:00:05.90
+    Last step completed in 00:00:06,4008
 </buildStep>
 <buildStep step="CombiningIntermediateTocFiles">
 Combining conceptual and API intermediate TOC files...
-    Last step completed in 00:00:00,0062
+    Last step completed in 00:00:00,0015
 </buildStep>
 <buildStep step="ExtractingHtmlInfo">
 Extracting HTML info for HTML Help 1 and/or website...
@@ -169,11 +172,11 @@ E-Mail: Eric@EWoodruff.us
 Using LCID &#39;1033&#39;, code page &#39;65001&#39;, encoding charset &#39;UTF-8&#39;.
 
 Processing Help 1 files in C:\Projects\Connect Platform\Work\ZenitelConnectWampSdk\DOC\Help\Working\Output\HtmlHelp1
-Processed 156 HTML files
+Processed 159 HTML files
 Sorting keywords and generating See Also indices
 Saving HTML Help 1 keyword index to C:\Projects\Connect Platform\Work\ZenitelConnectWampSdk\DOC\Help\Working\Zenitel.Connect.Wamp.Sdk.hhk
 Saving HTML Help 1 table of contents to C:\Projects\Connect Platform\Work\ZenitelConnectWampSdk\DOC\Help\Working\Zenitel.Connect.Wamp.Sdk.hhc
-    Last step completed in 00:00:00,8758
+    Last step completed in 00:00:00,6340
 </buildStep>
 <buildStep step="CopyStandardHelpContent">
 Copying standard help content...
@@ -239,7 +242,7 @@ C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyle
 C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-zh-CN.css -&gt; C:\Projects\Connect Platform\Work\ZenitelConnectWampSdk\DOC\Help\Working\Output\HtmlHelp1\styles\branding-zh-CN.css
 C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-zh-TW.css -&gt; C:\Projects\Connect Platform\Work\ZenitelConnectWampSdk\DOC\Help\Working\Output\HtmlHelp1\styles\branding-zh-TW.css
 C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding.css -&gt; C:\Projects\Connect Platform\Work\ZenitelConnectWampSdk\DOC\Help\Working\Output\HtmlHelp1\styles\branding.css
-    Last step completed in 00:00:00,1859
+    Last step completed in 00:00:00,1058
 </buildStep>
 <buildStep step="GenerateHelpFormatTableOfContents">
 Generating HTML Help 1 table of contents file...
@@ -266,11 +269,11 @@ Compiling HTML Help 1 file...
   
   
   
-  Compile time: 0 minutes, 2 seconds
+  Compile time: 0 minutes, 1 second
   
-  158	Topics
+  161	Topics
   
-  1,625	Local links
+  1,660	Local links
   
   0	Internet links
   
@@ -280,19 +283,19 @@ Compiling HTML Help 1 file...
   
   
   
-  Created c:\Projects\Connect Platform\Work\ZenitelConnectWampSdk\DOC\Help\Working\Output\HtmlHelp1\Zenitel.Connect.Wamp.Sdk.chm, 217,630 bytes
+  Created c:\Projects\Connect Platform\Work\ZenitelConnectWampSdk\DOC\Help\Working\Output\HtmlHelp1\Zenitel.Connect.Wamp.Sdk.chm, 220,042 bytes
   
-  Compression decreased file by 1,171,764 bytes.
+  Compression decreased file by 1,187,384 bytes.
   
-    Last step completed in 00:00:03,3817
+    Last step completed in 00:00:02,6727
 </buildStep>
 <buildStep step="CleanIntermediates">
 Removing intermediate files...
-    Last step completed in 00:00:00,1176
+    Last step completed in 00:00:00,0640
 </buildStep>
 <buildStep step="Completed">
 
-Build completed successfully at 24/08/2022 09.59.41.  Total time: 00:00:16,0161
+Build completed successfully at 19/09/2022 09.54.52.  Total time: 00:00:13,8566
 
 </buildStep>
 </shfbBuild>
