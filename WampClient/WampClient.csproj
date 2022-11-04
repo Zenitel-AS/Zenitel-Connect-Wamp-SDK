@@ -202,7 +202,8 @@
     <Compile Include="DeleteCalls.cs" />
     <Compile Include="PostCalls.cs" />
     <Compile Include="PostDeviceGPO.cs" />
-    <Compile Include="TraceCallQueueStatusEvent.cs" />
+    <Compile Include="PostDeviceKey.cs" />
+    <Compile Include="TraceCallLegStatusEvent.cs" />
     <Compile Include="TraceCallStatusEvent.cs" />
     <Compile Include="RequestRegisteredDevices.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
