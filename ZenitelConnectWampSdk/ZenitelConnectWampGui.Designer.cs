@@ -44,7 +44,7 @@
             this.btnDELETECalls = new System.Windows.Forms.Button();
             this.btnOpenLoggingWindow = new System.Windows.Forms.Button();
             this.cbxCallStatusEvent = new System.Windows.Forms.CheckBox();
-            this.cbxCallQueueStatusEvent = new System.Windows.Forms.CheckBox();
+            this.cbxCallLegStatusEvent = new System.Windows.Forms.CheckBox();
             this.cbxDeviceRegistrationEvent = new System.Windows.Forms.CheckBox();
             this.grbEvent = new System.Windows.Forms.GroupBox();
             this.cbxOpenDoorEvent = new System.Windows.Forms.CheckBox();
@@ -55,12 +55,12 @@
             this.lblASubscriber = new System.Windows.Forms.Label();
             this.lblBSubscriber = new System.Windows.Forms.Label();
             this.gbxCallControl = new System.Windows.Forms.GroupBox();
+            this.btnGETCallLegs = new System.Windows.Forms.Button();
             this.grpbxPOSTCalls = new System.Windows.Forms.GroupBox();
             this.cmbxCallAction = new System.Windows.Forms.ComboBox();
             this.lblAction = new System.Windows.Forms.Label();
             this.btnGETCalls = new System.Windows.Forms.Button();
             this.btnPOSTcallId = new System.Windows.Forms.Button();
-            this.btnGETQueues = new System.Windows.Forms.Button();
             this.btnDELETECallId = new System.Windows.Forms.Button();
             this.gbxSwaggerSystem = new System.Windows.Forms.GroupBox();
             this.btnGETNetInterface = new System.Windows.Forms.Button();
@@ -86,7 +86,7 @@
             this.dgrdLocation = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgrdState = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbxActiveCalls = new System.Windows.Forms.GroupBox();
-            this.dgrd_ActiveCalls = new System.Windows.Forms.DataGridView();
+            this.dgrdActiveCalls = new System.Windows.Forms.DataGridView();
             this.Source = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Destination = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CallState = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -108,6 +108,7 @@
             this.NetMACaddr = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NetName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NetState = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label1 = new System.Windows.Forms.Label();
             this.grbEvent.SuspendLayout();
             this.gbxCallControl.SuspendLayout();
             this.grpbxPOSTCalls.SuspendLayout();
@@ -117,7 +118,7 @@
             this.grpbxRegistratedDevices.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgrd_Registrations)).BeginInit();
             this.gbxActiveCalls.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgrd_ActiveCalls)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgrdActiveCalls)).BeginInit();
             this.gbxLogging.SuspendLayout();
             this.gbxQueuedCalls.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgrdQueuedCalls)).BeginInit();
@@ -129,10 +130,9 @@
             // 
             this.btnWampConnect.BackColor = System.Drawing.SystemColors.ControlLight;
             this.btnWampConnect.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnWampConnect.Location = new System.Drawing.Point(1213, 28);
-            this.btnWampConnect.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnWampConnect.Location = new System.Drawing.Point(910, 23);
             this.btnWampConnect.Name = "btnWampConnect";
-            this.btnWampConnect.Size = new System.Drawing.Size(133, 57);
+            this.btnWampConnect.Size = new System.Drawing.Size(100, 46);
             this.btnWampConnect.TabIndex = 0;
             this.btnWampConnect.Text = "WAMP Connect";
             this.btnWampConnect.UseVisualStyleBackColor = false;
@@ -141,10 +141,9 @@
             // btnWampDisconnect
             // 
             this.btnWampDisconnect.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnWampDisconnect.Location = new System.Drawing.Point(1215, 97);
-            this.btnWampDisconnect.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnWampDisconnect.Location = new System.Drawing.Point(911, 79);
             this.btnWampDisconnect.Name = "btnWampDisconnect";
-            this.btnWampDisconnect.Size = new System.Drawing.Size(131, 57);
+            this.btnWampDisconnect.Size = new System.Drawing.Size(98, 46);
             this.btnWampDisconnect.TabIndex = 1;
             this.btnWampDisconnect.Text = "WAMP Disconnect";
             this.btnWampDisconnect.UseVisualStyleBackColor = true;
@@ -154,73 +153,64 @@
             // 
             this.lab_WAMPServerAddress.AutoSize = true;
             this.lab_WAMPServerAddress.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lab_WAMPServerAddress.Location = new System.Drawing.Point(20, 57);
-            this.lab_WAMPServerAddress.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lab_WAMPServerAddress.Location = new System.Drawing.Point(15, 46);
             this.lab_WAMPServerAddress.Name = "lab_WAMPServerAddress";
-            this.lab_WAMPServerAddress.Size = new System.Drawing.Size(164, 16);
+            this.lab_WAMPServerAddress.Size = new System.Drawing.Size(132, 14);
             this.lab_WAMPServerAddress.TabIndex = 3;
             this.lab_WAMPServerAddress.Text = "WAMP Server Address";
             // 
             // edtWAMPServerAddr
             // 
             this.edtWAMPServerAddr.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.edtWAMPServerAddr.Location = new System.Drawing.Point(20, 77);
-            this.edtWAMPServerAddr.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.edtWAMPServerAddr.Location = new System.Drawing.Point(15, 63);
             this.edtWAMPServerAddr.Name = "edtWAMPServerAddr";
-            this.edtWAMPServerAddr.Size = new System.Drawing.Size(164, 27);
+            this.edtWAMPServerAddr.Size = new System.Drawing.Size(124, 23);
             this.edtWAMPServerAddr.TabIndex = 4;
             this.edtWAMPServerAddr.Text = "169.254.1.5";
             // 
             // edtUserName
             // 
             this.edtUserName.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.edtUserName.Location = new System.Drawing.Point(201, 77);
-            this.edtUserName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.edtUserName.Location = new System.Drawing.Point(151, 63);
             this.edtUserName.Name = "edtUserName";
-            this.edtUserName.Size = new System.Drawing.Size(145, 27);
+            this.edtUserName.Size = new System.Drawing.Size(110, 23);
             this.edtUserName.TabIndex = 6;
-            this.edtUserName.Text = "admin";
             // 
             // labUserName
             // 
             this.labUserName.AutoSize = true;
             this.labUserName.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labUserName.Location = new System.Drawing.Point(201, 57);
-            this.labUserName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labUserName.Location = new System.Drawing.Point(151, 46);
             this.labUserName.Name = "labUserName";
-            this.labUserName.Size = new System.Drawing.Size(84, 16);
+            this.labUserName.Size = new System.Drawing.Size(67, 14);
             this.labUserName.TabIndex = 5;
             this.labUserName.Text = "User Name";
             // 
             // edtPassword
             // 
             this.edtPassword.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.edtPassword.Location = new System.Drawing.Point(367, 77);
-            this.edtPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.edtPassword.Location = new System.Drawing.Point(275, 63);
             this.edtPassword.Name = "edtPassword";
-            this.edtPassword.Size = new System.Drawing.Size(145, 27);
+            this.edtPassword.Size = new System.Drawing.Size(110, 23);
             this.edtPassword.TabIndex = 8;
-            this.edtPassword.Text = "admin";
             this.edtPassword.UseSystemPasswordChar = true;
             // 
             // labPassword
             // 
             this.labPassword.AutoSize = true;
             this.labPassword.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labPassword.Location = new System.Drawing.Point(367, 57);
-            this.labPassword.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labPassword.Location = new System.Drawing.Point(275, 46);
             this.labPassword.Name = "labPassword";
-            this.labPassword.Size = new System.Drawing.Size(76, 16);
+            this.labPassword.Size = new System.Drawing.Size(63, 14);
             this.labPassword.TabIndex = 7;
             this.labPassword.Text = "Password";
             // 
             // edtWampRealm
             // 
             this.edtWampRealm.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.edtWampRealm.Location = new System.Drawing.Point(548, 77);
-            this.edtWampRealm.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.edtWampRealm.Location = new System.Drawing.Point(411, 63);
             this.edtWampRealm.Name = "edtWampRealm";
-            this.edtWampRealm.Size = new System.Drawing.Size(145, 27);
+            this.edtWampRealm.Size = new System.Drawing.Size(110, 23);
             this.edtWampRealm.TabIndex = 12;
             this.edtWampRealm.Text = "zenitel";
             // 
@@ -228,19 +218,17 @@
             // 
             this.labWampRealm.AutoSize = true;
             this.labWampRealm.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labWampRealm.Location = new System.Drawing.Point(548, 57);
-            this.labWampRealm.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labWampRealm.Location = new System.Drawing.Point(411, 46);
             this.labWampRealm.Name = "labWampRealm";
-            this.labWampRealm.Size = new System.Drawing.Size(94, 16);
+            this.labWampRealm.Size = new System.Drawing.Size(76, 14);
             this.labWampRealm.TabIndex = 11;
             this.labWampRealm.Text = "WAMP realm";
             // 
             // btnGETDeviceAccounts
             // 
-            this.btnGETDeviceAccounts.Location = new System.Drawing.Point(27, 34);
-            this.btnGETDeviceAccounts.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnGETDeviceAccounts.Location = new System.Drawing.Point(20, 28);
             this.btnGETDeviceAccounts.Name = "btnGETDeviceAccounts";
-            this.btnGETDeviceAccounts.Size = new System.Drawing.Size(147, 78);
+            this.btnGETDeviceAccounts.Size = new System.Drawing.Size(110, 63);
             this.btnGETDeviceAccounts.TabIndex = 2;
             this.btnGETDeviceAccounts.Text = "GET \r\nDevice Accounts";
             this.btnGETDeviceAccounts.UseVisualStyleBackColor = true;
@@ -248,10 +236,9 @@
             // 
             // btnPOSTCalls
             // 
-            this.btnPOSTCalls.Location = new System.Drawing.Point(193, 18);
-            this.btnPOSTCalls.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnPOSTCalls.Location = new System.Drawing.Point(145, 15);
             this.btnPOSTCalls.Name = "btnPOSTCalls";
-            this.btnPOSTCalls.Size = new System.Drawing.Size(157, 74);
+            this.btnPOSTCalls.Size = new System.Drawing.Size(118, 60);
             this.btnPOSTCalls.TabIndex = 15;
             this.btnPOSTCalls.Text = "POST\r\nCalls";
             this.btnPOSTCalls.UseVisualStyleBackColor = true;
@@ -259,10 +246,9 @@
             // 
             // btnDELETECalls
             // 
-            this.btnDELETECalls.Location = new System.Drawing.Point(379, 214);
-            this.btnDELETECalls.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDELETECalls.Location = new System.Drawing.Point(284, 179);
             this.btnDELETECalls.Name = "btnDELETECalls";
-            this.btnDELETECalls.Size = new System.Drawing.Size(157, 74);
+            this.btnDELETECalls.Size = new System.Drawing.Size(118, 60);
             this.btnDELETECalls.TabIndex = 16;
             this.btnDELETECalls.Text = "DELETE\r\nCalls";
             this.btnDELETECalls.UseVisualStyleBackColor = true;
@@ -271,10 +257,10 @@
             // btnOpenLoggingWindow
             // 
             this.btnOpenLoggingWindow.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOpenLoggingWindow.Location = new System.Drawing.Point(21, 91);
-            this.btnOpenLoggingWindow.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnOpenLoggingWindow.Location = new System.Drawing.Point(16, 74);
+            this.btnOpenLoggingWindow.Margin = new System.Windows.Forms.Padding(2);
             this.btnOpenLoggingWindow.Name = "btnOpenLoggingWindow";
-            this.btnOpenLoggingWindow.Size = new System.Drawing.Size(133, 66);
+            this.btnOpenLoggingWindow.Size = new System.Drawing.Size(100, 54);
             this.btnOpenLoggingWindow.TabIndex = 23;
             this.btnOpenLoggingWindow.Text = "Open\r\nLogging Window";
             this.btnOpenLoggingWindow.UseVisualStyleBackColor = true;
@@ -283,34 +269,34 @@
             // cbxCallStatusEvent
             // 
             this.cbxCallStatusEvent.AutoSize = true;
-            this.cbxCallStatusEvent.Location = new System.Drawing.Point(23, 34);
-            this.cbxCallStatusEvent.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cbxCallStatusEvent.Location = new System.Drawing.Point(17, 28);
+            this.cbxCallStatusEvent.Margin = new System.Windows.Forms.Padding(2);
             this.cbxCallStatusEvent.Name = "cbxCallStatusEvent";
-            this.cbxCallStatusEvent.Size = new System.Drawing.Size(166, 23);
+            this.cbxCallStatusEvent.Size = new System.Drawing.Size(146, 20);
             this.cbxCallStatusEvent.TabIndex = 27;
             this.cbxCallStatusEvent.Text = "Call Status Event";
             this.cbxCallStatusEvent.UseVisualStyleBackColor = true;
             this.cbxCallStatusEvent.CheckedChanged += new System.EventHandler(this.cbxCallStatusEvent_CheckedChanged);
             // 
-            // cbxCallQueueStatusEvent
+            // cbxCallLegStatusEvent
             // 
-            this.cbxCallQueueStatusEvent.AutoSize = true;
-            this.cbxCallQueueStatusEvent.Location = new System.Drawing.Point(23, 79);
-            this.cbxCallQueueStatusEvent.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.cbxCallQueueStatusEvent.Name = "cbxCallQueueStatusEvent";
-            this.cbxCallQueueStatusEvent.Size = new System.Drawing.Size(222, 23);
-            this.cbxCallQueueStatusEvent.TabIndex = 28;
-            this.cbxCallQueueStatusEvent.Text = "Call Queue Status Event";
-            this.cbxCallQueueStatusEvent.UseVisualStyleBackColor = true;
-            this.cbxCallQueueStatusEvent.CheckedChanged += new System.EventHandler(this.cbxCallQueueStatusEvent_CheckedChanged);
+            this.cbxCallLegStatusEvent.AutoSize = true;
+            this.cbxCallLegStatusEvent.Location = new System.Drawing.Point(17, 64);
+            this.cbxCallLegStatusEvent.Margin = new System.Windows.Forms.Padding(2);
+            this.cbxCallLegStatusEvent.Name = "cbxCallLegStatusEvent";
+            this.cbxCallLegStatusEvent.Size = new System.Drawing.Size(176, 20);
+            this.cbxCallLegStatusEvent.TabIndex = 28;
+            this.cbxCallLegStatusEvent.Text = "Call Leg Status Event";
+            this.cbxCallLegStatusEvent.UseVisualStyleBackColor = true;
+            this.cbxCallLegStatusEvent.CheckedChanged += new System.EventHandler(this.cbxCallQueueStatusEvent_CheckedChanged);
             // 
             // cbxDeviceRegistrationEvent
             // 
             this.cbxDeviceRegistrationEvent.AutoSize = true;
-            this.cbxDeviceRegistrationEvent.Location = new System.Drawing.Point(23, 126);
-            this.cbxDeviceRegistrationEvent.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cbxDeviceRegistrationEvent.Location = new System.Drawing.Point(17, 102);
+            this.cbxDeviceRegistrationEvent.Margin = new System.Windows.Forms.Padding(2);
             this.cbxDeviceRegistrationEvent.Name = "cbxDeviceRegistrationEvent";
-            this.cbxDeviceRegistrationEvent.Size = new System.Drawing.Size(234, 23);
+            this.cbxDeviceRegistrationEvent.Size = new System.Drawing.Size(211, 20);
             this.cbxDeviceRegistrationEvent.TabIndex = 29;
             this.cbxDeviceRegistrationEvent.Text = "Device Registration Event";
             this.cbxDeviceRegistrationEvent.UseVisualStyleBackColor = true;
@@ -323,13 +309,13 @@
             this.grbEvent.Controls.Add(this.cbxDeviceGPOStatusEvent);
             this.grbEvent.Controls.Add(this.cbxCallStatusEvent);
             this.grbEvent.Controls.Add(this.cbxDeviceRegistrationEvent);
-            this.grbEvent.Controls.Add(this.cbxCallQueueStatusEvent);
+            this.grbEvent.Controls.Add(this.cbxCallLegStatusEvent);
             this.grbEvent.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grbEvent.Location = new System.Drawing.Point(1407, 196);
-            this.grbEvent.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.grbEvent.Location = new System.Drawing.Point(1055, 159);
+            this.grbEvent.Margin = new System.Windows.Forms.Padding(2);
             this.grbEvent.Name = "grbEvent";
-            this.grbEvent.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.grbEvent.Size = new System.Drawing.Size(528, 394);
+            this.grbEvent.Padding = new System.Windows.Forms.Padding(2);
+            this.grbEvent.Size = new System.Drawing.Size(396, 320);
             this.grbEvent.TabIndex = 30;
             this.grbEvent.TabStop = false;
             this.grbEvent.Text = "Events";
@@ -337,10 +323,10 @@
             // cbxOpenDoorEvent
             // 
             this.cbxOpenDoorEvent.AutoSize = true;
-            this.cbxOpenDoorEvent.Location = new System.Drawing.Point(23, 279);
-            this.cbxOpenDoorEvent.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cbxOpenDoorEvent.Location = new System.Drawing.Point(17, 227);
+            this.cbxOpenDoorEvent.Margin = new System.Windows.Forms.Padding(2);
             this.cbxOpenDoorEvent.Name = "cbxOpenDoorEvent";
-            this.cbxOpenDoorEvent.Size = new System.Drawing.Size(167, 23);
+            this.cbxOpenDoorEvent.Size = new System.Drawing.Size(148, 20);
             this.cbxOpenDoorEvent.TabIndex = 32;
             this.cbxOpenDoorEvent.Text = "Open Door Event";
             this.cbxOpenDoorEvent.UseVisualStyleBackColor = true;
@@ -349,24 +335,24 @@
             // cbxDeviceGPIStatusEvent
             // 
             this.cbxDeviceGPIStatusEvent.AutoSize = true;
-            this.cbxDeviceGPIStatusEvent.Location = new System.Drawing.Point(23, 230);
-            this.cbxDeviceGPIStatusEvent.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cbxDeviceGPIStatusEvent.Location = new System.Drawing.Point(17, 187);
+            this.cbxDeviceGPIStatusEvent.Margin = new System.Windows.Forms.Padding(2);
             this.cbxDeviceGPIStatusEvent.Name = "cbxDeviceGPIStatusEvent";
-            this.cbxDeviceGPIStatusEvent.Size = new System.Drawing.Size(222, 23);
+            this.cbxDeviceGPIStatusEvent.Size = new System.Drawing.Size(232, 20);
             this.cbxDeviceGPIStatusEvent.TabIndex = 31;
-            this.cbxDeviceGPIStatusEvent.Text = "Device GPI Status Event";
+            this.cbxDeviceGPIStatusEvent.Text = "Device GPI Status Event (n/a)";
             this.cbxDeviceGPIStatusEvent.UseVisualStyleBackColor = true;
             this.cbxDeviceGPIStatusEvent.CheckedChanged += new System.EventHandler(this.cbxDeviceGPIStatusEvent_CheckedChanged);
             // 
             // cbxDeviceGPOStatusEvent
             // 
             this.cbxDeviceGPOStatusEvent.AutoSize = true;
-            this.cbxDeviceGPOStatusEvent.Location = new System.Drawing.Point(23, 177);
-            this.cbxDeviceGPOStatusEvent.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cbxDeviceGPOStatusEvent.Location = new System.Drawing.Point(17, 144);
+            this.cbxDeviceGPOStatusEvent.Margin = new System.Windows.Forms.Padding(2);
             this.cbxDeviceGPOStatusEvent.Name = "cbxDeviceGPOStatusEvent";
-            this.cbxDeviceGPOStatusEvent.Size = new System.Drawing.Size(231, 23);
+            this.cbxDeviceGPOStatusEvent.Size = new System.Drawing.Size(239, 20);
             this.cbxDeviceGPOStatusEvent.TabIndex = 30;
-            this.cbxDeviceGPOStatusEvent.Text = "Device GPO Status Event";
+            this.cbxDeviceGPOStatusEvent.Text = "Device GPO Status Event (n/a)";
             this.cbxDeviceGPOStatusEvent.UseVisualStyleBackColor = true;
             this.cbxDeviceGPOStatusEvent.CheckedChanged += new System.EventHandler(this.cbxGPOStatusEvent_CheckedChanged);
             // 
@@ -379,61 +365,74 @@
             "144",
             "145"});
             this.tbxASubscriber.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxASubscriber.Location = new System.Drawing.Point(25, 58);
-            this.tbxASubscriber.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tbxASubscriber.Location = new System.Drawing.Point(19, 47);
+            this.tbxASubscriber.Margin = new System.Windows.Forms.Padding(2);
             this.tbxASubscriber.Name = "tbxASubscriber";
-            this.tbxASubscriber.Size = new System.Drawing.Size(76, 27);
+            this.tbxASubscriber.Size = new System.Drawing.Size(58, 23);
             this.tbxASubscriber.TabIndex = 32;
-            this.tbxASubscriber.Text = "141";
+            this.tbxASubscriber.Text = "101";
             this.tbxASubscriber.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // tbxBSubscriber
             // 
             this.tbxBSubscriber.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxBSubscriber.Location = new System.Drawing.Point(25, 132);
-            this.tbxBSubscriber.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tbxBSubscriber.Location = new System.Drawing.Point(19, 107);
+            this.tbxBSubscriber.Margin = new System.Windows.Forms.Padding(2);
             this.tbxBSubscriber.Name = "tbxBSubscriber";
-            this.tbxBSubscriber.Size = new System.Drawing.Size(76, 27);
+            this.tbxBSubscriber.Size = new System.Drawing.Size(58, 23);
             this.tbxBSubscriber.TabIndex = 33;
-            this.tbxBSubscriber.Text = "142";
+            this.tbxBSubscriber.Text = "102";
             this.tbxBSubscriber.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // lblASubscriber
             // 
             this.lblASubscriber.AutoSize = true;
-            this.lblASubscriber.Location = new System.Drawing.Point(21, 23);
+            this.lblASubscriber.Location = new System.Drawing.Point(16, 19);
+            this.lblASubscriber.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblASubscriber.Name = "lblASubscriber";
-            this.lblASubscriber.Size = new System.Drawing.Size(118, 19);
+            this.lblASubscriber.Size = new System.Drawing.Size(103, 16);
             this.lblASubscriber.TabIndex = 34;
             this.lblASubscriber.Text = "A-Subscriber:";
             // 
             // lblBSubscriber
             // 
             this.lblBSubscriber.AutoSize = true;
-            this.lblBSubscriber.Location = new System.Drawing.Point(24, 105);
+            this.lblBSubscriber.Location = new System.Drawing.Point(18, 85);
+            this.lblBSubscriber.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblBSubscriber.Name = "lblBSubscriber";
-            this.lblBSubscriber.Size = new System.Drawing.Size(119, 19);
+            this.lblBSubscriber.Size = new System.Drawing.Size(104, 16);
             this.lblBSubscriber.TabIndex = 35;
             this.lblBSubscriber.Text = "B-Subscriber:";
             // 
             // gbxCallControl
             // 
             this.gbxCallControl.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.gbxCallControl.Controls.Add(this.label1);
+            this.gbxCallControl.Controls.Add(this.btnGETCallLegs);
             this.gbxCallControl.Controls.Add(this.grpbxPOSTCalls);
             this.gbxCallControl.Controls.Add(this.btnGETCalls);
             this.gbxCallControl.Controls.Add(this.btnPOSTcallId);
-            this.gbxCallControl.Controls.Add(this.btnGETQueues);
             this.gbxCallControl.Controls.Add(this.btnDELETECallId);
             this.gbxCallControl.Controls.Add(this.btnDELETECalls);
             this.gbxCallControl.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbxCallControl.Location = new System.Drawing.Point(258, 196);
-            this.gbxCallControl.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.gbxCallControl.Location = new System.Drawing.Point(194, 159);
+            this.gbxCallControl.Margin = new System.Windows.Forms.Padding(2);
             this.gbxCallControl.Name = "gbxCallControl";
-            this.gbxCallControl.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.gbxCallControl.Size = new System.Drawing.Size(765, 394);
+            this.gbxCallControl.Padding = new System.Windows.Forms.Padding(2);
+            this.gbxCallControl.Size = new System.Drawing.Size(574, 320);
             this.gbxCallControl.TabIndex = 36;
             this.gbxCallControl.TabStop = false;
             this.gbxCallControl.Text = "Call Handling";
+            // 
+            // btnGETCallLegs
+            // 
+            this.btnGETCallLegs.Location = new System.Drawing.Point(19, 249);
+            this.btnGETCallLegs.Name = "btnGETCallLegs";
+            this.btnGETCallLegs.Size = new System.Drawing.Size(118, 60);
+            this.btnGETCallLegs.TabIndex = 43;
+            this.btnGETCallLegs.Text = "GET\r\nCall Legs";
+            this.btnGETCallLegs.UseVisualStyleBackColor = true;
+            this.btnGETCallLegs.Click += new System.EventHandler(this.btnGETCallQueueLegs_Click);
             // 
             // grpbxPOSTCalls
             // 
@@ -444,38 +443,36 @@
             this.grpbxPOSTCalls.Controls.Add(this.tbxBSubscriber);
             this.grpbxPOSTCalls.Controls.Add(this.lblASubscriber);
             this.grpbxPOSTCalls.Controls.Add(this.lblBSubscriber);
-            this.grpbxPOSTCalls.Location = new System.Drawing.Point(25, 20);
-            this.grpbxPOSTCalls.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.grpbxPOSTCalls.Location = new System.Drawing.Point(19, 16);
             this.grpbxPOSTCalls.Name = "grpbxPOSTCalls";
-            this.grpbxPOSTCalls.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.grpbxPOSTCalls.Size = new System.Drawing.Size(511, 180);
+            this.grpbxPOSTCalls.Size = new System.Drawing.Size(383, 146);
             this.grpbxPOSTCalls.TabIndex = 42;
             this.grpbxPOSTCalls.TabStop = false;
             // 
             // cmbxCallAction
             // 
             this.cmbxCallAction.FormattingEnabled = true;
-            this.cmbxCallAction.Location = new System.Drawing.Point(197, 132);
-            this.cmbxCallAction.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cmbxCallAction.Location = new System.Drawing.Point(148, 107);
+            this.cmbxCallAction.Margin = new System.Windows.Forms.Padding(2);
             this.cmbxCallAction.Name = "cmbxCallAction";
-            this.cmbxCallAction.Size = new System.Drawing.Size(121, 27);
+            this.cmbxCallAction.Size = new System.Drawing.Size(92, 24);
             this.cmbxCallAction.TabIndex = 41;
             // 
             // lblAction
             // 
             this.lblAction.AutoSize = true;
-            this.lblAction.Location = new System.Drawing.Point(195, 105);
+            this.lblAction.Location = new System.Drawing.Point(146, 85);
+            this.lblAction.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblAction.Name = "lblAction";
-            this.lblAction.Size = new System.Drawing.Size(65, 19);
+            this.lblAction.Size = new System.Drawing.Size(56, 16);
             this.lblAction.TabIndex = 40;
             this.lblAction.Text = "Action:";
             // 
             // btnGETCalls
             // 
-            this.btnGETCalls.Location = new System.Drawing.Point(25, 214);
-            this.btnGETCalls.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnGETCalls.Location = new System.Drawing.Point(19, 179);
             this.btnGETCalls.Name = "btnGETCalls";
-            this.btnGETCalls.Size = new System.Drawing.Size(157, 74);
+            this.btnGETCalls.Size = new System.Drawing.Size(118, 60);
             this.btnGETCalls.TabIndex = 4;
             this.btnGETCalls.Text = "GET\r\nCalls";
             this.btnGETCalls.UseVisualStyleBackColor = true;
@@ -483,32 +480,19 @@
             // 
             // btnPOSTcallId
             // 
-            this.btnPOSTcallId.Location = new System.Drawing.Point(203, 214);
-            this.btnPOSTcallId.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnPOSTcallId.Location = new System.Drawing.Point(156, 179);
             this.btnPOSTcallId.Name = "btnPOSTcallId";
-            this.btnPOSTcallId.Size = new System.Drawing.Size(157, 74);
+            this.btnPOSTcallId.Size = new System.Drawing.Size(118, 60);
             this.btnPOSTcallId.TabIndex = 38;
-            this.btnPOSTcallId.Text = "POST\r\nCall Id\r\n(answer)";
+            this.btnPOSTcallId.Text = "POST\r\nCall Id\r\n";
             this.btnPOSTcallId.UseVisualStyleBackColor = true;
             this.btnPOSTcallId.Click += new System.EventHandler(this.btnPOSTcallId_Click);
             // 
-            // btnGETQueues
-            // 
-            this.btnGETQueues.Location = new System.Drawing.Point(25, 300);
-            this.btnGETQueues.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnGETQueues.Name = "btnGETQueues";
-            this.btnGETQueues.Size = new System.Drawing.Size(157, 74);
-            this.btnGETQueues.TabIndex = 37;
-            this.btnGETQueues.Text = "GET\r\nQueues";
-            this.btnGETQueues.UseVisualStyleBackColor = true;
-            this.btnGETQueues.Click += new System.EventHandler(this.btnGetCallQueued_Click);
-            // 
             // btnDELETECallId
             // 
-            this.btnDELETECallId.Location = new System.Drawing.Point(379, 300);
-            this.btnDELETECallId.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDELETECallId.Location = new System.Drawing.Point(284, 249);
             this.btnDELETECallId.Name = "btnDELETECallId";
-            this.btnDELETECallId.Size = new System.Drawing.Size(157, 74);
+            this.btnDELETECallId.Size = new System.Drawing.Size(118, 60);
             this.btnDELETECallId.TabIndex = 36;
             this.btnDELETECallId.Text = "DELETE\r\nCall Id";
             this.btnDELETECallId.UseVisualStyleBackColor = true;
@@ -520,21 +504,20 @@
             this.gbxSwaggerSystem.Controls.Add(this.btnGETNetInterface);
             this.gbxSwaggerSystem.Controls.Add(this.btnGETDeviceAccounts);
             this.gbxSwaggerSystem.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbxSwaggerSystem.Location = new System.Drawing.Point(19, 196);
-            this.gbxSwaggerSystem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.gbxSwaggerSystem.Location = new System.Drawing.Point(14, 159);
+            this.gbxSwaggerSystem.Margin = new System.Windows.Forms.Padding(2);
             this.gbxSwaggerSystem.Name = "gbxSwaggerSystem";
-            this.gbxSwaggerSystem.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.gbxSwaggerSystem.Size = new System.Drawing.Size(205, 394);
+            this.gbxSwaggerSystem.Padding = new System.Windows.Forms.Padding(2);
+            this.gbxSwaggerSystem.Size = new System.Drawing.Size(154, 320);
             this.gbxSwaggerSystem.TabIndex = 37;
             this.gbxSwaggerSystem.TabStop = false;
             this.gbxSwaggerSystem.Text = "System";
             // 
             // btnGETNetInterface
             // 
-            this.btnGETNetInterface.Location = new System.Drawing.Point(27, 128);
-            this.btnGETNetInterface.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnGETNetInterface.Location = new System.Drawing.Point(20, 104);
             this.btnGETNetInterface.Name = "btnGETNetInterface";
-            this.btnGETNetInterface.Size = new System.Drawing.Size(147, 78);
+            this.btnGETNetInterface.Size = new System.Drawing.Size(110, 63);
             this.btnGETNetInterface.TabIndex = 3;
             this.btnGETNetInterface.Text = "GET\r\n Net Interfaces";
             this.btnGETNetInterface.UseVisualStyleBackColor = true;
@@ -558,11 +541,9 @@
             this.gbxAuthentication.Controls.Add(this.labWampRealm);
             this.gbxAuthentication.Controls.Add(this.edtPassword);
             this.gbxAuthentication.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbxAuthentication.Location = new System.Drawing.Point(17, 5);
-            this.gbxAuthentication.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbxAuthentication.Location = new System.Drawing.Point(13, 4);
             this.gbxAuthentication.Name = "gbxAuthentication";
-            this.gbxAuthentication.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.gbxAuthentication.Size = new System.Drawing.Size(1367, 178);
+            this.gbxAuthentication.Size = new System.Drawing.Size(1025, 145);
             this.gbxAuthentication.TabIndex = 38;
             this.gbxAuthentication.TabStop = false;
             this.gbxAuthentication.Text = "Authentication";
@@ -571,10 +552,10 @@
             // 
             this.chbxUnencrypted.AutoSize = true;
             this.chbxUnencrypted.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chbxUnencrypted.Location = new System.Drawing.Point(739, 97);
-            this.chbxUnencrypted.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.chbxUnencrypted.Location = new System.Drawing.Point(554, 79);
+            this.chbxUnencrypted.Margin = new System.Windows.Forms.Padding(2);
             this.chbxUnencrypted.Name = "chbxUnencrypted";
-            this.chbxUnencrypted.Size = new System.Drawing.Size(267, 26);
+            this.chbxUnencrypted.Size = new System.Drawing.Size(206, 21);
             this.chbxUnencrypted.TabIndex = 30;
             this.chbxUnencrypted.Text = "Unencrypted (Port 80/8087)";
             this.chbxUnencrypted.UseVisualStyleBackColor = true;
@@ -584,10 +565,10 @@
             // 
             this.chbxEncrypted.AutoSize = true;
             this.chbxEncrypted.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chbxEncrypted.Location = new System.Drawing.Point(739, 61);
-            this.chbxEncrypted.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.chbxEncrypted.Location = new System.Drawing.Point(554, 50);
+            this.chbxEncrypted.Margin = new System.Windows.Forms.Padding(2);
             this.chbxEncrypted.Name = "chbxEncrypted";
-            this.chbxEncrypted.Size = new System.Drawing.Size(257, 26);
+            this.chbxEncrypted.Size = new System.Drawing.Size(198, 21);
             this.chbxEncrypted.TabIndex = 29;
             this.chbxEncrypted.Text = "Encrypted (Port 443/8086)";
             this.chbxEncrypted.UseVisualStyleBackColor = true;
@@ -597,10 +578,9 @@
             // 
             this.labEncryption.AutoSize = true;
             this.labEncryption.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labEncryption.Location = new System.Drawing.Point(735, 39);
-            this.labEncryption.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labEncryption.Location = new System.Drawing.Point(551, 32);
             this.labEncryption.Name = "labEncryption";
-            this.labEncryption.Size = new System.Drawing.Size(153, 16);
+            this.labEncryption.Size = new System.Drawing.Size(119, 14);
             this.labEncryption.TabIndex = 17;
             this.labEncryption.Text = "Encryption Selection";
             // 
@@ -608,10 +588,9 @@
             // 
             this.blConnectionStatus.AutoSize = true;
             this.blConnectionStatus.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.blConnectionStatus.Location = new System.Drawing.Point(1044, 38);
-            this.blConnectionStatus.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.blConnectionStatus.Location = new System.Drawing.Point(783, 31);
             this.blConnectionStatus.Name = "blConnectionStatus";
-            this.blConnectionStatus.Size = new System.Drawing.Size(137, 16);
+            this.blConnectionStatus.Size = new System.Drawing.Size(108, 14);
             this.blConnectionStatus.TabIndex = 14;
             this.blConnectionStatus.Text = "Connection Status";
             // 
@@ -619,10 +598,9 @@
             // 
             this.tbxConnectionStatus.Enabled = false;
             this.tbxConnectionStatus.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxConnectionStatus.Location = new System.Drawing.Point(1048, 59);
-            this.tbxConnectionStatus.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbxConnectionStatus.Location = new System.Drawing.Point(786, 48);
             this.tbxConnectionStatus.Name = "tbxConnectionStatus";
-            this.tbxConnectionStatus.Size = new System.Drawing.Size(145, 27);
+            this.tbxConnectionStatus.Size = new System.Drawing.Size(110, 23);
             this.tbxConnectionStatus.TabIndex = 15;
             this.tbxConnectionStatus.Text = "Disconnected";
             // 
@@ -637,61 +615,62 @@
             this.gbxDevice.Controls.Add(this.btnGETDeviceGPOs);
             this.gbxDevice.Controls.Add(this.btnPOSTDeviceGPO);
             this.gbxDevice.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbxDevice.Location = new System.Drawing.Point(1044, 196);
-            this.gbxDevice.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.gbxDevice.Location = new System.Drawing.Point(783, 159);
+            this.gbxDevice.Margin = new System.Windows.Forms.Padding(2);
             this.gbxDevice.Name = "gbxDevice";
-            this.gbxDevice.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.gbxDevice.Size = new System.Drawing.Size(339, 394);
+            this.gbxDevice.Padding = new System.Windows.Forms.Padding(2);
+            this.gbxDevice.Size = new System.Drawing.Size(254, 320);
             this.gbxDevice.TabIndex = 39;
             this.gbxDevice.TabStop = false;
-            this.gbxDevice.Text = "Device";
+            this.gbxDevice.Text = "Device (n/a)";
             // 
             // tbxGPIDevice
             // 
             this.tbxGPIDevice.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxGPIDevice.Location = new System.Drawing.Point(213, 257);
-            this.tbxGPIDevice.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tbxGPIDevice.Location = new System.Drawing.Point(160, 209);
+            this.tbxGPIDevice.Margin = new System.Windows.Forms.Padding(2);
             this.tbxGPIDevice.Name = "tbxGPIDevice";
-            this.tbxGPIDevice.Size = new System.Drawing.Size(76, 27);
+            this.tbxGPIDevice.Size = new System.Drawing.Size(58, 23);
             this.tbxGPIDevice.TabIndex = 37;
-            this.tbxGPIDevice.Text = "141";
+            this.tbxGPIDevice.Text = "101";
             this.tbxGPIDevice.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // lblGPIDevice
             // 
             this.lblGPIDevice.AutoSize = true;
-            this.lblGPIDevice.Location = new System.Drawing.Point(211, 236);
+            this.lblGPIDevice.Location = new System.Drawing.Point(158, 192);
+            this.lblGPIDevice.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblGPIDevice.Name = "lblGPIDevice";
-            this.lblGPIDevice.Size = new System.Drawing.Size(94, 19);
+            this.lblGPIDevice.Size = new System.Drawing.Size(85, 16);
             this.lblGPIDevice.TabIndex = 38;
             this.lblGPIDevice.Text = "GPI Device";
             // 
             // tbxGPODevice
             // 
             this.tbxGPODevice.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxGPODevice.Location = new System.Drawing.Point(213, 158);
-            this.tbxGPODevice.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tbxGPODevice.Location = new System.Drawing.Point(160, 128);
+            this.tbxGPODevice.Margin = new System.Windows.Forms.Padding(2);
             this.tbxGPODevice.Name = "tbxGPODevice";
-            this.tbxGPODevice.Size = new System.Drawing.Size(76, 27);
+            this.tbxGPODevice.Size = new System.Drawing.Size(58, 23);
             this.tbxGPODevice.TabIndex = 35;
-            this.tbxGPODevice.Text = "141";
+            this.tbxGPODevice.Text = "101\r\n";
             this.tbxGPODevice.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // lblGPODevice
             // 
             this.lblGPODevice.AutoSize = true;
-            this.lblGPODevice.Location = new System.Drawing.Point(211, 135);
+            this.lblGPODevice.Location = new System.Drawing.Point(158, 110);
+            this.lblGPODevice.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblGPODevice.Name = "lblGPODevice";
-            this.lblGPODevice.Size = new System.Drawing.Size(103, 19);
+            this.lblGPODevice.Size = new System.Drawing.Size(92, 16);
             this.lblGPODevice.TabIndex = 36;
             this.lblGPODevice.Text = "GPO Device";
             // 
             // btnGETDeviceGPIOs
             // 
-            this.btnGETDeviceGPIOs.Location = new System.Drawing.Point(24, 230);
-            this.btnGETDeviceGPIOs.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnGETDeviceGPIOs.Location = new System.Drawing.Point(18, 187);
             this.btnGETDeviceGPIOs.Name = "btnGETDeviceGPIOs";
-            this.btnGETDeviceGPIOs.Size = new System.Drawing.Size(171, 74);
+            this.btnGETDeviceGPIOs.Size = new System.Drawing.Size(128, 60);
             this.btnGETDeviceGPIOs.TabIndex = 4;
             this.btnGETDeviceGPIOs.Text = "GET\r\n Device GPIs";
             this.btnGETDeviceGPIOs.UseVisualStyleBackColor = true;
@@ -699,10 +678,9 @@
             // 
             // btnGETDeviceGPOs
             // 
-            this.btnGETDeviceGPOs.Location = new System.Drawing.Point(24, 130);
-            this.btnGETDeviceGPOs.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnGETDeviceGPOs.Location = new System.Drawing.Point(18, 106);
             this.btnGETDeviceGPOs.Name = "btnGETDeviceGPOs";
-            this.btnGETDeviceGPOs.Size = new System.Drawing.Size(171, 74);
+            this.btnGETDeviceGPOs.Size = new System.Drawing.Size(128, 60);
             this.btnGETDeviceGPOs.TabIndex = 3;
             this.btnGETDeviceGPOs.Text = "GET\r\n Device GPOs";
             this.btnGETDeviceGPOs.UseVisualStyleBackColor = true;
@@ -711,10 +689,9 @@
             // btnPOSTDeviceGPO
             // 
             this.btnPOSTDeviceGPO.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.btnPOSTDeviceGPO.Location = new System.Drawing.Point(24, 36);
-            this.btnPOSTDeviceGPO.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnPOSTDeviceGPO.Location = new System.Drawing.Point(18, 29);
             this.btnPOSTDeviceGPO.Name = "btnPOSTDeviceGPO";
-            this.btnPOSTDeviceGPO.Size = new System.Drawing.Size(171, 74);
+            this.btnPOSTDeviceGPO.Size = new System.Drawing.Size(128, 60);
             this.btnPOSTDeviceGPO.TabIndex = 2;
             this.btnPOSTDeviceGPO.Text = "POST \r\nDevice GPO";
             this.btnPOSTDeviceGPO.UseVisualStyleBackColor = true;
@@ -725,11 +702,11 @@
             this.grpbxRegistratedDevices.Controls.Add(this.btnClearList);
             this.grpbxRegistratedDevices.Controls.Add(this.dgrd_Registrations);
             this.grpbxRegistratedDevices.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpbxRegistratedDevices.Location = new System.Drawing.Point(17, 617);
-            this.grpbxRegistratedDevices.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.grpbxRegistratedDevices.Location = new System.Drawing.Point(13, 501);
+            this.grpbxRegistratedDevices.Margin = new System.Windows.Forms.Padding(2);
             this.grpbxRegistratedDevices.Name = "grpbxRegistratedDevices";
-            this.grpbxRegistratedDevices.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.grpbxRegistratedDevices.Size = new System.Drawing.Size(1006, 319);
+            this.grpbxRegistratedDevices.Padding = new System.Windows.Forms.Padding(2);
+            this.grpbxRegistratedDevices.Size = new System.Drawing.Size(754, 259);
             this.grpbxRegistratedDevices.TabIndex = 40;
             this.grpbxRegistratedDevices.TabStop = false;
             this.grpbxRegistratedDevices.Text = "Registered Devices";
@@ -737,10 +714,10 @@
             // btnClearList
             // 
             this.btnClearList.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClearList.Location = new System.Drawing.Point(887, 252);
-            this.btnClearList.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnClearList.Location = new System.Drawing.Point(665, 205);
+            this.btnClearList.Margin = new System.Windows.Forms.Padding(2);
             this.btnClearList.Name = "btnClearList";
-            this.btnClearList.Size = new System.Drawing.Size(109, 39);
+            this.btnClearList.Size = new System.Drawing.Size(82, 32);
             this.btnClearList.TabIndex = 24;
             this.btnClearList.Text = "Clear List";
             this.btnClearList.UseVisualStyleBackColor = true;
@@ -760,13 +737,13 @@
             this.dgrdLocation,
             this.dgrdState});
             this.dgrd_Registrations.GridColor = System.Drawing.SystemColors.ButtonFace;
-            this.dgrd_Registrations.Location = new System.Drawing.Point(17, 25);
-            this.dgrd_Registrations.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgrd_Registrations.Location = new System.Drawing.Point(13, 20);
+            this.dgrd_Registrations.Margin = new System.Windows.Forms.Padding(2);
             this.dgrd_Registrations.Name = "dgrd_Registrations";
             this.dgrd_Registrations.RowHeadersWidth = 51;
             this.dgrd_Registrations.RowTemplate.Height = 24;
             this.dgrd_Registrations.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dgrd_Registrations.Size = new System.Drawing.Size(854, 266);
+            this.dgrd_Registrations.Size = new System.Drawing.Size(640, 216);
             this.dgrd_Registrations.TabIndex = 16;
             // 
             // dgrdDirNo
@@ -775,7 +752,7 @@
             this.dgrdDirNo.HeaderText = "Dir. No";
             this.dgrdDirNo.MinimumWidth = 60;
             this.dgrdDirNo.Name = "dgrdDirNo";
-            this.dgrdDirNo.Width = 92;
+            this.dgrdDirNo.Width = 79;
             // 
             // dgrdName
             // 
@@ -800,59 +777,59 @@
             // 
             // gbxActiveCalls
             // 
-            this.gbxActiveCalls.Controls.Add(this.dgrd_ActiveCalls);
+            this.gbxActiveCalls.Controls.Add(this.dgrdActiveCalls);
             this.gbxActiveCalls.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbxActiveCalls.Location = new System.Drawing.Point(1044, 617);
-            this.gbxActiveCalls.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.gbxActiveCalls.Location = new System.Drawing.Point(783, 501);
+            this.gbxActiveCalls.Margin = new System.Windows.Forms.Padding(2);
             this.gbxActiveCalls.Name = "gbxActiveCalls";
-            this.gbxActiveCalls.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.gbxActiveCalls.Size = new System.Drawing.Size(891, 264);
+            this.gbxActiveCalls.Padding = new System.Windows.Forms.Padding(2);
+            this.gbxActiveCalls.Size = new System.Drawing.Size(668, 214);
             this.gbxActiveCalls.TabIndex = 41;
             this.gbxActiveCalls.TabStop = false;
             this.gbxActiveCalls.Text = "Active Calls";
             // 
-            // dgrd_ActiveCalls
+            // dgrdActiveCalls
             // 
-            this.dgrd_ActiveCalls.AllowUserToAddRows = false;
-            this.dgrd_ActiveCalls.AllowUserToDeleteRows = false;
-            this.dgrd_ActiveCalls.AllowUserToResizeColumns = false;
-            this.dgrd_ActiveCalls.AllowUserToResizeRows = false;
-            this.dgrd_ActiveCalls.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
-            this.dgrd_ActiveCalls.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgrd_ActiveCalls.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgrdActiveCalls.AllowUserToAddRows = false;
+            this.dgrdActiveCalls.AllowUserToDeleteRows = false;
+            this.dgrdActiveCalls.AllowUserToResizeColumns = false;
+            this.dgrdActiveCalls.AllowUserToResizeRows = false;
+            this.dgrdActiveCalls.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
+            this.dgrdActiveCalls.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgrdActiveCalls.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Source,
             this.Destination,
             this.CallState,
             this.CallId});
-            this.dgrd_ActiveCalls.Location = new System.Drawing.Point(20, 25);
-            this.dgrd_ActiveCalls.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dgrd_ActiveCalls.Name = "dgrd_ActiveCalls";
-            this.dgrd_ActiveCalls.RowHeadersWidth = 51;
-            this.dgrd_ActiveCalls.RowTemplate.Height = 24;
-            this.dgrd_ActiveCalls.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dgrd_ActiveCalls.Size = new System.Drawing.Size(849, 216);
-            this.dgrd_ActiveCalls.TabIndex = 17;
+            this.dgrdActiveCalls.Location = new System.Drawing.Point(16, 20);
+            this.dgrdActiveCalls.Margin = new System.Windows.Forms.Padding(2);
+            this.dgrdActiveCalls.Name = "dgrdActiveCalls";
+            this.dgrdActiveCalls.RowHeadersWidth = 51;
+            this.dgrdActiveCalls.RowTemplate.Height = 24;
+            this.dgrdActiveCalls.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dgrdActiveCalls.Size = new System.Drawing.Size(637, 176);
+            this.dgrdActiveCalls.TabIndex = 17;
             // 
             // Source
             // 
-            this.Source.HeaderText = "Source";
-            this.Source.MinimumWidth = 50;
+            this.Source.HeaderText = "Call from";
+            this.Source.MinimumWidth = 130;
             this.Source.Name = "Source";
-            this.Source.Width = 70;
+            this.Source.Width = 130;
             // 
             // Destination
             // 
-            this.Destination.HeaderText = "Destination";
-            this.Destination.MinimumWidth = 90;
+            this.Destination.HeaderText = "Call to";
+            this.Destination.MinimumWidth = 130;
             this.Destination.Name = "Destination";
-            this.Destination.Width = 125;
+            this.Destination.Width = 130;
             // 
             // CallState
             // 
             this.CallState.HeaderText = "Call State";
-            this.CallState.MinimumWidth = 100;
+            this.CallState.MinimumWidth = 130;
             this.CallState.Name = "CallState";
-            this.CallState.Width = 115;
+            this.CallState.Width = 130;
             // 
             // CallId
             // 
@@ -869,11 +846,11 @@
             this.gbxLogging.Controls.Add(this.btnCloseLoggingWindow);
             this.gbxLogging.Controls.Add(this.btnOpenLoggingWindow);
             this.gbxLogging.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbxLogging.Location = new System.Drawing.Point(1407, 11);
-            this.gbxLogging.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.gbxLogging.Location = new System.Drawing.Point(1055, 9);
+            this.gbxLogging.Margin = new System.Windows.Forms.Padding(2);
             this.gbxLogging.Name = "gbxLogging";
-            this.gbxLogging.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.gbxLogging.Size = new System.Drawing.Size(528, 172);
+            this.gbxLogging.Padding = new System.Windows.Forms.Padding(2);
+            this.gbxLogging.Size = new System.Drawing.Size(396, 140);
             this.gbxLogging.TabIndex = 42;
             this.gbxLogging.TabStop = false;
             this.gbxLogging.Text = "Logging";
@@ -882,19 +859,20 @@
             // 
             this.lblLogFileSavingLocation.AutoSize = true;
             this.lblLogFileSavingLocation.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLogFileSavingLocation.Location = new System.Drawing.Point(18, 58);
+            this.lblLogFileSavingLocation.Location = new System.Drawing.Point(14, 47);
+            this.lblLogFileSavingLocation.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblLogFileSavingLocation.Name = "lblLogFileSavingLocation";
-            this.lblLogFileSavingLocation.Size = new System.Drawing.Size(46, 16);
+            this.lblLogFileSavingLocation.Size = new System.Drawing.Size(35, 14);
             this.lblLogFileSavingLocation.TabIndex = 27;
             this.lblLogFileSavingLocation.Text = "label1";
             // 
             // cbxSaveLoggingToFile
             // 
             this.cbxSaveLoggingToFile.AutoSize = true;
-            this.cbxSaveLoggingToFile.Location = new System.Drawing.Point(21, 29);
-            this.cbxSaveLoggingToFile.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cbxSaveLoggingToFile.Location = new System.Drawing.Point(16, 24);
+            this.cbxSaveLoggingToFile.Margin = new System.Windows.Forms.Padding(2);
             this.cbxSaveLoggingToFile.Name = "cbxSaveLoggingToFile";
-            this.cbxSaveLoggingToFile.Size = new System.Drawing.Size(191, 23);
+            this.cbxSaveLoggingToFile.Size = new System.Drawing.Size(171, 20);
             this.cbxSaveLoggingToFile.TabIndex = 26;
             this.cbxSaveLoggingToFile.Text = "Save Logging to File";
             this.cbxSaveLoggingToFile.UseVisualStyleBackColor = true;
@@ -903,10 +881,10 @@
             // btnClearLoggingWindow
             // 
             this.btnClearLoggingWindow.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClearLoggingWindow.Location = new System.Drawing.Point(356, 91);
-            this.btnClearLoggingWindow.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnClearLoggingWindow.Location = new System.Drawing.Point(267, 74);
+            this.btnClearLoggingWindow.Margin = new System.Windows.Forms.Padding(2);
             this.btnClearLoggingWindow.Name = "btnClearLoggingWindow";
-            this.btnClearLoggingWindow.Size = new System.Drawing.Size(133, 66);
+            this.btnClearLoggingWindow.Size = new System.Drawing.Size(100, 54);
             this.btnClearLoggingWindow.TabIndex = 25;
             this.btnClearLoggingWindow.Text = "Clear\r\nLogging Window";
             this.btnClearLoggingWindow.UseVisualStyleBackColor = true;
@@ -915,10 +893,10 @@
             // btnCloseLoggingWindow
             // 
             this.btnCloseLoggingWindow.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCloseLoggingWindow.Location = new System.Drawing.Point(199, 91);
-            this.btnCloseLoggingWindow.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnCloseLoggingWindow.Location = new System.Drawing.Point(149, 74);
+            this.btnCloseLoggingWindow.Margin = new System.Windows.Forms.Padding(2);
             this.btnCloseLoggingWindow.Name = "btnCloseLoggingWindow";
-            this.btnCloseLoggingWindow.Size = new System.Drawing.Size(133, 66);
+            this.btnCloseLoggingWindow.Size = new System.Drawing.Size(100, 54);
             this.btnCloseLoggingWindow.TabIndex = 24;
             this.btnCloseLoggingWindow.Text = "Close\r\nLogging Window";
             this.btnCloseLoggingWindow.UseVisualStyleBackColor = true;
@@ -928,11 +906,11 @@
             // 
             this.gbxQueuedCalls.Controls.Add(this.dgrdQueuedCalls);
             this.gbxQueuedCalls.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbxQueuedCalls.Location = new System.Drawing.Point(1044, 901);
-            this.gbxQueuedCalls.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.gbxQueuedCalls.Location = new System.Drawing.Point(783, 732);
+            this.gbxQueuedCalls.Margin = new System.Windows.Forms.Padding(2);
             this.gbxQueuedCalls.Name = "gbxQueuedCalls";
-            this.gbxQueuedCalls.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.gbxQueuedCalls.Size = new System.Drawing.Size(891, 232);
+            this.gbxQueuedCalls.Padding = new System.Windows.Forms.Padding(2);
+            this.gbxQueuedCalls.Size = new System.Drawing.Size(668, 188);
             this.gbxQueuedCalls.TabIndex = 43;
             this.gbxQueuedCalls.TabStop = false;
             this.gbxQueuedCalls.Text = "Queued Calls";
@@ -950,53 +928,53 @@
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4});
-            this.dgrdQueuedCalls.Location = new System.Drawing.Point(20, 30);
-            this.dgrdQueuedCalls.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgrdQueuedCalls.Location = new System.Drawing.Point(15, 24);
+            this.dgrdQueuedCalls.Margin = new System.Windows.Forms.Padding(2);
             this.dgrdQueuedCalls.Name = "dgrdQueuedCalls";
             this.dgrdQueuedCalls.RowHeadersWidth = 51;
             this.dgrdQueuedCalls.RowTemplate.Height = 24;
             this.dgrdQueuedCalls.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dgrdQueuedCalls.Size = new System.Drawing.Size(849, 181);
+            this.dgrdQueuedCalls.Size = new System.Drawing.Size(637, 147);
             this.dgrdQueuedCalls.TabIndex = 17;
             // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.HeaderText = "Call from";
-            this.dataGridViewTextBoxColumn1.MinimumWidth = 120;
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 130;
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.Width = 120;
+            this.dataGridViewTextBoxColumn1.Width = 130;
             // 
             // dataGridViewTextBoxColumn2
             // 
-            this.dataGridViewTextBoxColumn2.HeaderText = "Agents";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Call to";
             this.dataGridViewTextBoxColumn2.MinimumWidth = 130;
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             this.dataGridViewTextBoxColumn2.Width = 130;
             // 
             // dataGridViewTextBoxColumn3
             // 
-            this.dataGridViewTextBoxColumn3.HeaderText = "State";
-            this.dataGridViewTextBoxColumn3.MinimumWidth = 100;
+            this.dataGridViewTextBoxColumn3.HeaderText = "Call State";
+            this.dataGridViewTextBoxColumn3.MinimumWidth = 130;
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.Width = 125;
+            this.dataGridViewTextBoxColumn3.Width = 130;
             // 
             // dataGridViewTextBoxColumn4
             // 
-            this.dataGridViewTextBoxColumn4.HeaderText = "Q-size";
-            this.dataGridViewTextBoxColumn4.MinimumWidth = 100;
+            this.dataGridViewTextBoxColumn4.HeaderText = "Call ID";
+            this.dataGridViewTextBoxColumn4.MinimumWidth = 250;
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.Width = 125;
+            this.dataGridViewTextBoxColumn4.Width = 300;
             // 
             // gbxNetInterfaces
             // 
             this.gbxNetInterfaces.Controls.Add(this.btnClearNetInterfaces);
             this.gbxNetInterfaces.Controls.Add(this.dgrdNetInterfaces);
             this.gbxNetInterfaces.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbxNetInterfaces.Location = new System.Drawing.Point(19, 952);
-            this.gbxNetInterfaces.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.gbxNetInterfaces.Location = new System.Drawing.Point(14, 774);
+            this.gbxNetInterfaces.Margin = new System.Windows.Forms.Padding(2);
             this.gbxNetInterfaces.Name = "gbxNetInterfaces";
-            this.gbxNetInterfaces.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.gbxNetInterfaces.Size = new System.Drawing.Size(1004, 181);
+            this.gbxNetInterfaces.Padding = new System.Windows.Forms.Padding(2);
+            this.gbxNetInterfaces.Size = new System.Drawing.Size(753, 147);
             this.gbxNetInterfaces.TabIndex = 44;
             this.gbxNetInterfaces.TabStop = false;
             this.gbxNetInterfaces.Text = "Net Interfaces";
@@ -1004,10 +982,10 @@
             // btnClearNetInterfaces
             // 
             this.btnClearNetInterfaces.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClearNetInterfaces.Location = new System.Drawing.Point(885, 114);
-            this.btnClearNetInterfaces.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnClearNetInterfaces.Location = new System.Drawing.Point(664, 93);
+            this.btnClearNetInterfaces.Margin = new System.Windows.Forms.Padding(2);
             this.btnClearNetInterfaces.Name = "btnClearNetInterfaces";
-            this.btnClearNetInterfaces.Size = new System.Drawing.Size(109, 39);
+            this.btnClearNetInterfaces.Size = new System.Drawing.Size(82, 32);
             this.btnClearNetInterfaces.TabIndex = 24;
             this.btnClearNetInterfaces.Text = "Clear List";
             this.btnClearNetInterfaces.UseVisualStyleBackColor = true;
@@ -1026,13 +1004,13 @@
             this.NetName,
             this.NetState});
             this.dgrdNetInterfaces.GridColor = System.Drawing.SystemColors.ButtonFace;
-            this.dgrdNetInterfaces.Location = new System.Drawing.Point(21, 30);
-            this.dgrdNetInterfaces.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgrdNetInterfaces.Location = new System.Drawing.Point(16, 24);
+            this.dgrdNetInterfaces.Margin = new System.Windows.Forms.Padding(2);
             this.dgrdNetInterfaces.Name = "dgrdNetInterfaces";
             this.dgrdNetInterfaces.RowHeadersWidth = 51;
             this.dgrdNetInterfaces.RowTemplate.Height = 24;
             this.dgrdNetInterfaces.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dgrdNetInterfaces.Size = new System.Drawing.Size(848, 130);
+            this.dgrdNetInterfaces.Size = new System.Drawing.Size(636, 106);
             this.dgrdNetInterfaces.TabIndex = 16;
             // 
             // NetMACaddr
@@ -1057,12 +1035,23 @@
             this.NetState.Name = "NetState";
             this.NetState.Width = 125;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(155, 163);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(103, 14);
+            this.label1.TabIndex = 53;
+            this.label1.Text = "answer queued call";
+            // 
             // ZenitelConnectWampGui
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.ClientSize = new System.Drawing.Size(1959, 1186);
+            this.ClientSize = new System.Drawing.Size(1469, 964);
             this.Controls.Add(this.gbxNetInterfaces);
             this.Controls.Add(this.gbxQueuedCalls);
             this.Controls.Add(this.gbxLogging);
@@ -1074,12 +1063,12 @@
             this.Controls.Add(this.gbxCallControl);
             this.Controls.Add(this.grbEvent);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "ZenitelConnectWampGui";
             this.Text = "Zenitel Connect WAMP SDK";
             this.grbEvent.ResumeLayout(false);
             this.grbEvent.PerformLayout();
             this.gbxCallControl.ResumeLayout(false);
+            this.gbxCallControl.PerformLayout();
             this.grpbxPOSTCalls.ResumeLayout(false);
             this.grpbxPOSTCalls.PerformLayout();
             this.gbxSwaggerSystem.ResumeLayout(false);
@@ -1090,7 +1079,7 @@
             this.grpbxRegistratedDevices.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgrd_Registrations)).EndInit();
             this.gbxActiveCalls.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgrd_ActiveCalls)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgrdActiveCalls)).EndInit();
             this.gbxLogging.ResumeLayout(false);
             this.gbxLogging.PerformLayout();
             this.gbxQueuedCalls.ResumeLayout(false);
@@ -1118,7 +1107,7 @@
         private System.Windows.Forms.Button btnDELETECalls;
         private System.Windows.Forms.Button btnOpenLoggingWindow;
         private System.Windows.Forms.CheckBox cbxCallStatusEvent;
-        private System.Windows.Forms.CheckBox cbxCallQueueStatusEvent;
+        private System.Windows.Forms.CheckBox cbxCallLegStatusEvent;
         private System.Windows.Forms.CheckBox cbxDeviceRegistrationEvent;
         private System.Windows.Forms.GroupBox grbEvent;
         private System.Windows.Forms.TextBox tbxASubscriber;
@@ -1130,7 +1119,6 @@
         private System.Windows.Forms.Button btnGETNetInterface;
         private System.Windows.Forms.Button btnGETCalls;
         private System.Windows.Forms.Button btnDELETECallId;
-        private System.Windows.Forms.Button btnGETQueues;
         private System.Windows.Forms.CheckBox cbxDeviceGPOStatusEvent;
         private System.Windows.Forms.CheckBox cbxDeviceGPIStatusEvent;
         private System.Windows.Forms.GroupBox gbxAuthentication;
@@ -1144,7 +1132,7 @@
         private System.Windows.Forms.GroupBox grpbxRegistratedDevices;
         private System.Windows.Forms.DataGridView dgrd_Registrations;
         private System.Windows.Forms.GroupBox gbxActiveCalls;
-        private System.Windows.Forms.DataGridView dgrd_ActiveCalls;
+        private System.Windows.Forms.DataGridView dgrdActiveCalls;
         private System.Windows.Forms.Button btnClearList;
         private System.Windows.Forms.TextBox tbxGPIDevice;
         private System.Windows.Forms.Label lblGPIDevice;
@@ -1164,17 +1152,9 @@
         private System.Windows.Forms.GroupBox gbxNetInterfaces;
         private System.Windows.Forms.Button btnClearNetInterfaces;
         private System.Windows.Forms.DataGridView dgrdNetInterfaces;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn NetMACaddr;
         private System.Windows.Forms.DataGridViewTextBoxColumn NetName;
         private System.Windows.Forms.DataGridViewTextBoxColumn NetState;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Source;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Destination;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CallState;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CallId;
         private System.Windows.Forms.Button btnPOSTcallId;
         private System.Windows.Forms.ComboBox cmbxCallAction;
         private System.Windows.Forms.Label lblAction;
@@ -1182,6 +1162,16 @@
         private System.Windows.Forms.CheckBox chbxEncrypted;
         private System.Windows.Forms.Label labEncryption;
         private System.Windows.Forms.GroupBox grpbxPOSTCalls;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Source;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Destination;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CallState;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CallId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.Button btnGETCallLegs;
+        private System.Windows.Forms.Label label1;
     }
 }
 
