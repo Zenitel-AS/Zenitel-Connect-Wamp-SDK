@@ -1,13 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.32413.511
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33403.182
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZenitelConnectWampGui", "ZenitelConnectWampSdk\ZenitelConnectWampGui.csproj", "{DD1F5EF5-178F-4EC0-9E50-21C3F95E2DD7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogManager", "LogManager\LogManager.csproj", "{3AB3E158-BC10-482E-B9C6-3C6536884D9E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WampClient", "WampClient\WampClient.csproj", "{A42427C2-3EFE-45C4-86FD-5388B8135DDB}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "ZenitelConnectWampSdkSetup", "ZenitelConnectWampSdkSetup\ZenitelConnectWampSdkSetup.vdproj", "{27DF6E42-9C61-4855-94E2-8A0CD4E98BBB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,6 +43,14 @@ Global
 		{A42427C2-3EFE-45C4-86FD-5388B8135DDB}.Release|Any CPU.Build.0 = Release|Any CPU
 		{A42427C2-3EFE-45C4-86FD-5388B8135DDB}.Release|x86.ActiveCfg = Release|x86
 		{A42427C2-3EFE-45C4-86FD-5388B8135DDB}.Release|x86.Build.0 = Release|x86
+		{27DF6E42-9C61-4855-94E2-8A0CD4E98BBB}.Debug|Any CPU.ActiveCfg = Debug
+		{27DF6E42-9C61-4855-94E2-8A0CD4E98BBB}.Debug|Any CPU.Build.0 = Debug
+		{27DF6E42-9C61-4855-94E2-8A0CD4E98BBB}.Debug|x86.ActiveCfg = Debug
+		{27DF6E42-9C61-4855-94E2-8A0CD4E98BBB}.Debug|x86.Build.0 = Debug
+		{27DF6E42-9C61-4855-94E2-8A0CD4E98BBB}.Release|Any CPU.ActiveCfg = Release
+		{27DF6E42-9C61-4855-94E2-8A0CD4E98BBB}.Release|Any CPU.Build.0 = Release
+		{27DF6E42-9C61-4855-94E2-8A0CD4E98BBB}.Release|x86.ActiveCfg = Release
+		{27DF6E42-9C61-4855-94E2-8A0CD4E98BBB}.Release|x86.Build.0 = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
