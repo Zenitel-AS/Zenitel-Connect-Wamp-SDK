@@ -80,10 +80,6 @@
             this.grpbxRegistratedDevices = new System.Windows.Forms.GroupBox();
             this.btnClearList = new System.Windows.Forms.Button();
             this.dgrd_Registrations = new System.Windows.Forms.DataGridView();
-            this.dgrdDirNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgrdName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgrdLocation = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgrdState = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbxActiveCalls = new System.Windows.Forms.GroupBox();
             this.dgrdActiveCalls = new System.Windows.Forms.DataGridView();
             this.Source = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -107,6 +103,12 @@
             this.NetMACaddr = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NetName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NetState = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgrdIP_Address = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgrdDeviceType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgrdDirNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgrdName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgrdLocation = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgrdState = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grbEvent.SuspendLayout();
             this.gbxCallControl.SuspendLayout();
             this.grpbxPOSTCalls.SuspendLayout();
@@ -129,7 +131,7 @@
             this.btnWampConnect.BackColor = System.Drawing.SystemColors.ControlLight;
             this.btnWampConnect.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnWampConnect.Location = new System.Drawing.Point(1213, 28);
-            this.btnWampConnect.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnWampConnect.Margin = new System.Windows.Forms.Padding(4);
             this.btnWampConnect.Name = "btnWampConnect";
             this.btnWampConnect.Size = new System.Drawing.Size(133, 57);
             this.btnWampConnect.TabIndex = 0;
@@ -141,7 +143,7 @@
             // 
             this.btnWampDisconnect.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnWampDisconnect.Location = new System.Drawing.Point(1215, 97);
-            this.btnWampDisconnect.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnWampDisconnect.Margin = new System.Windows.Forms.Padding(4);
             this.btnWampDisconnect.Name = "btnWampDisconnect";
             this.btnWampDisconnect.Size = new System.Drawing.Size(131, 57);
             this.btnWampDisconnect.TabIndex = 1;
@@ -164,7 +166,7 @@
             // 
             this.edtWAMPServerAddr.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.edtWAMPServerAddr.Location = new System.Drawing.Point(20, 78);
-            this.edtWAMPServerAddr.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.edtWAMPServerAddr.Margin = new System.Windows.Forms.Padding(4);
             this.edtWAMPServerAddr.Name = "edtWAMPServerAddr";
             this.edtWAMPServerAddr.Size = new System.Drawing.Size(164, 27);
             this.edtWAMPServerAddr.TabIndex = 4;
@@ -174,7 +176,7 @@
             // 
             this.edtUserName.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.edtUserName.Location = new System.Drawing.Point(201, 78);
-            this.edtUserName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.edtUserName.Margin = new System.Windows.Forms.Padding(4);
             this.edtUserName.Name = "edtUserName";
             this.edtUserName.Size = new System.Drawing.Size(145, 27);
             this.edtUserName.TabIndex = 6;
@@ -194,7 +196,7 @@
             // 
             this.edtPassword.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.edtPassword.Location = new System.Drawing.Point(367, 78);
-            this.edtPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.edtPassword.Margin = new System.Windows.Forms.Padding(4);
             this.edtPassword.Name = "edtPassword";
             this.edtPassword.Size = new System.Drawing.Size(145, 27);
             this.edtPassword.TabIndex = 8;
@@ -215,7 +217,7 @@
             // 
             this.edtWampRealm.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.edtWampRealm.Location = new System.Drawing.Point(548, 78);
-            this.edtWampRealm.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.edtWampRealm.Margin = new System.Windows.Forms.Padding(4);
             this.edtWampRealm.Name = "edtWampRealm";
             this.edtWampRealm.Size = new System.Drawing.Size(145, 27);
             this.edtWampRealm.TabIndex = 12;
@@ -235,7 +237,7 @@
             // btnGETDeviceAccounts
             // 
             this.btnGETDeviceAccounts.Location = new System.Drawing.Point(27, 34);
-            this.btnGETDeviceAccounts.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnGETDeviceAccounts.Margin = new System.Windows.Forms.Padding(4);
             this.btnGETDeviceAccounts.Name = "btnGETDeviceAccounts";
             this.btnGETDeviceAccounts.Size = new System.Drawing.Size(147, 78);
             this.btnGETDeviceAccounts.TabIndex = 2;
@@ -246,7 +248,7 @@
             // btnPOSTCalls
             // 
             this.btnPOSTCalls.Location = new System.Drawing.Point(193, 18);
-            this.btnPOSTCalls.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnPOSTCalls.Margin = new System.Windows.Forms.Padding(4);
             this.btnPOSTCalls.Name = "btnPOSTCalls";
             this.btnPOSTCalls.Size = new System.Drawing.Size(157, 74);
             this.btnPOSTCalls.TabIndex = 15;
@@ -257,7 +259,7 @@
             // btnDELETECalls
             // 
             this.btnDELETECalls.Location = new System.Drawing.Point(379, 220);
-            this.btnDELETECalls.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDELETECalls.Margin = new System.Windows.Forms.Padding(4);
             this.btnDELETECalls.Name = "btnDELETECalls";
             this.btnDELETECalls.Size = new System.Drawing.Size(157, 74);
             this.btnDELETECalls.TabIndex = 16;
@@ -434,7 +436,7 @@
             // btnGETCallLegs
             // 
             this.btnGETCallLegs.Location = new System.Drawing.Point(25, 306);
-            this.btnGETCallLegs.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnGETCallLegs.Margin = new System.Windows.Forms.Padding(4);
             this.btnGETCallLegs.Name = "btnGETCallLegs";
             this.btnGETCallLegs.Size = new System.Drawing.Size(157, 74);
             this.btnGETCallLegs.TabIndex = 43;
@@ -452,9 +454,9 @@
             this.grpbxPOSTCalls.Controls.Add(this.lblASubscriber);
             this.grpbxPOSTCalls.Controls.Add(this.lblBSubscriber);
             this.grpbxPOSTCalls.Location = new System.Drawing.Point(25, 20);
-            this.grpbxPOSTCalls.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.grpbxPOSTCalls.Margin = new System.Windows.Forms.Padding(4);
             this.grpbxPOSTCalls.Name = "grpbxPOSTCalls";
-            this.grpbxPOSTCalls.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.grpbxPOSTCalls.Padding = new System.Windows.Forms.Padding(4);
             this.grpbxPOSTCalls.Size = new System.Drawing.Size(511, 180);
             this.grpbxPOSTCalls.TabIndex = 42;
             this.grpbxPOSTCalls.TabStop = false;
@@ -480,7 +482,7 @@
             // btnGETCalls
             // 
             this.btnGETCalls.Location = new System.Drawing.Point(25, 220);
-            this.btnGETCalls.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnGETCalls.Margin = new System.Windows.Forms.Padding(4);
             this.btnGETCalls.Name = "btnGETCalls";
             this.btnGETCalls.Size = new System.Drawing.Size(157, 74);
             this.btnGETCalls.TabIndex = 4;
@@ -491,7 +493,7 @@
             // btnDELETECallId
             // 
             this.btnDELETECallId.Location = new System.Drawing.Point(379, 306);
-            this.btnDELETECallId.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDELETECallId.Margin = new System.Windows.Forms.Padding(4);
             this.btnDELETECallId.Name = "btnDELETECallId";
             this.btnDELETECallId.Size = new System.Drawing.Size(157, 74);
             this.btnDELETECallId.TabIndex = 36;
@@ -517,7 +519,7 @@
             // btnGETNetInterface
             // 
             this.btnGETNetInterface.Location = new System.Drawing.Point(27, 128);
-            this.btnGETNetInterface.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnGETNetInterface.Margin = new System.Windows.Forms.Padding(4);
             this.btnGETNetInterface.Name = "btnGETNetInterface";
             this.btnGETNetInterface.Size = new System.Drawing.Size(147, 78);
             this.btnGETNetInterface.TabIndex = 3;
@@ -544,9 +546,9 @@
             this.gbxAuthentication.Controls.Add(this.edtPassword);
             this.gbxAuthentication.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbxAuthentication.Location = new System.Drawing.Point(17, 5);
-            this.gbxAuthentication.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbxAuthentication.Margin = new System.Windows.Forms.Padding(4);
             this.gbxAuthentication.Name = "gbxAuthentication";
-            this.gbxAuthentication.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbxAuthentication.Padding = new System.Windows.Forms.Padding(4);
             this.gbxAuthentication.Size = new System.Drawing.Size(1367, 178);
             this.gbxAuthentication.TabIndex = 38;
             this.gbxAuthentication.TabStop = false;
@@ -605,7 +607,7 @@
             this.tbxConnectionStatus.Enabled = false;
             this.tbxConnectionStatus.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbxConnectionStatus.Location = new System.Drawing.Point(1048, 59);
-            this.tbxConnectionStatus.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbxConnectionStatus.Margin = new System.Windows.Forms.Padding(4);
             this.tbxConnectionStatus.Name = "tbxConnectionStatus";
             this.tbxConnectionStatus.Size = new System.Drawing.Size(145, 27);
             this.tbxConnectionStatus.TabIndex = 15;
@@ -674,7 +676,7 @@
             // btnGETDeviceGPIOs
             // 
             this.btnGETDeviceGPIOs.Location = new System.Drawing.Point(24, 230);
-            this.btnGETDeviceGPIOs.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnGETDeviceGPIOs.Margin = new System.Windows.Forms.Padding(4);
             this.btnGETDeviceGPIOs.Name = "btnGETDeviceGPIOs";
             this.btnGETDeviceGPIOs.Size = new System.Drawing.Size(171, 74);
             this.btnGETDeviceGPIOs.TabIndex = 4;
@@ -685,7 +687,7 @@
             // btnGETDeviceGPOs
             // 
             this.btnGETDeviceGPOs.Location = new System.Drawing.Point(24, 130);
-            this.btnGETDeviceGPOs.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnGETDeviceGPOs.Margin = new System.Windows.Forms.Padding(4);
             this.btnGETDeviceGPOs.Name = "btnGETDeviceGPOs";
             this.btnGETDeviceGPOs.Size = new System.Drawing.Size(171, 74);
             this.btnGETDeviceGPOs.TabIndex = 3;
@@ -697,7 +699,7 @@
             // 
             this.btnPOSTDeviceGPO.BackColor = System.Drawing.SystemColors.ControlLight;
             this.btnPOSTDeviceGPO.Location = new System.Drawing.Point(24, 36);
-            this.btnPOSTDeviceGPO.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnPOSTDeviceGPO.Margin = new System.Windows.Forms.Padding(4);
             this.btnPOSTDeviceGPO.Name = "btnPOSTDeviceGPO";
             this.btnPOSTDeviceGPO.Size = new System.Drawing.Size(171, 74);
             this.btnPOSTDeviceGPO.TabIndex = 2;
@@ -722,7 +724,7 @@
             // btnClearList
             // 
             this.btnClearList.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClearList.Location = new System.Drawing.Point(887, 252);
+            this.btnClearList.Location = new System.Drawing.Point(877, 262);
             this.btnClearList.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnClearList.Name = "btnClearList";
             this.btnClearList.Size = new System.Drawing.Size(109, 39);
@@ -740,6 +742,8 @@
             this.dgrd_Registrations.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dgrd_Registrations.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgrd_Registrations.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgrdIP_Address,
+            this.dgrdDeviceType,
             this.dgrdDirNo,
             this.dgrdName,
             this.dgrdLocation,
@@ -751,37 +755,8 @@
             this.dgrd_Registrations.RowHeadersWidth = 51;
             this.dgrd_Registrations.RowTemplate.Height = 24;
             this.dgrd_Registrations.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dgrd_Registrations.Size = new System.Drawing.Size(853, 266);
+            this.dgrd_Registrations.Size = new System.Drawing.Size(969, 217);
             this.dgrd_Registrations.TabIndex = 16;
-            // 
-            // dgrdDirNo
-            // 
-            this.dgrdDirNo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.dgrdDirNo.HeaderText = "Dir. No";
-            this.dgrdDirNo.MinimumWidth = 60;
-            this.dgrdDirNo.Name = "dgrdDirNo";
-            this.dgrdDirNo.Width = 92;
-            // 
-            // dgrdName
-            // 
-            this.dgrdName.HeaderText = "Name";
-            this.dgrdName.MinimumWidth = 120;
-            this.dgrdName.Name = "dgrdName";
-            this.dgrdName.Width = 120;
-            // 
-            // dgrdLocation
-            // 
-            this.dgrdLocation.HeaderText = "Location";
-            this.dgrdLocation.MinimumWidth = 120;
-            this.dgrdLocation.Name = "dgrdLocation";
-            this.dgrdLocation.Width = 120;
-            // 
-            // dgrdState
-            // 
-            this.dgrdState.HeaderText = "State";
-            this.dgrdState.MinimumWidth = 180;
-            this.dgrdState.Name = "dgrdState";
-            this.dgrdState.Width = 180;
             // 
             // gbxActiveCalls
             // 
@@ -917,7 +892,7 @@
             this.gbxQueuedCalls.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gbxQueuedCalls.Name = "gbxQueuedCalls";
             this.gbxQueuedCalls.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.gbxQueuedCalls.Size = new System.Drawing.Size(891, 231);
+            this.gbxQueuedCalls.Size = new System.Drawing.Size(891, 274);
             this.gbxQueuedCalls.TabIndex = 43;
             this.gbxQueuedCalls.TabStop = false;
             this.gbxQueuedCalls.Text = "Queued Calls";
@@ -941,7 +916,7 @@
             this.dgrdQueuedCalls.RowHeadersWidth = 51;
             this.dgrdQueuedCalls.RowTemplate.Height = 24;
             this.dgrdQueuedCalls.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dgrdQueuedCalls.Size = new System.Drawing.Size(849, 181);
+            this.dgrdQueuedCalls.Size = new System.Drawing.Size(849, 228);
             this.dgrdQueuedCalls.TabIndex = 17;
             // 
             // dataGridViewTextBoxColumn1
@@ -981,7 +956,7 @@
             this.gbxNetInterfaces.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gbxNetInterfaces.Name = "gbxNetInterfaces";
             this.gbxNetInterfaces.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.gbxNetInterfaces.Size = new System.Drawing.Size(1004, 181);
+            this.gbxNetInterfaces.Size = new System.Drawing.Size(1004, 222);
             this.gbxNetInterfaces.TabIndex = 44;
             this.gbxNetInterfaces.TabStop = false;
             this.gbxNetInterfaces.Text = "Net Interfaces";
@@ -989,7 +964,7 @@
             // btnClearNetInterfaces
             // 
             this.btnClearNetInterfaces.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClearNetInterfaces.Location = new System.Drawing.Point(885, 114);
+            this.btnClearNetInterfaces.Location = new System.Drawing.Point(875, 167);
             this.btnClearNetInterfaces.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnClearNetInterfaces.Name = "btnClearNetInterfaces";
             this.btnClearNetInterfaces.Size = new System.Drawing.Size(109, 39);
@@ -1017,7 +992,7 @@
             this.dgrdNetInterfaces.RowHeadersWidth = 51;
             this.dgrdNetInterfaces.RowTemplate.Height = 24;
             this.dgrdNetInterfaces.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dgrdNetInterfaces.Size = new System.Drawing.Size(848, 130);
+            this.dgrdNetInterfaces.Size = new System.Drawing.Size(963, 118);
             this.dgrdNetInterfaces.TabIndex = 16;
             // 
             // NetMACaddr
@@ -1042,6 +1017,49 @@
             this.NetState.Name = "NetState";
             this.NetState.Width = 125;
             // 
+            // dgrdIP_Address
+            // 
+            this.dgrdIP_Address.HeaderText = "IP-Address";
+            this.dgrdIP_Address.MinimumWidth = 6;
+            this.dgrdIP_Address.Name = "dgrdIP_Address";
+            this.dgrdIP_Address.Width = 125;
+            // 
+            // dgrdDeviceType
+            // 
+            this.dgrdDeviceType.HeaderText = "Device Type";
+            this.dgrdDeviceType.MinimumWidth = 100;
+            this.dgrdDeviceType.Name = "dgrdDeviceType";
+            this.dgrdDeviceType.Width = 130;
+            // 
+            // dgrdDirNo
+            // 
+            this.dgrdDirNo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.dgrdDirNo.HeaderText = "Dir. No";
+            this.dgrdDirNo.MinimumWidth = 60;
+            this.dgrdDirNo.Name = "dgrdDirNo";
+            this.dgrdDirNo.Width = 92;
+            // 
+            // dgrdName
+            // 
+            this.dgrdName.HeaderText = "Name";
+            this.dgrdName.MinimumWidth = 120;
+            this.dgrdName.Name = "dgrdName";
+            this.dgrdName.Width = 120;
+            // 
+            // dgrdLocation
+            // 
+            this.dgrdLocation.HeaderText = "Location";
+            this.dgrdLocation.MinimumWidth = 120;
+            this.dgrdLocation.Name = "dgrdLocation";
+            this.dgrdLocation.Width = 120;
+            // 
+            // dgrdState
+            // 
+            this.dgrdState.HeaderText = "State";
+            this.dgrdState.MinimumWidth = 180;
+            this.dgrdState.Name = "dgrdState";
+            this.dgrdState.Width = 180;
+            // 
             // ZenitelConnectWampGui
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1059,7 +1077,7 @@
             this.Controls.Add(this.gbxCallControl);
             this.Controls.Add(this.grbEvent);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ZenitelConnectWampGui";
             this.Text = "Zenitel Connect WAMP SDK";
             this.grbEvent.ResumeLayout(false);
@@ -1139,10 +1157,6 @@
         private System.Windows.Forms.Button btnClearLoggingWindow;
         private System.Windows.Forms.Button btnCloseLoggingWindow;
         private System.Windows.Forms.Label lblLogFileSavingLocation;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgrdDirNo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgrdName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgrdLocation;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgrdState;
         private System.Windows.Forms.GroupBox gbxQueuedCalls;
         private System.Windows.Forms.DataGridView dgrdQueuedCalls;
         private System.Windows.Forms.GroupBox gbxNetInterfaces;
@@ -1166,6 +1180,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.Button btnGETCallLegs;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgrdIP_Address;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgrdDeviceType;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgrdDirNo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgrdName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgrdLocation;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgrdState;
     }
 }
 
