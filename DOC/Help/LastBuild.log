@@ -1,97 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
-<shfbBuild product="Sandcastle Help File Builder and Tools" version="2019.11.17.0" projectFile="C:\Projects\Connect Platform\Work\ZenitelConnectWampSdk\DOC\Zenitel.Connect.Wamp.Sdk.shfbproj" started="03/11/2022 09.22.44">
+<shfbBuild product="Sandcastle Help File Builder and Tools" version="2023.7.8.0" projectFile="C:\Projects\Zenitel_Connect_Pro\Work\Zenitel_GitHub\Zenitel-Connect-Wamp-SDK\DOC\Zenitel.Connect.Wamp.Sdk.shfbproj" started="27-08-2023 17:55:01">
 <buildStep step="Initializing">
-Finding tools...
-The Sandcastle tools are located in &#39;C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\&#39;
+The Sandcastle tools are located in &#39;C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder&#39;
+Locating components in the following folder(s):
+    C:\Projects\Zenitel_Connect_Pro\Work\Zenitel_GitHub\Zenitel-Connect-Wamp-SDK\DOC
+    C:\ProgramData\EWSoftware\Sandcastle Help File Builder\Components and Plug-Ins
+    C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components
+Using framework reflection data for &#39;.NET Framework 4.8&#39; located in &#39;C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\.NETFramework&#39;
+Using presentation style &#39;VS2013&#39; located in &#39;C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components\VS2013&#39;
 Searching for HTML Help 1 compiler...
 Found HTML Help 1 compiler in &#39;C:\Program Files (x86)\HTML Help Workshop\&#39;
-Locating components in the following folder(s):
-    C:\Projects\Connect Platform\Work\ZenitelConnectWampSdk\DOC
-    C:\ProgramData\EWSoftware\Sandcastle Help File Builder\Components and Plug-Ins\
-    C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\
-Using framework reflection data for &#39;.NET Framework 4.8&#39; located in &#39;C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\.NETFramework&#39;
-Using presentation style &#39;VS2013&#39; located in &#39;C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013&#39;
 Loading and initializing plug-ins...
-Lightweight Website Style Version 2019.11.17.0
-Copyright &#169; 2006-2019, Eric Woodruff, All Rights Reserved
+Lightweight Website Style Version 2023.7.8.0
+Copyright &#169; 2006-2023, Eric Woodruff, All Rights Reserved
 Portions Copyright &#169; 2014, Sam Harwell, All Rights Reserved
 </buildStep>
 <buildStep step="ValidatingDocumentationSources">
 Validating and copying documentation source information
-Source: C:\Projects\Connect Platform\Work\ZenitelConnectWampSdk\ZenitelConnectWampSdk\bin\Release\WampClient.dll
-    Found assembly &#39;C:\Projects\Connect Platform\Work\ZenitelConnectWampSdk\ZenitelConnectWampSdk\bin\Release\WampClient.dll&#39;
-Source: C:\Projects\Connect Platform\Work\ZenitelConnectWampSdk\ZenitelConnectWampSdk\bin\Release\WampClient.xml
+Source: C:\Projects\Zenitel_Connect_Pro\Work\Zenitel_GitHub\Zenitel-Connect-Wamp-SDK\ZenitelConnectWampSdk\bin\Release\WampClient.dll
+    Found assembly &#39;C:\Projects\Zenitel_Connect_Pro\Work\Zenitel_GitHub\Zenitel-Connect-Wamp-SDK\ZenitelConnectWampSdk\bin\Release\WampClient.dll&#39;
+Source: C:\Projects\Zenitel_Connect_Pro\Work\Zenitel_GitHub\Zenitel-Connect-Wamp-SDK\ZenitelConnectWampSdk\bin\Release\WampClient.xml
 
 References to include:
-    C:\Projects\Connect Platform\Work\ZenitelConnectWampSdk\ZenitelConnectWampSdk\bin\Debug\Zenitel.Connect.Wamp.Sdk.exe
+    C:\Projects\Zenitel_Connect_Pro\Work\Zenitel_GitHub\Zenitel-Connect-Wamp-SDK\ZenitelConnectWampSdk\bin\Debug\Zenitel.Connect.Wamp.Sdk.exe
 
 Copying XML comments files
-    C:\Projects\Connect Platform\Work\ZenitelConnectWampSdk\ZenitelConnectWampSdk\bin\Release\WampClient.xml -&gt; C:\Projects\Connect Platform\Work\ZenitelConnectWampSdk\DOC\Help\Working\WampClient.xml
+    C:\Projects\Zenitel_Connect_Pro\Work\Zenitel_GitHub\Zenitel-Connect-Wamp-SDK\ZenitelConnectWampSdk\bin\Release\WampClient.xml -&gt; C:\Projects\Zenitel_Connect_Pro\Work\Zenitel_GitHub\Zenitel-Connect-Wamp-SDK\DOC\Help\Working\WampClient.xml
 </buildStep>
 <buildStep step="GenerateSharedContent">
 Generating shared content files (en-US, English (United States))...
 <plugIn name="Lightweight Website Style" behavior="After" priority="1000">
-</plugIn>    Last step completed in 00:00:00,0160
+</plugIn>    Last step completed in 00:00:00,0061
 </buildStep>
 <buildStep step="GenerateApiFilter">
 Generating API filter for MRefBuilder...
-    Last step completed in 00:00:00,0040
+    Last step completed in 00:00:00,0029
 </buildStep>
 <buildStep step="GenerateReflectionInfo">
 Generating reflection information...
-[C:\Program Files (x86)\MSBuild\14.0\bin\amd64\MSBuild.exe - GenerateRefInfo.proj]
-Build started 03/11/2022 09.22.45.
-Project &quot;C:\Projects\Connect Platform\Work\ZenitelConnectWampSdk\DOC\Help\Working\GenerateRefInfo.proj&quot; on node 1 (default targets).
+[C:\Program Files (x86)\Microsoft Visual Studio\2019\Professional\MSBuild\Current\Bin\MSBuild.exe - GenerateRefInfo-a4194151-46e7-4a4f-ae49-b9ad805422b9.proj]
+Build started 27-08-2023 17:55:02.
+Project &quot;C:\Projects\Zenitel_Connect_Pro\Work\Zenitel_GitHub\Zenitel-Connect-Wamp-SDK\DOC\Help\Working\GenerateRefInfo-a4194151-46e7-4a4f-ae49-b9ad805422b9.proj&quot; on node 1 (default targets).
 PrepareForBuild:
   Creating directory &quot;obj\Debug\&quot;.
+GenerateBindingRedirects:
+  No suggested binding redirects from ResolveAssemblyReferences.
 GenerateRefInfo:
-  MRefBuilder (v2019.11.17.0)
-  Copyright &#184; 2006-2019, Microsoft Corporation, All Rights Reserved.
-  Portions Copyright &#184; 2006-2019, Eric Woodruff, All Rights Reserved.
+  Microsoft.Build (v16.11.2+f3225964253d565862806752e54a7608191a9035)
+  c Microsoft Corporation. All rights reserved.
   No source code context base path specified.  Source context information is unavailable.
   Loaded 1 assemblies for reflection and 2 dependency assemblies.
-  Wrote information on 1 namespaces, 11 types, and 142 members
-  Copying file from &quot;reflection.org&quot; to &quot;reflection.all&quot;.
-  XslTransform (v2019.11.17.0)
-  Copyright &#184; 2006-2019, Microsoft Corporation, All Rights Reserved.
-  Portions Copyright &#184; 2006-2019, Eric Woodruff, All Rights Reserved.
-  Applying XSL transformation &#39;C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\ProductionTransforms\MergeDuplicates.xsl&#39;.
-Done Building Project &quot;C:\Projects\Connect Platform\Work\ZenitelConnectWampSdk\DOC\Help\Working\GenerateRefInfo.proj&quot; (default targets).
-
-Build succeeded.
-
-Time Elapsed 00:00:00.63
-    Last step completed in 00:00:01,1364
+  Wrote information on 1 namespaces, 13 types, and 153 members
+  Merging duplicate type and member information
+  Merged 0 duplicate type(s) and 0 duplicate member(s)
+Done Building Project &quot;C:\Projects\Zenitel_Connect_Pro\Work\Zenitel_GitHub\Zenitel-Connect-Wamp-SDK\DOC\Help\Working\GenerateRefInfo-a4194151-46e7-4a4f-ae49-b9ad805422b9.proj&quot; (default targets).
+    Last step completed in 00:00:01,0676
 </buildStep>
-<buildStep step="TransformReflectionInfo">
-Transforming reflection output...
-[C:\Program Files (x86)\MSBuild\14.0\bin\amd64\MSBuild.exe - TransformManifest.proj]
-Build started 03/11/2022 09.22.46.
-Project &quot;C:\Projects\Connect Platform\Work\ZenitelConnectWampSdk\DOC\Help\Working\TransformManifest.proj&quot; on node 1 (default targets).
-TransformManifest:
-  XslTransform (v2019.11.17.0)
-  Copyright &#184; 2006-2019, Microsoft Corporation, All Rights Reserved.
-  Portions Copyright &#184; 2006-2019, Eric Woodruff, All Rights Reserved.
-  Applying XSL transformation &#39;C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\\ProductionTransforms\ApplyVSDocModel.xsl&#39;.
-  Copying file from &quot;reflection.xml&quot; to &quot;reflection.nofilenames&quot;.
-  XslTransform (v2019.11.17.0)
-  Copyright &#184; 2006-2019, Microsoft Corporation, All Rights Reserved.
-  Portions Copyright &#184; 2006-2019, Eric Woodruff, All Rights Reserved.
-  Applying XSL transformation &#39;C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\ProductionTransforms\AddFilenames.xsl&#39;.
-  XslTransform (v2019.11.17.0)
-  Copyright &#184; 2006-2019, Microsoft Corporation, All Rights Reserved.
-  Portions Copyright &#184; 2006-2019, Eric Woodruff, All Rights Reserved.
-  Applying XSL transformation &#39;C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\ProductionTransforms\ReflectionToManifest.xsl&#39;.
-Done Building Project &quot;C:\Projects\Connect Platform\Work\ZenitelConnectWampSdk\DOC\Help\Working\TransformManifest.proj&quot; (default targets).
-
-Build succeeded.
-
-Time Elapsed 00:00:00.76
-    Last step completed in 00:00:01,2335
+<buildStep step="ApplyDocumentModel">
+Applying document model to reflection output...
+    Last step completed in 00:00:00,0288
+</buildStep>
+<buildStep step="AddApiTopicFilenames">
+Adding topic filenames to API members...
+    Last step completed in 00:00:00,0110
+</buildStep>
+<buildStep step="GenerateApiTopicManifest">
+Generating API topic manifest...
+    Last step completed in 00:00:00,0060
 </buildStep>
 <buildStep step="GenerateNamespaceSummaries">
 Generating namespace summary information...
-    Last step completed in 00:00:00,0190
+    Last step completed in 00:00:00,0160
 </buildStep>
 <buildStep step="CopyAdditionalContent">
 Copying additional content files...
@@ -103,167 +82,129 @@ Merging conceptual and additional tables of contents...
     Last step completed in 00:00:00,0000
 </buildStep>
 <buildStep step="GenerateIntermediateTableOfContents">
-Generating intermediate table of contents file...
-[C:\Program Files (x86)\MSBuild\14.0\bin\amd64\MSBuild.exe - GenerateIntermediateTOC.proj]
-Build started 03/11/2022 09.22.48.
-Project &quot;C:\Projects\Connect Platform\Work\ZenitelConnectWampSdk\DOC\Help\Working\GenerateIntermediateTOC.proj&quot; on node 1 (default targets).
-GenerateIntermediateTOC:
-  XslTransform (v2019.11.17.0)
-  Copyright &#184; 2006-2019, Microsoft Corporation, All Rights Reserved.
-  Portions Copyright &#184; 2006-2019, Eric Woodruff, All Rights Reserved.
-  Applying XSL transformation &#39;C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\\ProductionTransforms\CreateVSToc.xsl&#39;.
-Done Building Project &quot;C:\Projects\Connect Platform\Work\ZenitelConnectWampSdk\DOC\Help\Working\GenerateIntermediateTOC.proj&quot; (default targets).
-
-Build succeeded.
-
-Time Elapsed 00:00:00.12
+Generating intermediate table of contents file for API content...
 Generating conceptual content intermediate TOC file...
-    Last step completed in 00:00:00,5608
+    Last step completed in 00:00:00,0141
 </buildStep>
 <buildStep step="CreateBuildAssemblerConfigs">
 Creating Sandcastle configuration files...
-    sandcastle.config
-    Last step completed in 00:00:00,1440
-</buildStep>
-<buildStep step="MergeCustomConfigs">
-Merging custom build component configurations
-C:\Projects\Connect Platform\Work\ZenitelConnectWampSdk\DOC\Help\Working\sandcastle.config
-  Updating reference topic configurations.
-  No conceptual content.  Removing conceptual content components.
-    Last step completed in 00:00:00,0059
-</buildStep>
-<buildStep step="BuildTopics">
-Building help topics...
-[C:\Program Files (x86)\MSBuild\14.0\bin\amd64\MSBuild.exe - BuildTopics.proj]
-Build started 03/11/2022 09.22.48.
-Project &quot;C:\Projects\Connect Platform\Work\ZenitelConnectWampSdk\DOC\Help\Working\BuildTopics.proj&quot; on node 1 (default targets).
-BuildTopics:
-  BuildAssembler (v2019.11.17.0)
-  Copyright &#184; 2006-2019, Microsoft Corporation, All Rights Reserved.
-  Portions Copyright &#184; 2006-2019, Eric Woodruff, All Rights Reserved.
-  Loading configuration...
-  Processing topics...
-BuildAssembler : warning : ShowMissingComponent: [N:Wamp.Client] Missing &lt;summary&gt; documentation [C:\Projects\Connect Platform\Work\ZenitelConnectWampSdk\DOC\Help\Working\BuildTopics.proj]
-BuildAssembler : warning : ShowMissingComponent: [M:Wamp.Client.WampClient.requestCallLegs(System.String,System.String,System.String,System.String,System.String,System.String,System.String)] Missing &lt;returns&gt; documentation [C:\Projects\Connect Platform\Work\ZenitelConnectWampSdk\DOC\Help\Working\BuildTopics.proj]
-BuildAssembler : warning : ShowMissingComponent: [M:Wamp.Client.WampClient.requestCallLegs(System.String,System.String,System.String,System.String,System.String,System.String,System.String)] Missing &lt;param name=&quot;fromDirNo&quot;/&gt; documentation [C:\Projects\Connect Platform\Work\ZenitelConnectWampSdk\DOC\Help\Working\BuildTopics.proj]
-BuildAssembler : warning : ShowMissingComponent: [M:Wamp.Client.WampClient.requestCallLegs(System.String,System.String,System.String,System.String,System.String,System.String,System.String)] Missing &lt;param name=&quot;toDirNo&quot;/&gt; documentation [C:\Projects\Connect Platform\Work\ZenitelConnectWampSdk\DOC\Help\Working\BuildTopics.proj]
-BuildAssembler : warning : ShowMissingComponent: [M:Wamp.Client.WampClient.requestCallLegs(System.String,System.String,System.String,System.String,System.String,System.String,System.String)] Missing &lt;param name=&quot;dirNo&quot;/&gt; documentation [C:\Projects\Connect Platform\Work\ZenitelConnectWampSdk\DOC\Help\Working\BuildTopics.proj]
-BuildAssembler : warning : ShowMissingComponent: [M:Wamp.Client.WampClient.requestCallLegs(System.String,System.String,System.String,System.String,System.String,System.String,System.String)] Missing &lt;param name=&quot;legId&quot;/&gt; documentation [C:\Projects\Connect Platform\Work\ZenitelConnectWampSdk\DOC\Help\Working\BuildTopics.proj]
-BuildAssembler : warning : ShowMissingComponent: [M:Wamp.Client.WampClient.requestCallLegs(System.String,System.String,System.String,System.String,System.String,System.String,System.String)] Missing &lt;param name=&quot;callId&quot;/&gt; documentation [C:\Projects\Connect Platform\Work\ZenitelConnectWampSdk\DOC\Help\Working\BuildTopics.proj]
-BuildAssembler : warning : ShowMissingComponent: [M:Wamp.Client.WampClient.requestCallLegs(System.String,System.String,System.String,System.String,System.String,System.String,System.String)] Missing &lt;param name=&quot;State&quot;/&gt; documentation [C:\Projects\Connect Platform\Work\ZenitelConnectWampSdk\DOC\Help\Working\BuildTopics.proj]
-BuildAssembler : warning : ShowMissingComponent: [M:Wamp.Client.WampClient.requestCallLegs(System.String,System.String,System.String,System.String,System.String,System.String,System.String)] Missing &lt;param name=&quot;legRole&quot;/&gt; documentation [C:\Projects\Connect Platform\Work\ZenitelConnectWampSdk\DOC\Help\Working\BuildTopics.proj]
-BuildAssembler : warning : ShowMissingComponent: [P:Wamp.Client.WampClient.wamp_call_leg_element.call_type] Missing &lt;summary&gt; documentation [C:\Projects\Connect Platform\Work\ZenitelConnectWampSdk\DOC\Help\Working\BuildTopics.proj]
-BuildAssembler : warning : ShowMissingComponent: [P:Wamp.Client.WampClient.wamp_call_leg_element.channel] Missing &lt;summary&gt; documentation [C:\Projects\Connect Platform\Work\ZenitelConnectWampSdk\DOC\Help\Working\BuildTopics.proj]
-BuildAssembler : warning : ShowMissingComponent: [P:Wamp.Client.WampClient.wamp_call_leg_element.dirno] Missing &lt;summary&gt; documentation [C:\Projects\Connect Platform\Work\ZenitelConnectWampSdk\DOC\Help\Working\BuildTopics.proj]
-BuildAssembler : warning : ShowMissingComponent: [P:Wamp.Client.WampClient.wamp_call_leg_element.leg_id] Missing &lt;summary&gt; documentation [C:\Projects\Connect Platform\Work\ZenitelConnectWampSdk\DOC\Help\Working\BuildTopics.proj]
-BuildAssembler : warning : ShowMissingComponent: [P:Wamp.Client.WampClient.wamp_call_leg_element.leg_role] Missing &lt;summary&gt; documentation [C:\Projects\Connect Platform\Work\ZenitelConnectWampSdk\DOC\Help\Working\BuildTopics.proj]
-BuildAssembler : warning : ShowMissingComponent: [P:Wamp.Client.WampClient.wamp_call_leg_element.priority] Missing &lt;summary&gt; documentation [C:\Projects\Connect Platform\Work\ZenitelConnectWampSdk\DOC\Help\Working\BuildTopics.proj]
-BuildAssembler : warning : ShowMissingComponent: [P:Wamp.Client.WampClient.wamp_call_leg_element.reason] Missing &lt;summary&gt; documentation [C:\Projects\Connect Platform\Work\ZenitelConnectWampSdk\DOC\Help\Working\BuildTopics.proj]
-BuildAssembler : warning : ShowMissingComponent: [P:Wamp.Client.WampClient.wamp_call_leg_element.to_dirno] Missing &lt;summary&gt; documentation [C:\Projects\Connect Platform\Work\ZenitelConnectWampSdk\DOC\Help\Working\BuildTopics.proj]
-  Processed 170 topic(s)
-  17 warning(s)
-  CopyFromIndexComponent: &quot;reflection&quot; in-memory cache entries used: 3 of 15.
-  CopyFromIndexComponent: &quot;comments&quot; in-memory cache entries used: 2 of 30.
-Done Building Project &quot;C:\Projects\Connect Platform\Work\ZenitelConnectWampSdk\DOC\Help\Working\BuildTopics.proj&quot; (default targets).
-
-Build succeeded.
-
-Time Elapsed 00:00:06.02
-    Last step completed in 00:00:06,5080
+    Last step completed in 00:00:00,1129
 </buildStep>
 <buildStep step="CombiningIntermediateTocFiles">
 Combining conceptual and API intermediate TOC files...
-    Last step completed in 00:00:00,0020
+    Last step completed in 00:00:00,0061
+</buildStep>
+<buildStep step="MergeCustomConfigs">
+Merging custom build component configurations
+C:\Projects\Zenitel_Connect_Pro\Work\Zenitel_GitHub\Zenitel-Connect-Wamp-SDK\DOC\Help\Working\BuildAssembler.config
+  Updating reference topic configurations.
+  No conceptual content.  Removing conceptual content components.
+    Last step completed in 00:00:00,0110
+</buildStep>
+<buildStep step="BuildTopics">
+Building help topics...
+Loading configuration...
+ResolveReferenceLinksComponent: The member ID URL cache &#39;C:\Users\EMortensen\AppData\Local\EWSoftware\Sandcastle Help File Builder\Cache\MemberIdUrl.cache&#39; does not exist yet.  All IDs will be looked up in this build which will slow it down.
+Processing topics...
+SHFB: Warning BE0066: ShowMissingComponent: [N:Wamp.Client] Missing &lt;summary&gt; documentation
+SHFB: Warning BE0066: ShowMissingComponent: [F:Wamp.Client.WampClient.Get_UCT_Time] Missing &lt;summary&gt; documentation
+SHFB: Warning BE0066: ShowMissingComponent: [M:Wamp.Client.WampClient.RegisterCalleeServices] Missing &lt;returns&gt; documentation
+SHFB: Warning BE0066: ShowMissingComponent: [M:Wamp.Client.WampClient.requestCallLegs(System.String,System.String,System.String,System.String,System.String,System.String,System.String)] Missing &lt;returns&gt; documentation
+SHFB: Warning BE0066: ShowMissingComponent: [M:Wamp.Client.WampClient.requestCallLegs(System.String,System.String,System.String,System.String,System.String,System.String,System.String)] Missing &lt;param name=&quot;fromDirNo&quot;/&gt; documentation
+SHFB: Warning BE0066: ShowMissingComponent: [M:Wamp.Client.WampClient.requestCallLegs(System.String,System.String,System.String,System.String,System.String,System.String,System.String)] Missing &lt;param name=&quot;toDirNo&quot;/&gt; documentation
+SHFB: Warning BE0066: ShowMissingComponent: [M:Wamp.Client.WampClient.requestCallLegs(System.String,System.String,System.String,System.String,System.String,System.String,System.String)] Missing &lt;param name=&quot;dirNo&quot;/&gt; documentation
+SHFB: Warning BE0066: ShowMissingComponent: [M:Wamp.Client.WampClient.requestCallLegs(System.String,System.String,System.String,System.String,System.String,System.String,System.String)] Missing &lt;param name=&quot;legId&quot;/&gt; documentation
+SHFB: Warning BE0066: ShowMissingComponent: [M:Wamp.Client.WampClient.requestCallLegs(System.String,System.String,System.String,System.String,System.String,System.String,System.String)] Missing &lt;param name=&quot;callId&quot;/&gt; documentation
+SHFB: Warning BE0066: ShowMissingComponent: [M:Wamp.Client.WampClient.requestCallLegs(System.String,System.String,System.String,System.String,System.String,System.String,System.String)] Missing &lt;param name=&quot;State&quot;/&gt; documentation
+SHFB: Warning BE0066: ShowMissingComponent: [M:Wamp.Client.WampClient.requestCallLegs(System.String,System.String,System.String,System.String,System.String,System.String,System.String)] Missing &lt;param name=&quot;legRole&quot;/&gt; documentation
+SHFB: Warning BE0066: ShowMissingComponent: [F:Wamp.Client.WampClient.UCT_Time_event] Missing &lt;summary&gt; documentation
+SHFB: Warning BE0066: ShowMissingComponent: [P:Wamp.Client.WampClient.wamp_call_leg_element.call_type] Missing &lt;summary&gt; documentation
+SHFB: Warning BE0066: ShowMissingComponent: [P:Wamp.Client.WampClient.wamp_call_leg_element.channel] Missing &lt;summary&gt; documentation
+SHFB: Warning BE0066: ShowMissingComponent: [P:Wamp.Client.WampClient.wamp_call_leg_element.dirno] Missing &lt;summary&gt; documentation
+SHFB: Warning BE0066: ShowMissingComponent: [P:Wamp.Client.WampClient.wamp_call_leg_element.leg_id] Missing &lt;summary&gt; documentation
+SHFB: Warning BE0066: ShowMissingComponent: [P:Wamp.Client.WampClient.wamp_call_leg_element.leg_role] Missing &lt;summary&gt; documentation
+SHFB: Warning BE0066: ShowMissingComponent: [P:Wamp.Client.WampClient.wamp_call_leg_element.priority] Missing &lt;summary&gt; documentation
+SHFB: Warning BE0066: ShowMissingComponent: [P:Wamp.Client.WampClient.wamp_call_leg_element.reason] Missing &lt;summary&gt; documentation
+SHFB: Warning BE0066: ShowMissingComponent: [P:Wamp.Client.WampClient.wamp_call_leg_element.to_dirno] Missing &lt;summary&gt; documentation
+Processed 186 topic(s)
+20 warning(s)
+CopyFromIndexComponent: &quot;reflection&quot; in-memory cache entries used: 4 of 15.
+CopyFromIndexComponent: &quot;comments&quot; in-memory cache entries used: 2 of 30.
+ResolveReferenceLinksComponent: 14 entries added to the member ID URL cache.  New cache size: 14 entries
+SaveComponent: Waiting for the document writer task to finish (1 Help1 API file(s) remaining)...
+    Last step completed in 00:00:09,4099
 </buildStep>
 <buildStep step="ExtractingHtmlInfo">
 Extracting HTML info for HTML Help 1 and/or website...
-[C:\Program Files (x86)\MSBuild\14.0\bin\amd64\MSBuild.exe - ExtractHtmlInfo.proj]
-Sandcastle Help File Builder and Tools, version 2019.11.17.0
-Copyright &#184; 2006-2019, Eric Woodruff, All Rights Reserved
-E-Mail: Eric@EWoodruff.us
-
 Using LCID &#39;1033&#39;, code page &#39;65001&#39;, encoding charset &#39;UTF-8&#39;.
-
-Processing Help 1 files in C:\Projects\Connect Platform\Work\ZenitelConnectWampSdk\DOC\Help\Working\Output\HtmlHelp1
-Processed 170 HTML files
-Sorting keywords and generating See Also indices
-Saving HTML Help 1 keyword index to C:\Projects\Connect Platform\Work\ZenitelConnectWampSdk\DOC\Help\Working\Zenitel.Connect.Wamp.Sdk.hhk
-Saving HTML Help 1 table of contents to C:\Projects\Connect Platform\Work\ZenitelConnectWampSdk\DOC\Help\Working\Zenitel.Connect.Wamp.Sdk.hhc
-    Last step completed in 00:00:00,6250
+Processing Help 1 files in C:\Projects\Zenitel_Connect_Pro\Work\Zenitel_GitHub\Zenitel-Connect-Wamp-SDK\DOC\Help\Working\Output\HtmlHelp1
+Processed 186 HTML files.  Sorting keywords and generating See Also indices.
+Saving HTML Help 1 keyword index to C:\Projects\Zenitel_Connect_Pro\Work\Zenitel_GitHub\Zenitel-Connect-Wamp-SDK\DOC\Help\Working\Output\HtmlHelp1\Zenitel.Connect.Wamp.Sdk.hhk
+Saving HTML Help 1 table of contents to C:\Projects\Zenitel_Connect_Pro\Work\Zenitel_GitHub\Zenitel-Connect-Wamp-SDK\DOC\Help\Working\Output\HtmlHelp1\Zenitel.Connect.Wamp.Sdk.hhc
+    Last step completed in 00:00:00,0560
 </buildStep>
 <buildStep step="CopyStandardHelpContent">
 Copying standard help content...
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\AlertCaution.png -&gt; C:\Projects\Connect Platform\Work\ZenitelConnectWampSdk\DOC\Help\Working\Output\HtmlHelp1\icons\AlertCaution.png
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\AlertNote.png -&gt; C:\Projects\Connect Platform\Work\ZenitelConnectWampSdk\DOC\Help\Working\Output\HtmlHelp1\icons\AlertNote.png
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\AlertSecurity.png -&gt; C:\Projects\Connect Platform\Work\ZenitelConnectWampSdk\DOC\Help\Working\Output\HtmlHelp1\icons\AlertSecurity.png
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\CFW.gif -&gt; C:\Projects\Connect Platform\Work\ZenitelConnectWampSdk\DOC\Help\Working\Output\HtmlHelp1\icons\CFW.gif
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\CodeExample.png -&gt; C:\Projects\Connect Platform\Work\ZenitelConnectWampSdk\DOC\Help\Working\Output\HtmlHelp1\icons\CodeExample.png
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\favicon.ico -&gt; C:\Projects\Connect Platform\Work\ZenitelConnectWampSdk\DOC\Help\Working\Output\HtmlHelp1\icons\favicon.ico
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\privclass.gif -&gt; C:\Projects\Connect Platform\Work\ZenitelConnectWampSdk\DOC\Help\Working\Output\HtmlHelp1\icons\privclass.gif
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\privdelegate.gif -&gt; C:\Projects\Connect Platform\Work\ZenitelConnectWampSdk\DOC\Help\Working\Output\HtmlHelp1\icons\privdelegate.gif
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\privenumeration.gif -&gt; C:\Projects\Connect Platform\Work\ZenitelConnectWampSdk\DOC\Help\Working\Output\HtmlHelp1\icons\privenumeration.gif
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\privevent.gif -&gt; C:\Projects\Connect Platform\Work\ZenitelConnectWampSdk\DOC\Help\Working\Output\HtmlHelp1\icons\privevent.gif
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\privextension.gif -&gt; C:\Projects\Connect Platform\Work\ZenitelConnectWampSdk\DOC\Help\Working\Output\HtmlHelp1\icons\privextension.gif
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\privfield.gif -&gt; C:\Projects\Connect Platform\Work\ZenitelConnectWampSdk\DOC\Help\Working\Output\HtmlHelp1\icons\privfield.gif
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\privinterface.gif -&gt; C:\Projects\Connect Platform\Work\ZenitelConnectWampSdk\DOC\Help\Working\Output\HtmlHelp1\icons\privinterface.gif
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\privmethod.gif -&gt; C:\Projects\Connect Platform\Work\ZenitelConnectWampSdk\DOC\Help\Working\Output\HtmlHelp1\icons\privmethod.gif
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\privproperty.gif -&gt; C:\Projects\Connect Platform\Work\ZenitelConnectWampSdk\DOC\Help\Working\Output\HtmlHelp1\icons\privproperty.gif
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\privstructure.gif -&gt; C:\Projects\Connect Platform\Work\ZenitelConnectWampSdk\DOC\Help\Working\Output\HtmlHelp1\icons\privstructure.gif
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\protclass.gif -&gt; C:\Projects\Connect Platform\Work\ZenitelConnectWampSdk\DOC\Help\Working\Output\HtmlHelp1\icons\protclass.gif
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\protdelegate.gif -&gt; C:\Projects\Connect Platform\Work\ZenitelConnectWampSdk\DOC\Help\Working\Output\HtmlHelp1\icons\protdelegate.gif
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\protenumeration.gif -&gt; C:\Projects\Connect Platform\Work\ZenitelConnectWampSdk\DOC\Help\Working\Output\HtmlHelp1\icons\protenumeration.gif
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\protevent.gif -&gt; C:\Projects\Connect Platform\Work\ZenitelConnectWampSdk\DOC\Help\Working\Output\HtmlHelp1\icons\protevent.gif
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\protextension.gif -&gt; C:\Projects\Connect Platform\Work\ZenitelConnectWampSdk\DOC\Help\Working\Output\HtmlHelp1\icons\protextension.gif
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\protfield.gif -&gt; C:\Projects\Connect Platform\Work\ZenitelConnectWampSdk\DOC\Help\Working\Output\HtmlHelp1\icons\protfield.gif
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\protinterface.gif -&gt; C:\Projects\Connect Platform\Work\ZenitelConnectWampSdk\DOC\Help\Working\Output\HtmlHelp1\icons\protinterface.gif
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\protmethod.gif -&gt; C:\Projects\Connect Platform\Work\ZenitelConnectWampSdk\DOC\Help\Working\Output\HtmlHelp1\icons\protmethod.gif
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\protoperator.gif -&gt; C:\Projects\Connect Platform\Work\ZenitelConnectWampSdk\DOC\Help\Working\Output\HtmlHelp1\icons\protoperator.gif
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\protproperty.gif -&gt; C:\Projects\Connect Platform\Work\ZenitelConnectWampSdk\DOC\Help\Working\Output\HtmlHelp1\icons\protproperty.gif
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\protstructure.gif -&gt; C:\Projects\Connect Platform\Work\ZenitelConnectWampSdk\DOC\Help\Working\Output\HtmlHelp1\icons\protstructure.gif
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\pubclass.gif -&gt; C:\Projects\Connect Platform\Work\ZenitelConnectWampSdk\DOC\Help\Working\Output\HtmlHelp1\icons\pubclass.gif
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\pubdelegate.gif -&gt; C:\Projects\Connect Platform\Work\ZenitelConnectWampSdk\DOC\Help\Working\Output\HtmlHelp1\icons\pubdelegate.gif
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\pubenumeration.gif -&gt; C:\Projects\Connect Platform\Work\ZenitelConnectWampSdk\DOC\Help\Working\Output\HtmlHelp1\icons\pubenumeration.gif
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\pubevent.gif -&gt; C:\Projects\Connect Platform\Work\ZenitelConnectWampSdk\DOC\Help\Working\Output\HtmlHelp1\icons\pubevent.gif
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\pubextension.gif -&gt; C:\Projects\Connect Platform\Work\ZenitelConnectWampSdk\DOC\Help\Working\Output\HtmlHelp1\icons\pubextension.gif
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\pubfield.gif -&gt; C:\Projects\Connect Platform\Work\ZenitelConnectWampSdk\DOC\Help\Working\Output\HtmlHelp1\icons\pubfield.gif
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\pubinterface.gif -&gt; C:\Projects\Connect Platform\Work\ZenitelConnectWampSdk\DOC\Help\Working\Output\HtmlHelp1\icons\pubinterface.gif
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\pubmethod.gif -&gt; C:\Projects\Connect Platform\Work\ZenitelConnectWampSdk\DOC\Help\Working\Output\HtmlHelp1\icons\pubmethod.gif
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\puboperator.gif -&gt; C:\Projects\Connect Platform\Work\ZenitelConnectWampSdk\DOC\Help\Working\Output\HtmlHelp1\icons\puboperator.gif
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\pubproperty.gif -&gt; C:\Projects\Connect Platform\Work\ZenitelConnectWampSdk\DOC\Help\Working\Output\HtmlHelp1\icons\pubproperty.gif
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\pubstructure.gif -&gt; C:\Projects\Connect Platform\Work\ZenitelConnectWampSdk\DOC\Help\Working\Output\HtmlHelp1\icons\pubstructure.gif
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\SectionCollapsed.png -&gt; C:\Projects\Connect Platform\Work\ZenitelConnectWampSdk\DOC\Help\Working\Output\HtmlHelp1\icons\SectionCollapsed.png
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\SectionExpanded.png -&gt; C:\Projects\Connect Platform\Work\ZenitelConnectWampSdk\DOC\Help\Working\Output\HtmlHelp1\icons\SectionExpanded.png
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\slMobile.gif -&gt; C:\Projects\Connect Platform\Work\ZenitelConnectWampSdk\DOC\Help\Working\Output\HtmlHelp1\icons\slMobile.gif
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\static.gif -&gt; C:\Projects\Connect Platform\Work\ZenitelConnectWampSdk\DOC\Help\Working\Output\HtmlHelp1\icons\static.gif
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\xna.gif -&gt; C:\Projects\Connect Platform\Work\ZenitelConnectWampSdk\DOC\Help\Working\Output\HtmlHelp1\icons\xna.gif
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\scripts\branding.js -&gt; C:\Projects\Connect Platform\Work\ZenitelConnectWampSdk\DOC\Help\Working\Output\HtmlHelp1\scripts\branding.js
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-cs-CZ.css -&gt; C:\Projects\Connect Platform\Work\ZenitelConnectWampSdk\DOC\Help\Working\Output\HtmlHelp1\styles\branding-cs-CZ.css
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-de-DE.css -&gt; C:\Projects\Connect Platform\Work\ZenitelConnectWampSdk\DOC\Help\Working\Output\HtmlHelp1\styles\branding-de-DE.css
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-en-US.css -&gt; C:\Projects\Connect Platform\Work\ZenitelConnectWampSdk\DOC\Help\Working\Output\HtmlHelp1\styles\branding-en-US.css
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-es-ES.css -&gt; C:\Projects\Connect Platform\Work\ZenitelConnectWampSdk\DOC\Help\Working\Output\HtmlHelp1\styles\branding-es-ES.css
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-fr-FR.css -&gt; C:\Projects\Connect Platform\Work\ZenitelConnectWampSdk\DOC\Help\Working\Output\HtmlHelp1\styles\branding-fr-FR.css
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-Help1.css -&gt; C:\Projects\Connect Platform\Work\ZenitelConnectWampSdk\DOC\Help\Working\Output\HtmlHelp1\styles\branding-Help1.css
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-HelpViewer.css -&gt; C:\Projects\Connect Platform\Work\ZenitelConnectWampSdk\DOC\Help\Working\Output\HtmlHelp1\styles\branding-HelpViewer.css
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-it-IT.css -&gt; C:\Projects\Connect Platform\Work\ZenitelConnectWampSdk\DOC\Help\Working\Output\HtmlHelp1\styles\branding-it-IT.css
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-ja-JP.css -&gt; C:\Projects\Connect Platform\Work\ZenitelConnectWampSdk\DOC\Help\Working\Output\HtmlHelp1\styles\branding-ja-JP.css
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-ko-KR.css -&gt; C:\Projects\Connect Platform\Work\ZenitelConnectWampSdk\DOC\Help\Working\Output\HtmlHelp1\styles\branding-ko-KR.css
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-pl-PL.css -&gt; C:\Projects\Connect Platform\Work\ZenitelConnectWampSdk\DOC\Help\Working\Output\HtmlHelp1\styles\branding-pl-PL.css
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-pt-BR.css -&gt; C:\Projects\Connect Platform\Work\ZenitelConnectWampSdk\DOC\Help\Working\Output\HtmlHelp1\styles\branding-pt-BR.css
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-ru-RU.css -&gt; C:\Projects\Connect Platform\Work\ZenitelConnectWampSdk\DOC\Help\Working\Output\HtmlHelp1\styles\branding-ru-RU.css
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-tr-TR.css -&gt; C:\Projects\Connect Platform\Work\ZenitelConnectWampSdk\DOC\Help\Working\Output\HtmlHelp1\styles\branding-tr-TR.css
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-Website.css -&gt; C:\Projects\Connect Platform\Work\ZenitelConnectWampSdk\DOC\Help\Working\Output\HtmlHelp1\styles\branding-Website.css
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-zh-CN.css -&gt; C:\Projects\Connect Platform\Work\ZenitelConnectWampSdk\DOC\Help\Working\Output\HtmlHelp1\styles\branding-zh-CN.css
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-zh-TW.css -&gt; C:\Projects\Connect Platform\Work\ZenitelConnectWampSdk\DOC\Help\Working\Output\HtmlHelp1\styles\branding-zh-TW.css
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding.css -&gt; C:\Projects\Connect Platform\Work\ZenitelConnectWampSdk\DOC\Help\Working\Output\HtmlHelp1\styles\branding.css
-    Last step completed in 00:00:00,1299
-</buildStep>
-<buildStep step="GenerateHelpFormatTableOfContents">
-Generating HTML Help 1 table of contents file...
-    Last step completed in 00:00:00,0000
-</buildStep>
-<buildStep step="GenerateHelpFileIndex">
-Generating HTML Help 1 index file...
-    Last step completed in 00:00:00,0000
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components\VS2013\icons\AlertCaution.png -&gt; C:\Projects\Zenitel_Connect_Pro\Work\Zenitel_GitHub\Zenitel-Connect-Wamp-SDK\DOC\Help\Working\Output\HtmlHelp1\icons\AlertCaution.png
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components\VS2013\icons\AlertNote.png -&gt; C:\Projects\Zenitel_Connect_Pro\Work\Zenitel_GitHub\Zenitel-Connect-Wamp-SDK\DOC\Help\Working\Output\HtmlHelp1\icons\AlertNote.png
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components\VS2013\icons\AlertSecurity.png -&gt; C:\Projects\Zenitel_Connect_Pro\Work\Zenitel_GitHub\Zenitel-Connect-Wamp-SDK\DOC\Help\Working\Output\HtmlHelp1\icons\AlertSecurity.png
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components\VS2013\icons\CodeExample.png -&gt; C:\Projects\Zenitel_Connect_Pro\Work\Zenitel_GitHub\Zenitel-Connect-Wamp-SDK\DOC\Help\Working\Output\HtmlHelp1\icons\CodeExample.png
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components\VS2013\icons\favicon.ico -&gt; C:\Projects\Zenitel_Connect_Pro\Work\Zenitel_GitHub\Zenitel-Connect-Wamp-SDK\DOC\Help\Working\Output\HtmlHelp1\icons\favicon.ico
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components\VS2013\icons\privClass.gif -&gt; C:\Projects\Zenitel_Connect_Pro\Work\Zenitel_GitHub\Zenitel-Connect-Wamp-SDK\DOC\Help\Working\Output\HtmlHelp1\icons\privClass.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components\VS2013\icons\privDelegate.gif -&gt; C:\Projects\Zenitel_Connect_Pro\Work\Zenitel_GitHub\Zenitel-Connect-Wamp-SDK\DOC\Help\Working\Output\HtmlHelp1\icons\privDelegate.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components\VS2013\icons\privEnumeration.gif -&gt; C:\Projects\Zenitel_Connect_Pro\Work\Zenitel_GitHub\Zenitel-Connect-Wamp-SDK\DOC\Help\Working\Output\HtmlHelp1\icons\privEnumeration.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components\VS2013\icons\privEvent.gif -&gt; C:\Projects\Zenitel_Connect_Pro\Work\Zenitel_GitHub\Zenitel-Connect-Wamp-SDK\DOC\Help\Working\Output\HtmlHelp1\icons\privEvent.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components\VS2013\icons\privExtension.gif -&gt; C:\Projects\Zenitel_Connect_Pro\Work\Zenitel_GitHub\Zenitel-Connect-Wamp-SDK\DOC\Help\Working\Output\HtmlHelp1\icons\privExtension.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components\VS2013\icons\privField.gif -&gt; C:\Projects\Zenitel_Connect_Pro\Work\Zenitel_GitHub\Zenitel-Connect-Wamp-SDK\DOC\Help\Working\Output\HtmlHelp1\icons\privField.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components\VS2013\icons\privInterface.gif -&gt; C:\Projects\Zenitel_Connect_Pro\Work\Zenitel_GitHub\Zenitel-Connect-Wamp-SDK\DOC\Help\Working\Output\HtmlHelp1\icons\privInterface.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components\VS2013\icons\privMethod.gif -&gt; C:\Projects\Zenitel_Connect_Pro\Work\Zenitel_GitHub\Zenitel-Connect-Wamp-SDK\DOC\Help\Working\Output\HtmlHelp1\icons\privMethod.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components\VS2013\icons\privProperty.gif -&gt; C:\Projects\Zenitel_Connect_Pro\Work\Zenitel_GitHub\Zenitel-Connect-Wamp-SDK\DOC\Help\Working\Output\HtmlHelp1\icons\privProperty.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components\VS2013\icons\privStructure.gif -&gt; C:\Projects\Zenitel_Connect_Pro\Work\Zenitel_GitHub\Zenitel-Connect-Wamp-SDK\DOC\Help\Working\Output\HtmlHelp1\icons\privStructure.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components\VS2013\icons\protClass.gif -&gt; C:\Projects\Zenitel_Connect_Pro\Work\Zenitel_GitHub\Zenitel-Connect-Wamp-SDK\DOC\Help\Working\Output\HtmlHelp1\icons\protClass.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components\VS2013\icons\protDelegate.gif -&gt; C:\Projects\Zenitel_Connect_Pro\Work\Zenitel_GitHub\Zenitel-Connect-Wamp-SDK\DOC\Help\Working\Output\HtmlHelp1\icons\protDelegate.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components\VS2013\icons\protEnumeration.gif -&gt; C:\Projects\Zenitel_Connect_Pro\Work\Zenitel_GitHub\Zenitel-Connect-Wamp-SDK\DOC\Help\Working\Output\HtmlHelp1\icons\protEnumeration.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components\VS2013\icons\protEvent.gif -&gt; C:\Projects\Zenitel_Connect_Pro\Work\Zenitel_GitHub\Zenitel-Connect-Wamp-SDK\DOC\Help\Working\Output\HtmlHelp1\icons\protEvent.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components\VS2013\icons\protExtension.gif -&gt; C:\Projects\Zenitel_Connect_Pro\Work\Zenitel_GitHub\Zenitel-Connect-Wamp-SDK\DOC\Help\Working\Output\HtmlHelp1\icons\protExtension.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components\VS2013\icons\protField.gif -&gt; C:\Projects\Zenitel_Connect_Pro\Work\Zenitel_GitHub\Zenitel-Connect-Wamp-SDK\DOC\Help\Working\Output\HtmlHelp1\icons\protField.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components\VS2013\icons\protInterface.gif -&gt; C:\Projects\Zenitel_Connect_Pro\Work\Zenitel_GitHub\Zenitel-Connect-Wamp-SDK\DOC\Help\Working\Output\HtmlHelp1\icons\protInterface.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components\VS2013\icons\protMethod.gif -&gt; C:\Projects\Zenitel_Connect_Pro\Work\Zenitel_GitHub\Zenitel-Connect-Wamp-SDK\DOC\Help\Working\Output\HtmlHelp1\icons\protMethod.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components\VS2013\icons\protOperator.gif -&gt; C:\Projects\Zenitel_Connect_Pro\Work\Zenitel_GitHub\Zenitel-Connect-Wamp-SDK\DOC\Help\Working\Output\HtmlHelp1\icons\protOperator.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components\VS2013\icons\protProperty.gif -&gt; C:\Projects\Zenitel_Connect_Pro\Work\Zenitel_GitHub\Zenitel-Connect-Wamp-SDK\DOC\Help\Working\Output\HtmlHelp1\icons\protProperty.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components\VS2013\icons\protStructure.gif -&gt; C:\Projects\Zenitel_Connect_Pro\Work\Zenitel_GitHub\Zenitel-Connect-Wamp-SDK\DOC\Help\Working\Output\HtmlHelp1\icons\protStructure.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components\VS2013\icons\pubClass.gif -&gt; C:\Projects\Zenitel_Connect_Pro\Work\Zenitel_GitHub\Zenitel-Connect-Wamp-SDK\DOC\Help\Working\Output\HtmlHelp1\icons\pubClass.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components\VS2013\icons\pubDelegate.gif -&gt; C:\Projects\Zenitel_Connect_Pro\Work\Zenitel_GitHub\Zenitel-Connect-Wamp-SDK\DOC\Help\Working\Output\HtmlHelp1\icons\pubDelegate.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components\VS2013\icons\pubEnumeration.gif -&gt; C:\Projects\Zenitel_Connect_Pro\Work\Zenitel_GitHub\Zenitel-Connect-Wamp-SDK\DOC\Help\Working\Output\HtmlHelp1\icons\pubEnumeration.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components\VS2013\icons\pubEvent.gif -&gt; C:\Projects\Zenitel_Connect_Pro\Work\Zenitel_GitHub\Zenitel-Connect-Wamp-SDK\DOC\Help\Working\Output\HtmlHelp1\icons\pubEvent.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components\VS2013\icons\pubExtension.gif -&gt; C:\Projects\Zenitel_Connect_Pro\Work\Zenitel_GitHub\Zenitel-Connect-Wamp-SDK\DOC\Help\Working\Output\HtmlHelp1\icons\pubExtension.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components\VS2013\icons\pubField.gif -&gt; C:\Projects\Zenitel_Connect_Pro\Work\Zenitel_GitHub\Zenitel-Connect-Wamp-SDK\DOC\Help\Working\Output\HtmlHelp1\icons\pubField.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components\VS2013\icons\pubInterface.gif -&gt; C:\Projects\Zenitel_Connect_Pro\Work\Zenitel_GitHub\Zenitel-Connect-Wamp-SDK\DOC\Help\Working\Output\HtmlHelp1\icons\pubInterface.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components\VS2013\icons\pubMethod.gif -&gt; C:\Projects\Zenitel_Connect_Pro\Work\Zenitel_GitHub\Zenitel-Connect-Wamp-SDK\DOC\Help\Working\Output\HtmlHelp1\icons\pubMethod.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components\VS2013\icons\pubOperator.gif -&gt; C:\Projects\Zenitel_Connect_Pro\Work\Zenitel_GitHub\Zenitel-Connect-Wamp-SDK\DOC\Help\Working\Output\HtmlHelp1\icons\pubOperator.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components\VS2013\icons\pubProperty.gif -&gt; C:\Projects\Zenitel_Connect_Pro\Work\Zenitel_GitHub\Zenitel-Connect-Wamp-SDK\DOC\Help\Working\Output\HtmlHelp1\icons\pubProperty.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components\VS2013\icons\pubStructure.gif -&gt; C:\Projects\Zenitel_Connect_Pro\Work\Zenitel_GitHub\Zenitel-Connect-Wamp-SDK\DOC\Help\Working\Output\HtmlHelp1\icons\pubStructure.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components\VS2013\icons\SectionCollapsed.png -&gt; C:\Projects\Zenitel_Connect_Pro\Work\Zenitel_GitHub\Zenitel-Connect-Wamp-SDK\DOC\Help\Working\Output\HtmlHelp1\icons\SectionCollapsed.png
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components\VS2013\icons\SectionExpanded.png -&gt; C:\Projects\Zenitel_Connect_Pro\Work\Zenitel_GitHub\Zenitel-Connect-Wamp-SDK\DOC\Help\Working\Output\HtmlHelp1\icons\SectionExpanded.png
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components\VS2013\icons\Static.gif -&gt; C:\Projects\Zenitel_Connect_Pro\Work\Zenitel_GitHub\Zenitel-Connect-Wamp-SDK\DOC\Help\Working\Output\HtmlHelp1\icons\Static.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components\VS2013\scripts\branding.js -&gt; C:\Projects\Zenitel_Connect_Pro\Work\Zenitel_GitHub\Zenitel-Connect-Wamp-SDK\DOC\Help\Working\Output\HtmlHelp1\scripts\branding.js
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components\VS2013\styles\branding-cs-CZ.css -&gt; C:\Projects\Zenitel_Connect_Pro\Work\Zenitel_GitHub\Zenitel-Connect-Wamp-SDK\DOC\Help\Working\Output\HtmlHelp1\styles\branding-cs-CZ.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components\VS2013\styles\branding-de-DE.css -&gt; C:\Projects\Zenitel_Connect_Pro\Work\Zenitel_GitHub\Zenitel-Connect-Wamp-SDK\DOC\Help\Working\Output\HtmlHelp1\styles\branding-de-DE.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components\VS2013\styles\branding-en-US.css -&gt; C:\Projects\Zenitel_Connect_Pro\Work\Zenitel_GitHub\Zenitel-Connect-Wamp-SDK\DOC\Help\Working\Output\HtmlHelp1\styles\branding-en-US.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components\VS2013\styles\branding-es-ES.css -&gt; C:\Projects\Zenitel_Connect_Pro\Work\Zenitel_GitHub\Zenitel-Connect-Wamp-SDK\DOC\Help\Working\Output\HtmlHelp1\styles\branding-es-ES.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components\VS2013\styles\branding-fr-FR.css -&gt; C:\Projects\Zenitel_Connect_Pro\Work\Zenitel_GitHub\Zenitel-Connect-Wamp-SDK\DOC\Help\Working\Output\HtmlHelp1\styles\branding-fr-FR.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components\VS2013\styles\branding-Help1.css -&gt; C:\Projects\Zenitel_Connect_Pro\Work\Zenitel_GitHub\Zenitel-Connect-Wamp-SDK\DOC\Help\Working\Output\HtmlHelp1\styles\branding-Help1.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components\VS2013\styles\branding-HelpViewer.css -&gt; C:\Projects\Zenitel_Connect_Pro\Work\Zenitel_GitHub\Zenitel-Connect-Wamp-SDK\DOC\Help\Working\Output\HtmlHelp1\styles\branding-HelpViewer.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components\VS2013\styles\branding-it-IT.css -&gt; C:\Projects\Zenitel_Connect_Pro\Work\Zenitel_GitHub\Zenitel-Connect-Wamp-SDK\DOC\Help\Working\Output\HtmlHelp1\styles\branding-it-IT.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components\VS2013\styles\branding-ja-JP.css -&gt; C:\Projects\Zenitel_Connect_Pro\Work\Zenitel_GitHub\Zenitel-Connect-Wamp-SDK\DOC\Help\Working\Output\HtmlHelp1\styles\branding-ja-JP.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components\VS2013\styles\branding-ko-KR.css -&gt; C:\Projects\Zenitel_Connect_Pro\Work\Zenitel_GitHub\Zenitel-Connect-Wamp-SDK\DOC\Help\Working\Output\HtmlHelp1\styles\branding-ko-KR.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components\VS2013\styles\branding-pl-PL.css -&gt; C:\Projects\Zenitel_Connect_Pro\Work\Zenitel_GitHub\Zenitel-Connect-Wamp-SDK\DOC\Help\Working\Output\HtmlHelp1\styles\branding-pl-PL.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components\VS2013\styles\branding-pt-BR.css -&gt; C:\Projects\Zenitel_Connect_Pro\Work\Zenitel_GitHub\Zenitel-Connect-Wamp-SDK\DOC\Help\Working\Output\HtmlHelp1\styles\branding-pt-BR.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components\VS2013\styles\branding-ru-RU.css -&gt; C:\Projects\Zenitel_Connect_Pro\Work\Zenitel_GitHub\Zenitel-Connect-Wamp-SDK\DOC\Help\Working\Output\HtmlHelp1\styles\branding-ru-RU.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components\VS2013\styles\branding-tr-TR.css -&gt; C:\Projects\Zenitel_Connect_Pro\Work\Zenitel_GitHub\Zenitel-Connect-Wamp-SDK\DOC\Help\Working\Output\HtmlHelp1\styles\branding-tr-TR.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components\VS2013\styles\branding-Website.css -&gt; C:\Projects\Zenitel_Connect_Pro\Work\Zenitel_GitHub\Zenitel-Connect-Wamp-SDK\DOC\Help\Working\Output\HtmlHelp1\styles\branding-Website.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components\VS2013\styles\branding-zh-CN.css -&gt; C:\Projects\Zenitel_Connect_Pro\Work\Zenitel_GitHub\Zenitel-Connect-Wamp-SDK\DOC\Help\Working\Output\HtmlHelp1\styles\branding-zh-CN.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components\VS2013\styles\branding-zh-TW.css -&gt; C:\Projects\Zenitel_Connect_Pro\Work\Zenitel_GitHub\Zenitel-Connect-Wamp-SDK\DOC\Help\Working\Output\HtmlHelp1\styles\branding-zh-TW.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components\VS2013\styles\branding.css -&gt; C:\Projects\Zenitel_Connect_Pro\Work\Zenitel_GitHub\Zenitel-Connect-Wamp-SDK\DOC\Help\Working\Output\HtmlHelp1\styles\branding.css
+    Last step completed in 00:00:00,0900
 </buildStep>
 <buildStep step="GenerateHelpProject">
 Generating HTML Help 1 project file...
@@ -271,12 +212,12 @@ Generating HTML Help 1 project file...
 </buildStep>
 <buildStep step="CompilingHelpFile">
 Compiling HTML Help 1 file...
-[C:\Program Files (x86)\MSBuild\14.0\bin\amd64\MSBuild.exe - Build1xHelpFile.proj]
+[C:\Program Files (x86)\Microsoft Visual Studio\2019\Professional\MSBuild\Current\Bin\MSBuild.exe - Build1xHelpFile.proj]
   Microsoft HTML Help Compiler 4.74.8702
   
   
   
-  Compiling c:\Projects\Connect Platform\Work\ZenitelConnectWampSdk\DOC\Help\Working\Output\HtmlHelp1\Zenitel.Connect.Wamp.Sdk.chm
+  Compiling c:\Projects\Zenitel_Connect_Pro\Work\Zenitel_GitHub\Zenitel-Connect-Wamp-SDK\DOC\Help\Working\Output\HtmlHelp1\Zenitel.Connect.Wamp.Sdk.chm
   
   
   
@@ -284,9 +225,9 @@ Compiling HTML Help 1 file...
   
   Compile time: 0 minutes, 1 second
   
-  172	Topics
+  188	Topics
   
-  1,783	Local links
+  1,943	Local links
   
   0	Internet links
   
@@ -296,19 +237,19 @@ Compiling HTML Help 1 file...
   
   
   
-  Created c:\Projects\Connect Platform\Work\ZenitelConnectWampSdk\DOC\Help\Working\Output\HtmlHelp1\Zenitel.Connect.Wamp.Sdk.chm, 229,406 bytes
+  Created c:\Projects\Zenitel_Connect_Pro\Work\Zenitel_GitHub\Zenitel-Connect-Wamp-SDK\DOC\Help\Working\Output\HtmlHelp1\Zenitel.Connect.Wamp.Sdk.chm, 243,136 bytes
   
-  Compression decreased file by 1,277,535 bytes.
+  Compression decreased file by 1,325,138 bytes.
   
-    Last step completed in 00:00:03,1142
+    Last step completed in 00:00:02,0271
 </buildStep>
 <buildStep step="CleanIntermediates">
 Removing intermediate files...
-    Last step completed in 00:00:00,1593
+    Last step completed in 00:00:00,0450
 </buildStep>
 <buildStep step="Completed">
 
-Build completed successfully at 03/11/2022 09.22.58.  Total time: 00:00:14,6098
+Build completed successfully at 27-08-2023 17:55:15.  Total time: 00:00:13,2843
 
 </buildStep>
 </shfbBuild>

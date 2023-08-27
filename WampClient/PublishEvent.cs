@@ -10,7 +10,9 @@ namespace Wamp.Client
 {
     public partial class WampClient
     {
-
+        /// <summary>
+        /// The method Publish_NewUCTTime will publish to subscriber(s) current UCT-time 
+        /// </summary>
         /***********************************************************************************************************************/
         public void Publish_NewUCTTime()
         /***********************************************************************************************************************/
