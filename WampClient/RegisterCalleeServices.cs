@@ -8,7 +8,10 @@ namespace Wamp.Client
 {
     public partial class WampClient
     {
-
+        /// <summary>
+        /// The RegisterCalleServices will reguster a defined services at callee
+        /// </summary>
+        /// <returns></returns>
         /***********************************************************************************************************************/
         public async Task RegisterCalleeServices()
         /***********************************************************************************************************************/

@@ -15,7 +15,7 @@ namespace Wamp.Client
         /// It will return the outcome of the request execution in the wamp_response class.
         /// </summary>
         /// 
-        /// <param name="from_dirno">This parameter specifies the directory number of the station, which requests open door.</param>
+        /// <param name="device">This parameter specifies the directory number of the station, which requests open door.</param>
         /// 
         /// <returns name="wamp_response">This class contains the result of the request execution and a describing text in case the
         /// request fails.

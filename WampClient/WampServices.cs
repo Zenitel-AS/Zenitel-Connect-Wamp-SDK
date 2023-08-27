@@ -31,9 +31,15 @@ namespace Wamp.Client
     }
 
 
+    /// <summary>
+    /// The wamp_UCT_time class contains the current UCT-time.
+    /// </summary>
     // Publish new UCT time
     public class wamp_UCT_time
     {
+        /// <summary>
+        /// The newTime is a string containg the current UCT-time.
+        /// </summary>
         public string newTime { get; set; }
     }
 
@@ -49,9 +55,15 @@ namespace Wamp.Client
         //List<wamp_audio_device_element> Get_Audio_Sources();
     }
 
-
+    /// <summary>
+    /// The ArgumentsService contains the list of services that can be registered.
+    /// </summary>
     public class ArgumentsService : IArgumentsService
     {
+        /// <summary>
+        /// Get_UCT_Time() method returns current UCT-time.
+        /// </summary>
+        /// <returns>A string containing current UCT-time</returns>
         public string Get_UCT_Time()
         {
             return ("UCT-time: " + DateTime.UtcNow.ToString());
