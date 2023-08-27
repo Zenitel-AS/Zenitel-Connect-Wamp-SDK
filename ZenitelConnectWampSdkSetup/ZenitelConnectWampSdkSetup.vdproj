@@ -309,6 +309,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_A2F28FA292D76211E772B620384917C4"
+        "OwnerKey" = "8:_DAFEFB52840E9CF4212D82C6BB5F1D30"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_B1AE6D95EDC70FEAFB6A3E2F33B6D132"
         "OwnerKey" = "8:_8B729233E67E42E6BB251A85EEBE3A49"
         "MsmSig" = "8:_UNDEFINED"
@@ -669,11 +675,6 @@
             "AssemblyAsmDisplayName" = "8:SuperSocket.ClientEngine, Version=0.10.0.0, Culture=neutral, PublicKeyToken=ee9af13f57f00acc, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_0D02C6E920A6B4D56FB513B748774CD9"
-                    {
-                    "Name" = "8:SuperSocket.ClientEngine.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:SuperSocket.ClientEngine.dll"
             "TargetName" = "8:"
@@ -700,11 +701,6 @@
             "AssemblyAsmDisplayName" = "8:System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_1224D6B71582C83F5AA74C9CEE7E032F"
-                    {
-                    "Name" = "8:System.Memory.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:System.Memory.dll"
             "TargetName" = "8:"
@@ -731,11 +727,6 @@
             "AssemblyAsmDisplayName" = "8:System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_23F0EE597D1A0DAC1FC3D1103C2A76D8"
-                    {
-                    "Name" = "8:System.Numerics.Vectors.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:System.Numerics.Vectors.dll"
             "TargetName" = "8:"
@@ -762,11 +753,6 @@
             "AssemblyAsmDisplayName" = "8:WampSharp, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_2D558C63A5CC22D941394BD6A2879BB5"
-                    {
-                    "Name" = "8:WampSharp.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:WampSharp.dll"
             "TargetName" = "8:"
@@ -813,11 +799,6 @@
             "AssemblyAsmDisplayName" = "8:WebSocket4Net, Version=0.15.2.11, Culture=neutral, PublicKeyToken=eb4e154b696bf72a, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_3324566B803DC503461A9197667CFB36"
-                    {
-                    "Name" = "8:WebSocket4Net.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:WebSocket4Net.dll"
             "TargetName" = "8:"
@@ -864,11 +845,6 @@
             "AssemblyAsmDisplayName" = "8:System.Reflection.DispatchProxy, Version=4.0.6.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_377BBD6F900449917A2671C059798E89"
-                    {
-                    "Name" = "8:System.Reflection.DispatchProxy.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:System.Reflection.DispatchProxy.dll"
             "TargetName" = "8:"
@@ -935,11 +911,6 @@
             "AssemblyAsmDisplayName" = "8:System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_4689CF1D28893A9F506793E99CB537EE"
-                    {
-                    "Name" = "8:System.Runtime.CompilerServices.Unsafe.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:System.Runtime.CompilerServices.Unsafe.dll"
             "TargetName" = "8:"
@@ -966,11 +937,6 @@
             "AssemblyAsmDisplayName" = "8:System.Collections.Immutable, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_48B68CCCA2961D025CAE01503389F5F1"
-                    {
-                    "Name" = "8:System.Collections.Immutable.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:System.Collections.Immutable.dll"
             "TargetName" = "8:"
@@ -1017,11 +983,6 @@
             "AssemblyAsmDisplayName" = "8:Microsoft.IO.RecyclableMemoryStream, Version=2.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_561A2D85843CD2566EE494C010D15D7B"
-                    {
-                    "Name" = "8:Microsoft.IO.RecyclableMemoryStream.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:Microsoft.IO.RecyclableMemoryStream.dll"
             "TargetName" = "8:"
@@ -1099,11 +1060,6 @@
             "AssemblyAsmDisplayName" = "8:WampSharp.WebSocket4Net, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_6B11FC2691E472A34EE59B63EF01A70C"
-                    {
-                    "Name" = "8:WampSharp.WebSocket4Net.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:WampSharp.WebSocket4Net.dll"
             "TargetName" = "8:"
@@ -1130,11 +1086,6 @@
             "AssemblyAsmDisplayName" = "8:LogManager, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_80CE05861FCED7FC74733AD13C9F021D"
-                    {
-                    "Name" = "8:LogManager.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:LogManager.dll"
             "TargetName" = "8:"
@@ -1161,11 +1112,6 @@
             "AssemblyAsmDisplayName" = "8:Microsoft.Bcl.AsyncInterfaces, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_82A16801CE98ECB9FDA1F4882BCE8285"
-                    {
-                    "Name" = "8:Microsoft.Bcl.AsyncInterfaces.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:Microsoft.Bcl.AsyncInterfaces.dll"
             "TargetName" = "8:"
@@ -1192,11 +1138,6 @@
             "AssemblyAsmDisplayName" = "8:System.Threading.Tasks.Dataflow, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_9A363AF607273F1918D85C73113DFAEF"
-                    {
-                    "Name" = "8:System.Threading.Tasks.Dataflow.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:System.Threading.Tasks.Dataflow.dll"
             "TargetName" = "8:"
@@ -1243,11 +1184,6 @@
             "AssemblyAsmDisplayName" = "8:WampSharp.RawSocket, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_A059DD9945E925213E5DD0D3335492F2"
-                    {
-                    "Name" = "8:WampSharp.RawSocket.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:WampSharp.RawSocket.dll"
             "TargetName" = "8:"
@@ -1274,11 +1210,6 @@
             "AssemblyAsmDisplayName" = "8:System.Reactive, Version=5.0.0.0, Culture=neutral, PublicKeyToken=94bc3704cddfc263, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_A2F28FA292D76211E772B620384917C4"
-                    {
-                    "Name" = "8:System.Reactive.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:System.Reactive.dll"
             "TargetName" = "8:"
@@ -1305,11 +1236,6 @@
             "AssemblyAsmDisplayName" = "8:Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_B1AE6D95EDC70FEAFB6A3E2F33B6D132"
-                    {
-                    "Name" = "8:Newtonsoft.Json.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:Newtonsoft.Json.dll"
             "TargetName" = "8:"
@@ -1336,11 +1262,6 @@
             "AssemblyAsmDisplayName" = "8:System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_C7160DE24D74E2F32EC03B47D359814B"
-                    {
-                    "Name" = "8:System.Threading.Tasks.Extensions.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:System.Threading.Tasks.Extensions.dll"
             "TargetName" = "8:"
@@ -1367,11 +1288,6 @@
             "AssemblyAsmDisplayName" = "8:System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_CA808FEC8D76C339F58D2C0CC810AB2B"
-                    {
-                    "Name" = "8:System.Buffers.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:System.Buffers.dll"
             "TargetName" = "8:"
@@ -1418,11 +1334,6 @@
             "AssemblyAsmDisplayName" = "8:System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_D8B8C606F961AFEE59F4FDE25752E89E"
-                    {
-                    "Name" = "8:System.ValueTuple.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:System.ValueTuple.dll"
             "TargetName" = "8:"
@@ -1449,11 +1360,6 @@
             "AssemblyAsmDisplayName" = "8:WampClient, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_DAFEFB52840E9CF4212D82C6BB5F1D30"
-                    {
-                    "Name" = "8:WampClient.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:WampClient.dll"
             "TargetName" = "8:"
@@ -1480,11 +1386,6 @@
             "AssemblyAsmDisplayName" = "8:WampSharp.NewtonsoftJson, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_E51F9E00834E7989F2198ECC2CD2CEE0"
-                    {
-                    "Name" = "8:WampSharp.NewtonsoftJson.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:WampSharp.NewtonsoftJson.dll"
             "TargetName" = "8:"
@@ -1615,15 +1516,15 @@
         {
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:ZenitelConnectWampSdk"
-        "ProductCode" = "8:{E7E08FEC-3128-47ED-B4FC-D9153CF6B916}"
-        "PackageCode" = "8:{62932A36-4F4F-48B5-9332-313F72B1D015}"
+        "ProductCode" = "8:{1A69E356-9645-4DF2-A504-10100A9C9081}"
+        "PackageCode" = "8:{9167FAFF-FDF9-43AE-8E3E-076DC8981733}"
         "UpgradeCode" = "8:{891C4339-0FC4-4829-A0B6-A73C6D14EC9D}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:FALSE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:FALSE"
-        "ProductVersion" = "8:1.0.32"
+        "ProductVersion" = "8:1.0.33"
         "Manufacturer" = "8:Zenitel"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
@@ -1639,7 +1540,7 @@
         "UseSystemSearchPath" = "11:TRUE"
         "TargetPlatform" = "3:0"
         "PreBuildEvent" = "8:"
-        "PostBuildEvent" = "8:cscript //nologo \"$(ProjectDir)WiRunSql.vbs\" \"$(BuiltOuputPath)\" \"UPDATE Property SET Value='1.0.3.2' WHERE Property='ProductVersion'\""
+        "PostBuildEvent" = "8:cscript //nologo \"$(ProjectDir)WiRunSql.vbs\" \"$(BuiltOuputPath)\" \"UPDATE Property SET Value='1.0.3.3' WHERE Property='ProductVersion'\""
         "RunPostBuildEvent" = "3:0"
         }
         "Registry"
