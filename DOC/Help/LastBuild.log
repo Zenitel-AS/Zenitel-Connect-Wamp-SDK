@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<shfbBuild product="Sandcastle Help File Builder and Tools" version="2023.7.8.0" projectFile="C:\Projects\Zenitel_Connect_Pro\Work\Zenitel_GitHub\Zenitel-Connect-Wamp-SDK\DOC\Zenitel.Connect.Wamp.Sdk.shfbproj" started="27-08-2023 17:55:01">
+<shfbBuild product="Sandcastle Help File Builder and Tools" version="2023.7.8.0" projectFile="C:\Projects\Zenitel_Connect_Pro\Work\Zenitel_GitHub\Zenitel-Connect-Wamp-SDK\DOC\Zenitel.Connect.Wamp.Sdk.shfbproj" started="28-08-2023 21:15:14">
 <buildStep step="Initializing">
 The Sandcastle tools are located in &#39;C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder&#39;
 Locating components in the following folder(s):
@@ -30,17 +30,17 @@ Copying XML comments files
 <buildStep step="GenerateSharedContent">
 Generating shared content files (en-US, English (United States))...
 <plugIn name="Lightweight Website Style" behavior="After" priority="1000">
-</plugIn>    Last step completed in 00:00:00,0061
+</plugIn>    Last step completed in 00:00:00,0100
 </buildStep>
 <buildStep step="GenerateApiFilter">
 Generating API filter for MRefBuilder...
-    Last step completed in 00:00:00,0029
+    Last step completed in 00:00:00,0040
 </buildStep>
 <buildStep step="GenerateReflectionInfo">
 Generating reflection information...
-[C:\Program Files (x86)\Microsoft Visual Studio\2019\Professional\MSBuild\Current\Bin\MSBuild.exe - GenerateRefInfo-a4194151-46e7-4a4f-ae49-b9ad805422b9.proj]
-Build started 27-08-2023 17:55:02.
-Project &quot;C:\Projects\Zenitel_Connect_Pro\Work\Zenitel_GitHub\Zenitel-Connect-Wamp-SDK\DOC\Help\Working\GenerateRefInfo-a4194151-46e7-4a4f-ae49-b9ad805422b9.proj&quot; on node 1 (default targets).
+[C:\Program Files (x86)\Microsoft Visual Studio\2019\Professional\MSBuild\Current\Bin\MSBuild.exe - GenerateRefInfo-68e79f86-a9fe-44ae-a5f9-cad139a8d5d7.proj]
+Build started 28-08-2023 21:15:15.
+Project &quot;C:\Projects\Zenitel_Connect_Pro\Work\Zenitel_GitHub\Zenitel-Connect-Wamp-SDK\DOC\Help\Working\GenerateRefInfo-68e79f86-a9fe-44ae-a5f9-cad139a8d5d7.proj&quot; on node 1 (default targets).
 PrepareForBuild:
   Creating directory &quot;obj\Debug\&quot;.
 GenerateBindingRedirects:
@@ -53,24 +53,24 @@ GenerateRefInfo:
   Wrote information on 1 namespaces, 13 types, and 153 members
   Merging duplicate type and member information
   Merged 0 duplicate type(s) and 0 duplicate member(s)
-Done Building Project &quot;C:\Projects\Zenitel_Connect_Pro\Work\Zenitel_GitHub\Zenitel-Connect-Wamp-SDK\DOC\Help\Working\GenerateRefInfo-a4194151-46e7-4a4f-ae49-b9ad805422b9.proj&quot; (default targets).
-    Last step completed in 00:00:01,0676
+Done Building Project &quot;C:\Projects\Zenitel_Connect_Pro\Work\Zenitel_GitHub\Zenitel-Connect-Wamp-SDK\DOC\Help\Working\GenerateRefInfo-68e79f86-a9fe-44ae-a5f9-cad139a8d5d7.proj&quot; (default targets).
+    Last step completed in 00:00:00,9814
 </buildStep>
 <buildStep step="ApplyDocumentModel">
 Applying document model to reflection output...
-    Last step completed in 00:00:00,0288
+    Last step completed in 00:00:00,0280
 </buildStep>
 <buildStep step="AddApiTopicFilenames">
 Adding topic filenames to API members...
-    Last step completed in 00:00:00,0110
+    Last step completed in 00:00:00,0080
 </buildStep>
 <buildStep step="GenerateApiTopicManifest">
 Generating API topic manifest...
-    Last step completed in 00:00:00,0060
+    Last step completed in 00:00:00,0090
 </buildStep>
 <buildStep step="GenerateNamespaceSummaries">
 Generating namespace summary information...
-    Last step completed in 00:00:00,0160
+    Last step completed in 00:00:00,0140
 </buildStep>
 <buildStep step="CopyAdditionalContent">
 Copying additional content files...
@@ -84,27 +84,26 @@ Merging conceptual and additional tables of contents...
 <buildStep step="GenerateIntermediateTableOfContents">
 Generating intermediate table of contents file for API content...
 Generating conceptual content intermediate TOC file...
-    Last step completed in 00:00:00,0141
+    Last step completed in 00:00:00,0130
 </buildStep>
 <buildStep step="CreateBuildAssemblerConfigs">
 Creating Sandcastle configuration files...
-    Last step completed in 00:00:00,1129
+    Last step completed in 00:00:00,1171
 </buildStep>
 <buildStep step="CombiningIntermediateTocFiles">
 Combining conceptual and API intermediate TOC files...
-    Last step completed in 00:00:00,0061
+    Last step completed in 00:00:00,0059
 </buildStep>
 <buildStep step="MergeCustomConfigs">
 Merging custom build component configurations
 C:\Projects\Zenitel_Connect_Pro\Work\Zenitel_GitHub\Zenitel-Connect-Wamp-SDK\DOC\Help\Working\BuildAssembler.config
   Updating reference topic configurations.
   No conceptual content.  Removing conceptual content components.
-    Last step completed in 00:00:00,0110
+    Last step completed in 00:00:00,0111
 </buildStep>
 <buildStep step="BuildTopics">
 Building help topics...
 Loading configuration...
-ResolveReferenceLinksComponent: The member ID URL cache &#39;C:\Users\EMortensen\AppData\Local\EWSoftware\Sandcastle Help File Builder\Cache\MemberIdUrl.cache&#39; does not exist yet.  All IDs will be looked up in this build which will slow it down.
 Processing topics...
 SHFB: Warning BE0066: ShowMissingComponent: [N:Wamp.Client] Missing &lt;summary&gt; documentation
 SHFB: Warning BE0066: ShowMissingComponent: [F:Wamp.Client.WampClient.Get_UCT_Time] Missing &lt;summary&gt; documentation
@@ -130,9 +129,7 @@ Processed 186 topic(s)
 20 warning(s)
 CopyFromIndexComponent: &quot;reflection&quot; in-memory cache entries used: 4 of 15.
 CopyFromIndexComponent: &quot;comments&quot; in-memory cache entries used: 2 of 30.
-ResolveReferenceLinksComponent: 14 entries added to the member ID URL cache.  New cache size: 14 entries
-SaveComponent: Waiting for the document writer task to finish (1 Help1 API file(s) remaining)...
-    Last step completed in 00:00:09,4099
+    Last step completed in 00:00:03,0187
 </buildStep>
 <buildStep step="ExtractingHtmlInfo">
 Extracting HTML info for HTML Help 1 and/or website...
@@ -141,7 +138,7 @@ Processing Help 1 files in C:\Projects\Zenitel_Connect_Pro\Work\Zenitel_GitHub\Z
 Processed 186 HTML files.  Sorting keywords and generating See Also indices.
 Saving HTML Help 1 keyword index to C:\Projects\Zenitel_Connect_Pro\Work\Zenitel_GitHub\Zenitel-Connect-Wamp-SDK\DOC\Help\Working\Output\HtmlHelp1\Zenitel.Connect.Wamp.Sdk.hhk
 Saving HTML Help 1 table of contents to C:\Projects\Zenitel_Connect_Pro\Work\Zenitel_GitHub\Zenitel-Connect-Wamp-SDK\DOC\Help\Working\Output\HtmlHelp1\Zenitel.Connect.Wamp.Sdk.hhc
-    Last step completed in 00:00:00,0560
+    Last step completed in 00:00:00,0550
 </buildStep>
 <buildStep step="CopyStandardHelpContent">
 Copying standard help content...
@@ -204,11 +201,11 @@ C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components\VS2013
 C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components\VS2013\styles\branding-zh-CN.css -&gt; C:\Projects\Zenitel_Connect_Pro\Work\Zenitel_GitHub\Zenitel-Connect-Wamp-SDK\DOC\Help\Working\Output\HtmlHelp1\styles\branding-zh-CN.css
 C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components\VS2013\styles\branding-zh-TW.css -&gt; C:\Projects\Zenitel_Connect_Pro\Work\Zenitel_GitHub\Zenitel-Connect-Wamp-SDK\DOC\Help\Working\Output\HtmlHelp1\styles\branding-zh-TW.css
 C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components\VS2013\styles\branding.css -&gt; C:\Projects\Zenitel_Connect_Pro\Work\Zenitel_GitHub\Zenitel-Connect-Wamp-SDK\DOC\Help\Working\Output\HtmlHelp1\styles\branding.css
-    Last step completed in 00:00:00,0900
+    Last step completed in 00:00:00,0980
 </buildStep>
 <buildStep step="GenerateHelpProject">
 Generating HTML Help 1 project file...
-    Last step completed in 00:00:00,0050
+    Last step completed in 00:00:00,0040
 </buildStep>
 <buildStep step="CompilingHelpFile">
 Compiling HTML Help 1 file...
@@ -237,19 +234,19 @@ Compiling HTML Help 1 file...
   
   
   
-  Created c:\Projects\Zenitel_Connect_Pro\Work\Zenitel_GitHub\Zenitel-Connect-Wamp-SDK\DOC\Help\Working\Output\HtmlHelp1\Zenitel.Connect.Wamp.Sdk.chm, 243,136 bytes
+  Created c:\Projects\Zenitel_Connect_Pro\Work\Zenitel_GitHub\Zenitel-Connect-Wamp-SDK\DOC\Help\Working\Output\HtmlHelp1\Zenitel.Connect.Wamp.Sdk.chm, 243,138 bytes
   
-  Compression decreased file by 1,325,138 bytes.
+  Compression decreased file by 1,325,136 bytes.
   
-    Last step completed in 00:00:02,0271
+    Last step completed in 00:00:01,9913
 </buildStep>
 <buildStep step="CleanIntermediates">
 Removing intermediate files...
-    Last step completed in 00:00:00,0450
+    Last step completed in 00:00:00,0470
 </buildStep>
 <buildStep step="Completed">
 
-Build completed successfully at 27-08-2023 17:55:15.  Total time: 00:00:13,2843
+Build completed successfully at 28-08-2023 21:15:20.  Total time: 00:00:06,7611
 
 </buildStep>
 </shfbBuild>
