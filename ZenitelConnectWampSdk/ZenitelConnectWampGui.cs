@@ -133,7 +133,7 @@ namespace Zenitel.Connect.Wamp.Sdk
                         addToLog(txt);
                         foreach (WampClient.wamp_device_registration_element dev in devices)
                         {
-                            txt = ("IP-Address: " + dev.device_ip + "Device-type: " + dev.device_type + "Dir-no: " + dev.dirno +
+                            txt = ("IP-Address: " + dev.device_ip + ". Device-type: " + dev.device_type + ". Dir-no: " + dev.dirno +
                                    ". Location: " + dev.location + ". Name: " + dev.name + ". Status: " + dev.state);
                             addToLog(txt);
                         }
@@ -1312,7 +1312,7 @@ namespace Zenitel.Connect.Wamp.Sdk
                             {
                                 addToLog(string.Format("Normal Call Found at index: {0}", i_save));
 
-                                if (callLegStatus.state.Equals("ended"))
+                                if ( callLegStatus.state.Equals("ended") )
                                 {
                                     addToLog("Normal Call - Ended");
                                     dgrdActiveCalls.Rows.RemoveAt(i_save);
@@ -1385,6 +1385,30 @@ namespace Zenitel.Connect.Wamp.Sdk
 
                                     string[] row = { callLegStatus.from_dirno, callLegStatus.dirno, callLegStatus.state, callLegStatus.call_id };
                                     dgrdActiveCalls.Rows.Add(row);
+                                }
+                            }
+                        }
+                        else
+                        {
+                            found = false;
+
+                            // See if call id is in the queued calls
+                            while ((i < dgrdQueuedCalls.Rows.Count) && (!found))
+                            {
+                                if (string.Compare(dgrdQueuedCalls.Rows[i].Cells[3].Value.ToString(), callLegStatus.call_id) == 0)
+                                {
+                                    found = true;
+                                    i_save = i;
+                                }
+                                i++;
+                            }
+
+                            if (found)
+                            {
+                                if (callLegStatus.state.Equals("in_call"))
+                                {
+                                    addToLog("Normal Call - Queued call answered");
+                                    dgrdQueuedCalls.Rows.RemoveAt(i_save);
                                 }
                             }
                         }
