@@ -1338,6 +1338,36 @@ namespace Zenitel.Connect.Wamp.Sdk
                                     {
                                         dgrdActiveCalls.Rows[i_save].Cells[3].Value = callLegStatus.call_id;
                                     }
+                                    found = false;
+                                    i = 0;
+                                    i_save = 0;
+
+
+                                    // See if call id is in the queued calls
+                                    while ((i < dgrdQueuedCalls.Rows.Count) && (!found))
+                                    {
+                                        if (string.Compare(dgrdQueuedCalls.Rows[i].Cells[3].Value.ToString(), callLegStatus.call_id) == 0)
+                                        {
+
+                                            if ((string.Compare(dgrdQueuedCalls.Rows[i].Cells[0].Value.ToString(), callLegStatus.from_dirno) == 0) &&
+                                                 (string.Compare(dgrdQueuedCalls.Rows[i].Cells[1].Value.ToString(), callLegStatus.dirno) == 0))
+                                            {
+                                                found = true;
+                                                i_save = i;
+                                            }
+                                        }
+                                        i++;
+                                    }
+
+                                    if (found)
+                                    {
+                                        addToLog("Normal Call. Call removed from queued calls.");
+                                        dgrdQueuedCalls.Rows.RemoveAt(i_save);
+                                    }
+                                    else
+                                    {
+                                        addToLog("Normal Call - Not in the queued calls.");
+                                    }
                                 }
                             }
                             else
