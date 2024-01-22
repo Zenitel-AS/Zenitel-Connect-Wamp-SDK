@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,7 +10,7 @@ namespace Wamp.Client
 
     public partial class WampClient
     {
-  
+
         /// <summary>This class contains device registration element.</summary>
         public class wamp_device_registration_element
         {
@@ -167,7 +168,7 @@ namespace Wamp.Client
         /// <summary>
         /// This class encapsulates the address information of the Interface List request.
         /// </summary>
-         public class  addrInfo
+        public class addrInfo
         {
             /// <summary>
             /// IP-Net Broadcast address.
@@ -182,7 +183,7 @@ namespace Wamp.Client
             /// <summary>
             /// Name of the IP port
             /// </summary>
-            public string label  { get; set; }
+            public string label { get; set; }
 
             /// <summary>
             /// IP address of the port.
@@ -224,7 +225,7 @@ namespace Wamp.Client
             /// <summary>
             /// MAC-address of the IP port
             /// </summary>
-            public string address    { get; set; }
+            public string address { get; set; }
 
             /// <summary>
             /// TBD
@@ -364,6 +365,42 @@ namespace Wamp.Client
                 WampResponse = ResponseType.WampNoResponce;
                 CompletionText = "";
             }
+        }
+
+        public class wamp_group_element
+        {
+            public string dirno { get; set; }
+            public string displayname { get; set; }
+            public string priority { get; set; }
+            public string[] members { get; set; }
+        }
+
+        public class AudioMessageWrapper
+        {
+            [JsonProperty("audio_messages")]
+            public List<wamp_audio_messages_element> AudioMessages { get; set; }
+
+            [JsonProperty("available_space")]
+            public int AvailableSpace { get; set; }
+
+            [JsonProperty("used_space")]
+            public int? UsedSpace { get; set; }
+        }
+
+        public class wamp_audio_messages_element
+        {
+            public string dirno { get; set; }
+            public string filename { get; set; }
+            public string filepath { get; set; }
+            public int filesize { get; set; }
+            public int duration { get; set; }
+        }
+
+        public class wamp_directory_number_element
+        {
+            public string dirno { get; set; }
+            public string displayname { get; set; }
+
         }
     }
 }

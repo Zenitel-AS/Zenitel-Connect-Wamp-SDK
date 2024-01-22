@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 using LogManager;
 using Wamp.Client;
+using static Wamp.Client.WampClient;
 
 namespace Zenitel.Connect.Wamp.Sdk
 {
     public partial class ZenitelConnectWampGui : Form
     {
 
-        private WampClient    wampClient;
+        private WampClient wampClient;
         private LoggingWindow loggingWindow = null;
 
         private string Zenitel_Connect_Wamp_SDK_Version = System.Diagnostics.FileVersionInfo.GetVersionInfo(
@@ -43,12 +44,12 @@ namespace Zenitel.Connect.Wamp.Sdk
             wampClient.OnError += WampConnection_OnError;
             wampClient.OnChildLogString += _wampConnection_OnChildLogString;
 
-            wampClient.OnWampCallStatusEvent +=         wampClient_OnWampCallStatusEvent;
-            wampClient.OnWampCallLegStatusEvent +=      wampClient_OnWampCallLegStatusEvent;
+            wampClient.OnWampCallStatusEvent += wampClient_OnWampCallStatusEvent;
+            wampClient.OnWampCallLegStatusEvent += wampClient_OnWampCallLegStatusEvent;
             wampClient.OnWampDeviceRegistrationEvent += wampClient_OnWampDeviceRegistrationEvent;
-            wampClient.OnWampOpenDoorEvent +=           wampClient_OnWampOpenDoorEvent;
-            wampClient.OnWampDeviceGPIStatusEvent +=    wampClient_OnWampDeviceGPIStatusEvent;
-            wampClient.OnWampDeviceGPOStatusEvent +=    wampClient_OnWampDeviceGPOStatusEvent;
+            wampClient.OnWampOpenDoorEvent += wampClient_OnWampOpenDoorEvent;
+            wampClient.OnWampDeviceGPIStatusEvent += wampClient_OnWampDeviceGPIStatusEvent;
+            wampClient.OnWampDeviceGPOStatusEvent += wampClient_OnWampDeviceGPOStatusEvent;
 
             UpdateConnectState();
 
@@ -82,10 +83,10 @@ namespace Zenitel.Connect.Wamp.Sdk
             else
             {
                 wampClient.WampServerAddr = edtWAMPServerAddr.Text;
-                wampClient.UserName       = edtUserName.Text;
-                wampClient.Password       = edtPassword.Text;
+                wampClient.UserName = edtUserName.Text;
+                wampClient.Password = edtPassword.Text;
 
- 
+
                 if (chbxUnencrypted.Checked)
                 {
                     wampClient.WampPort = WampClient.WampUnencryptedPort;
@@ -128,7 +129,7 @@ namespace Zenitel.Connect.Wamp.Sdk
                     devices = wampClient.requestRegisteredDevices();
 
                     if (devices != null)
-                    {        
+                    {
                         string txt = "SDK. Registered Devices:";
                         addToLog(txt);
                         foreach (WampClient.wamp_device_registration_element dev in devices)
@@ -176,7 +177,7 @@ namespace Zenitel.Connect.Wamp.Sdk
                     List<WampClient.wamp_interface_list> interfaceList;
                     interfaceList = wampClient.requestInterfaceList();
 
-                    if ( interfaceList != null)
+                    if (interfaceList != null)
                     {
                         dgrdNetInterfaces.Rows.Clear();
 
@@ -230,7 +231,7 @@ namespace Zenitel.Connect.Wamp.Sdk
                     if (callList != null)
                     {
                         if (callList.Count > 0)
-                        { 
+                        {
                             string txt = "SDK. Call List:";
                             addToLog(txt);
 
@@ -270,8 +271,8 @@ namespace Zenitel.Connect.Wamp.Sdk
                                 {
                                     LogMan.Instance.Log(string.Format("Call Found at index: {0}", i_save));
 
-                                    if ( (string.Compare(newCall.state, "call_ended") == 0) ||
-                                         (string.Compare(newCall.state, "canceled") == 0) )
+                                    if ((string.Compare(newCall.state, "call_ended") == 0) ||
+                                         (string.Compare(newCall.state, "canceled") == 0))
                                     {
                                         dgrdActiveCalls.Rows.RemoveAt(i_save);
                                     }
@@ -321,7 +322,7 @@ namespace Zenitel.Connect.Wamp.Sdk
                     MessageBox.Show("WAMP is NOT connected.");
                 }
             }
-           catch (Exception ex)
+            catch (Exception ex)
             {
                 string txt = "Exception in btnGetCalls_Click: " + ex.ToString();
                 addToLog(txt);
@@ -339,7 +340,7 @@ namespace Zenitel.Connect.Wamp.Sdk
                 {
                     string aSub = tbxASubscriber.Text;
                     string bSub = tbxBSubscriber.Text;
-                    string act  = cmbxCallAction.SelectedItem.ToString();
+                    string act = cmbxCallAction.SelectedItem.ToString();
 
                     WampClient.wamp_response wampResp = wampClient.PostCalls(aSub, bSub, act);
 
@@ -462,7 +463,7 @@ namespace Zenitel.Connect.Wamp.Sdk
             }
         }
 
- 
+
         /***********************************************************************************************************************/
         private void btnGETCallQueueLegs_Click(object sender, EventArgs e)
         /***********************************************************************************************************************/
@@ -473,7 +474,7 @@ namespace Zenitel.Connect.Wamp.Sdk
                 {
                     List<WampClient.wamp_call_leg_element> callQueueLegList;
 
-                    callQueueLegList = wampClient.requestCallLegs("", "", "", "", "", "", "" );
+                    callQueueLegList = wampClient.requestCallLegs("", "", "", "", "", "", "");
 
                     if (callQueueLegList != null)
                     {
@@ -629,7 +630,7 @@ namespace Zenitel.Connect.Wamp.Sdk
                 {
                     List<WampClient.wamp_device_gpio_element> gpoElements;
 
-                    string devId = "dirno="+tbxGPODevice.Text;
+                    string devId = "dirno=" + tbxGPODevice.Text;
                     gpoElements = wampClient.requestDevicesGPOs(devId, "");
 
                     if (gpoElements != null)
@@ -688,11 +689,11 @@ namespace Zenitel.Connect.Wamp.Sdk
                         }
                     }
                     else
-                        {
-                            string txt = "SDK. GPI elements is empty.";
-                            addToLog(txt);
-                        }
+                    {
+                        string txt = "SDK. GPI elements is empty.";
+                        addToLog(txt);
                     }
+                }
                 else
                 {
                     MessageBox.Show("WAMP Connection not established.");
@@ -1060,7 +1061,7 @@ namespace Zenitel.Connect.Wamp.Sdk
                     if (found)
                     {
                         dgrd_Registrations.Rows.RemoveAt(i_save);
-                        string[] row = { regUpd.dirno, regUpd.name, regUpd.location, regUpd.state};
+                        string[] row = { regUpd.dirno, regUpd.name, regUpd.location, regUpd.state };
                         dgrd_Registrations.Rows.Add(row);
                     }
                 }
@@ -1078,14 +1079,14 @@ namespace Zenitel.Connect.Wamp.Sdk
             {
                 if (this.dgrdActiveCalls.InvokeRequired)
                 {
-                    _wampConnection_OnWampCallStatusEventCallBack cb = 
+                    _wampConnection_OnWampCallStatusEventCallBack cb =
                         new _wampConnection_OnWampCallStatusEventCallBack(wampClient_OnWampCallStatusEvent);
 
                     this.Invoke(cb, new object[] { sender, callUpd });
                 }
                 else
                 {
-                    string txt = "SDK-Event. Call State Update: Call from " + callUpd.from_dirno + " to dir-no " + callUpd.to_dirno + 
+                    string txt = "SDK-Event. Call State Update: Call from " + callUpd.from_dirno + " to dir-no " + callUpd.to_dirno +
                          ". State = " + callUpd.state + ". id = " + callUpd.call_id;
 
                     addToLog(txt);
@@ -1144,7 +1145,7 @@ namespace Zenitel.Connect.Wamp.Sdk
                             addToLog("Normal Call - New call.");
 
                             // This is a new call
-                            if (! callUpd.state.Equals("ended"))
+                            if (!callUpd.state.Equals("ended"))
                             {
                                 addToLog("Normal Call - Not a call ended.");
 
@@ -1264,8 +1265,8 @@ namespace Zenitel.Connect.Wamp.Sdk
             {
                 if (InvokeRequired)
                 {
-                     _wampConnection_OnWampCallLegStatusEventCallBack cb =
-                        new _wampConnection_OnWampCallLegStatusEventCallBack(wampClient_OnWampCallLegStatusEvent);
+                    _wampConnection_OnWampCallLegStatusEventCallBack cb =
+                       new _wampConnection_OnWampCallLegStatusEventCallBack(wampClient_OnWampCallLegStatusEvent);
 
                     this.Invoke(cb, new object[] { sender, callLegStatus });
                 }
@@ -1298,7 +1299,7 @@ namespace Zenitel.Connect.Wamp.Sdk
                         if (callLegStatus.leg_role.Equals("callee"))
                         {
 
-                            while ((i < dgrdActiveCalls.Rows.Count) && (! found))
+                            while ((i < dgrdActiveCalls.Rows.Count) && (!found))
                             {
                                 if (string.Compare(dgrdActiveCalls.Rows[i].Cells[3].Value.ToString(), callLegStatus.call_id) == 0)
                                 {
@@ -1307,12 +1308,12 @@ namespace Zenitel.Connect.Wamp.Sdk
                                 }
                                 i++;
                             }
-                       
+
                             if (found)
                             {
                                 addToLog(string.Format("Normal Call Found at index: {0}", i_save));
 
-                                if ( callLegStatus.state.Equals("ended") )
+                                if (callLegStatus.state.Equals("ended"))
                                 {
                                     addToLog("Normal Call - Ended");
                                     dgrdActiveCalls.Rows.RemoveAt(i_save);
@@ -1375,7 +1376,7 @@ namespace Zenitel.Connect.Wamp.Sdk
                                 addToLog("Normal Call - New call.");
 
                                 // This is a new call
-                                if (! callLegStatus.state.Equals("ended"))
+                                if (!callLegStatus.state.Equals("ended"))
                                 {
                                     addToLog("Normal Call - Not a call ended.");
 
@@ -1393,7 +1394,7 @@ namespace Zenitel.Connect.Wamp.Sdk
                                         if (string.Compare(dgrdQueuedCalls.Rows[i].Cells[3].Value.ToString(), callLegStatus.call_id) == 0)
                                         {
 
-                                            if ( (string.Compare(dgrdQueuedCalls.Rows[i].Cells[0].Value.ToString(), callLegStatus.from_dirno) == 0) &&
+                                            if ((string.Compare(dgrdQueuedCalls.Rows[i].Cells[0].Value.ToString(), callLegStatus.from_dirno) == 0) &&
                                                  (string.Compare(dgrdQueuedCalls.Rows[i].Cells[1].Value.ToString(), callLegStatus.dirno) == 0))
                                             {
                                                 found = true;
@@ -1454,10 +1455,10 @@ namespace Zenitel.Connect.Wamp.Sdk
                             i = 0;
                             i_save = 0;
 
-                            while ((i < dgrdQueuedCalls.Rows.Count) && (! found))
+                            while ((i < dgrdQueuedCalls.Rows.Count) && (!found))
                             {
-                                if ( (string.Compare(dgrdQueuedCalls.Rows[i].Cells[0].Value.ToString(), callLegStatus.from_dirno) == 0) &&
-                                     (string.Compare(dgrdQueuedCalls.Rows[i].Cells[1].Value.ToString(), callLegStatus.dirno) == 0) )
+                                if ((string.Compare(dgrdQueuedCalls.Rows[i].Cells[0].Value.ToString(), callLegStatus.from_dirno) == 0) &&
+                                     (string.Compare(dgrdQueuedCalls.Rows[i].Cells[1].Value.ToString(), callLegStatus.dirno) == 0))
                                 {
                                     found = true;
                                     i_save = i;
@@ -1469,27 +1470,27 @@ namespace Zenitel.Connect.Wamp.Sdk
                             {
                                 addToLog(string.Format("Call Found at index: {0}", i_save));
 
-                                if ( callLegStatus.state.Equals("in_call") ||
-                                     callLegStatus.state.Equals("ended") )
+                                if (callLegStatus.state.Equals("in_call") ||
+                                     callLegStatus.state.Equals("ended"))
                                 {
                                     addToLog("Queued Call. Call is removed.");
                                     dgrdQueuedCalls.Rows.RemoveAt(i_save);
                                 }
                                 else
                                 {
-                                    if (! string.IsNullOrEmpty(callLegStatus.from_dirno))
+                                    if (!string.IsNullOrEmpty(callLegStatus.from_dirno))
                                     {
                                         dgrdQueuedCalls.Rows[i_save].Cells[0].Value = callLegStatus.from_dirno;
                                     }
-                                    if (! string.IsNullOrEmpty(callLegStatus.dirno))
+                                    if (!string.IsNullOrEmpty(callLegStatus.dirno))
                                     {
                                         dgrdQueuedCalls.Rows[i_save].Cells[1].Value = callLegStatus.dirno;
                                     }
-                                    if (! string.IsNullOrEmpty(callLegStatus.state))
+                                    if (!string.IsNullOrEmpty(callLegStatus.state))
                                     {
                                         dgrdQueuedCalls.Rows[i_save].Cells[2].Value = callLegStatus.state;
                                     }
-                                    if (! string.IsNullOrEmpty(callLegStatus.call_id))
+                                    if (!string.IsNullOrEmpty(callLegStatus.call_id))
                                     {
                                         dgrdQueuedCalls.Rows[i_save].Cells[3].Value = callLegStatus.call_id;
                                     }
@@ -1544,7 +1545,7 @@ namespace Zenitel.Connect.Wamp.Sdk
             }
             else
             {
- 
+
             }
         }
 
@@ -1630,6 +1631,33 @@ namespace Zenitel.Connect.Wamp.Sdk
                     addToLog("Subscribe Device Registration Events.");
                     wampClient.TraceDeviceRegistrationEvent();
                 }
+                try
+                {
+                    lbAudioMessages.Items.Clear();
+                    AudioMessageWrapper messageWrapper = wampClient.requestAudioMessages();
+                    foreach (wamp_audio_messages_element msg in messageWrapper.AudioMessages)
+                    {
+                        string displayText = $"{msg.dirno} - {msg.filename}";
+                        lbAudioMessages.Items.Add(displayText);
+                    }
+                }
+                catch (Exception ex)
+                {
+
+                }
+                try
+                {
+                    lbGroups.Items.Clear();
+                    foreach (wamp_group_element group in wampClient.requestGroups("", false))
+                    {
+                        string displayText = $"{group.dirno} - {group.displayname}";
+                        lbGroups.Items.Add(displayText);
+                    }
+                }
+                catch (Exception ex)
+                {
+
+                }
             }
             else
             {
@@ -1665,7 +1693,7 @@ namespace Zenitel.Connect.Wamp.Sdk
 
         private delegate void addToLogCallBack(string txt);
 
-         /***********************************************************************************************************************/
+        /***********************************************************************************************************************/
         private void addToLog(string txt)
         /***********************************************************************************************************************/
         {
@@ -1718,7 +1746,7 @@ namespace Zenitel.Connect.Wamp.Sdk
             }
             else
             {
-               MessageBox.Show("Logging Windows already Closed.");
+                MessageBox.Show("Logging Windows already Closed.");
             }
         }
 

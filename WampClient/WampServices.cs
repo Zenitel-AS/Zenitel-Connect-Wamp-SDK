@@ -28,6 +28,15 @@ namespace Wamp.Client
 
         [WampProcedure(WampClient.GetWampDevicesGpis)]
         object GET_devices_gpis(string device_id, string id);
+
+        [WampProcedure(WampClient.GetGroupsList)]
+        object GET_groups(string dirno, bool verbose);
+
+        [WampProcedure(WampClient.GetAudioMessagesList)]
+        object GET_audio_messages();
+
+        [WampProcedure(WampClient.GetDirectoriesList)]
+        object GET_directories(string dirno);
     }
 
 
