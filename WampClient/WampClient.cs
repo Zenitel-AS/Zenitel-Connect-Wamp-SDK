@@ -29,7 +29,7 @@ namespace Wamp.Client
     public partial class WampClient
     {
         /// <summary>This string defines the port number used for WAMP encrypted communication</summary>
-        public const string WampEncryptedPort   = "8086";
+        public const string WampEncryptedPort = "8086";
 
         /// <summary>This string defines the port number used for WAMP unencrypted communication</summary>
         public const string WampUnencryptedPort = "8087";
@@ -50,6 +50,18 @@ namespace Wamp.Client
         /// <summary>Zenitel Link Path for accessing Net Interfaces.</summary>
         //GET api/system/info/net_interfaces
         public const string GetWampInterfaceList = "com.zenitel.system.info.net_interfaces";
+
+        /// <summary>Get list of configured device groups (group calls)</summary>
+        /// GET api/groups
+        public const string GetGroupsList = "com.zenitel.groups";
+
+        /// <summary>Get a list of uploaded audio_messages</summary>
+        /// GET api/system/audio_messages
+        public const string GetAudioMessagesList = "com.zenitel.system.audio_messages";
+
+        /// <summary>Get list of configured directory numbers</summary>
+        /// GET api/directories
+        public const string GetDirectoriesList = "com.zenitel.directory";
 
         //GET api/system/info/ntp
         //TBD public const string GetWampSystemInfoNtp     = "com.zenitel.system.info.ntp";
@@ -142,7 +154,7 @@ namespace Wamp.Client
         /// 
         /// </summary>
         // Provided services
-        public const string Get_UCT_Time   = "com.zenitel.system.get_uct_time";
+        public const string Get_UCT_Time = "com.zenitel.system.get_uct_time";
 
 
         // Published events
@@ -174,7 +186,7 @@ namespace Wamp.Client
         /// <summary>Zenitel Link Server Access User Name</summary>
         public string UserName = string.Empty;
 
- 
+
         /// <summary>Zenitel Link Server Access Password</summary>
         public string Password = string.Empty;
 
@@ -198,7 +210,7 @@ namespace Wamp.Client
         /// <summary>Event Handler for WAMP connection change event.</summary>
         public event EventHandler<bool> OnConnectChanged;
 
- 
+
         /// <summary>Event Handler for WAMP Error event.</summary>
         public event EventHandler<string> OnError;
 
@@ -277,10 +289,10 @@ namespace Wamp.Client
                     {
                         bool useEncryption = WampPort.Equals(WampEncryptedPort);
 
-                         // Authentication is HTTP / HTTPS 
-                         string uri_str = ((useEncryption) ? ("https://" + WampServerAddr + ":" + HttpEncryptedPort) :
-                                                             ("http://"  + WampServerAddr)) +
-                                                              "/api/auth/login";
+                        // Authentication is HTTP / HTTPS 
+                        string uri_str = ((useEncryption) ? ("https://" + WampServerAddr + ":" + HttpEncryptedPort) :
+                                                            ("http://" + WampServerAddr)) +
+                                                             "/api/auth/login";
                         Uri uri = new Uri(uri_str);
 
                         HttpWebRequest rq = (HttpWebRequest)WebRequest.Create(uri);
@@ -375,7 +387,7 @@ namespace Wamp.Client
             _wampRealmProxy = null;
         }
 
- 
+
         /***********************************************************************************************************************/
         private void SetConnectState(bool connected, string error, string token = null)
         /***********************************************************************************************************************/
@@ -407,14 +419,15 @@ namespace Wamp.Client
             // create channel factory
             IWampChannelFactory factory = new WampChannelFactory();
 
-            if ( WampPort.Equals(WampEncryptedPort) )
+            if (WampPort.Equals(WampEncryptedPort))
             {
                 // create connect to realm, transport, serialization and authenticator
                 var stx = factory
                     .ConnectToRealm(WampRealm)
                     .WebSocket4NetTransport(WampUrl)
 
-                    .SetSecurityOptions(o => {
+                    .SetSecurityOptions(o =>
+                    {
                         o.EnabledSslProtocols = SslProtocols.Tls13 | SslProtocols.Tls12 | SslProtocols.Tls11 | SslProtocols.Tls | SslProtocols.Ssl3 | SslProtocols.Ssl2;
                         o.AllowCertificateChainErrors = true;
                         o.AllowNameMismatchCertificate = true;
@@ -437,7 +450,7 @@ namespace Wamp.Client
                        .Authenticator(_wampAuthenticator);
                 _wampChannel = stx.Build();
             }
- 
+
             // attach handlers to monitor
             _wampRealmProxy = _wampChannel.RealmProxy;
             _wampRealmProxy.Monitor.ConnectionEstablished += Monitor_ConnectionEstablished;
@@ -488,7 +501,7 @@ namespace Wamp.Client
         #region call functions from server
 
 
- 
+
         /***********************************************************************************************************************/
         private object GetSystemDevicesRegistered()
         /***********************************************************************************************************************/
@@ -513,7 +526,7 @@ namespace Wamp.Client
             return svc.InterfaceList();
         }
 
- 
+
         /***********************************************************************************************************************/
         private object GET_calls(string dirNo, string callId, string state)
         /***********************************************************************************************************************/
@@ -607,6 +620,66 @@ namespace Wamp.Client
 
                 // try call function
                 return svc.GET_devices_gpis(device_id, id);
+
+            }
+            catch (Exception ex)
+            {
+                OnChildLogString?.Invoke(this, "Exception in GET_devices_gpis: " + ex.ToString());
+                return null;
+            }
+        }
+
+        /***********************************************************************************************************************/
+        private object GET_groups(string dirno, bool verbose)
+        /***********************************************************************************************************************/
+        {
+            try
+            {
+                // get service
+                var svc = _wampRealmProxy.Services.GetCalleeProxy<IConnectWampServices>();
+
+                // try call function
+                return svc.GET_groups(dirno, verbose);
+
+            }
+            catch (Exception ex)
+            {
+                OnChildLogString?.Invoke(this, "Exception in GET_devices_gpis: " + ex.ToString());
+                return null;
+            }
+        }
+
+        /***********************************************************************************************************************/
+        private object GET_audio_messages()
+        /***********************************************************************************************************************/
+        {
+            try
+            {
+                // get service
+                var svc = _wampRealmProxy.Services.GetCalleeProxy<IConnectWampServices>();
+
+                // try call function
+                return svc.GET_audio_messages();
+
+            }
+            catch (Exception ex)
+            {
+                OnChildLogString?.Invoke(this, "Exception in GET_devices_gpis: " + ex.ToString());
+                return null;
+            }
+        }
+
+        /***********************************************************************************************************************/
+        private object GET_directories(string dirno)
+        /***********************************************************************************************************************/
+        {
+            try
+            {
+                // get service
+                var svc = _wampRealmProxy.Services.GetCalleeProxy<IConnectWampServices>();
+
+                // try call function
+                return svc.GET_directories(dirno);
 
             }
             catch (Exception ex)
