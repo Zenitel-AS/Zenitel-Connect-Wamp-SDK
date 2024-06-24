@@ -52,6 +52,8 @@ namespace Wamp.Client
 
                     string uri = TraceWampDeviceDirnoGpi.Replace("{dirno}", dirNo);
 
+                    OnChildLogString?.Invoke(this, "TraceDeviceGPIStatusEvent - uri: " + uri);
+
                     IWampTopicProxy topicProxy = _wampRealmProxy.TopicContainer.GetTopicByUri(uri);
 
                     tracerDeviceGPIStatusEvent = new TracerDeviceGPIStatusEvent();
@@ -85,6 +87,7 @@ namespace Wamp.Client
         private void TracerDeviceGPIStatusEvent_OnDeviceGPIStatusEvent(object sender, wamp_device_gpio_element gpioElement)
         /***********************************************************************************************************************/       
         {
+            OnChildLogString?.Invoke(this, "DeviceGPI Status Event: " + gpioElement.ToString());
             OnWampDeviceGPIStatusEvent?.Invoke(this, gpioElement);
         }
 

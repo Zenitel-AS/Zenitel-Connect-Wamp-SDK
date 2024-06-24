@@ -1611,8 +1611,8 @@ namespace Zenitel.Connect.Wamp.Sdk
                 cbxDeviceRegistrationEvent.Enabled = true;
 
                 // Currently not available
-                //cbxDeviceGPOStatusEvent.Enabled = true;
-                //cbxDeviceGPIStatusEvent.Enabled = true;
+                cbxDeviceGPOStatusEvent.Enabled = true;
+                cbxDeviceGPIStatusEvent.Enabled = true;
 
                 cbxOpenDoorEvent.Enabled = true;
 
@@ -1635,28 +1635,36 @@ namespace Zenitel.Connect.Wamp.Sdk
                 {
                     lbAudioMessages.Items.Clear();
                     AudioMessageWrapper messageWrapper = wampClient.requestAudioMessages();
-                    foreach (wamp_audio_messages_element msg in messageWrapper.AudioMessages)
+                    if ((messageWrapper != null)&&
+                    	(messageWrapper.AudioMessages != null))
                     {
-                        string displayText = $"{msg.dirno} - {msg.filename}";
-                        lbAudioMessages.Items.Add(displayText);
+                        foreach (wamp_audio_messages_element msg in messageWrapper.AudioMessages)
+                        {
+                            string displayText = $"{msg.dirno} - {msg.filename}";
+                            lbAudioMessages.Items.Add(displayText);
+                        }
                     }
                 }
                 catch (Exception ex)
                 {
-
+                    addToLog("Exception: " + ex.ToString());
                 }
                 try
                 {
                     lbGroups.Items.Clear();
-                    foreach (wamp_group_element group in wampClient.requestGroups("", false))
+                    List<wamp_group_element> group = wampClient.requestGroups("", false);
+                    if (group != null)
                     {
-                        string displayText = $"{group.dirno} - {group.displayname}";
-                        lbGroups.Items.Add(displayText);
+                        foreach (wamp_group_element gp in group )
+                        {
+                            string displayText = $"{gp.dirno} - {gp.displayname}";
+                            lbGroups.Items.Add(displayText);
+                        }
                     }
                 }
                 catch (Exception ex)
                 {
-
+                    addToLog("Exception: " + ex.ToString());
                 }
             }
             else
