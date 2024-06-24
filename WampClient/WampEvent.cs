@@ -327,6 +327,14 @@ namespace Wamp.Client
             public string door_name { get; set; }
         }
 
+        public class wamp_platform_version
+        {
+            /// <summary>
+            /// Zenitel Connect Pro Software Version.
+            /// </summary>
+            public string version { get; set; }
+        }
+
         /// <summary>
         /// These enums define the response possible received from the WAMP connection when sending a request
         /// </summary>

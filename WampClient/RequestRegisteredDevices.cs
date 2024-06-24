@@ -165,6 +165,32 @@ namespace Wamp.Client
             }
         }
 
+        /***********************************************************************************************************************/
+        public wamp_platform_version requestPlatformVersion()
+        /***********************************************************************************************************************/
+        {
+            object res = GET_PlatformVersion();
+
+            if (res != null)
+            {
+                string json_str = res.ToString();
+
+                if (json_str != null)
+                {
+                    OnChildLogString?.Invoke(this, json_str);
+
+                    wamp_platform_version platformVersion = Newtonsoft.Json.JsonConvert.DeserializeObject<wamp_platform_version>(json_str);
+                    return platformVersion;
+                }
+                else
+                    return null;
+            }
+            else
+            {
+                return null;
+            }
+        }
+
         /// <summary>
         /// This method requests a list of configured device groups (group calls)
         /// </summary>

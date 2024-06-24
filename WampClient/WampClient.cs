@@ -150,6 +150,9 @@ namespace Wamp.Client
         /// <summary>Send open door request from station.</summary>
         public const string PostWampOpenDoor = "com.zenitel.calls.call.open_door.post";
 
+        /// <summary>Send request Zenitel Connect Software Version </summary>
+        public const string GetPlatformVersion = "com.zenitel.system.platform.version";
+
         /// <summary>
         /// 
         /// </summary>
@@ -625,6 +628,25 @@ namespace Wamp.Client
             catch (Exception ex)
             {
                 OnChildLogString?.Invoke(this, "Exception in GET_devices_gpis: " + ex.ToString());
+                return null;
+            }
+        }
+
+        /***********************************************************************************************************************/
+        private object GET_PlatformVersion()
+        /***********************************************************************************************************************/
+        {
+            try
+            {
+                // get service
+                var svc = _wampRealmProxy.Services.GetCalleeProxy<IConnectWampServices>();
+
+                // try call function
+                return svc.GetPlatformVersion();
+            }
+            catch (Exception ex)
+            {
+                OnChildLogString?.Invoke(this, "Exception in GetPlatformVersion: " + ex.ToString());
                 return null;
             }
         }
