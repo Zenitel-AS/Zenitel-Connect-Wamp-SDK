@@ -12,7 +12,7 @@ namespace Zenitel.Connect.Wamp.Sdk
 
         private WampClient wampClient;
         private LoggingWindow loggingWindow = null;
-
+ 
         private string Zenitel_Connect_Wamp_SDK_Version = System.Diagnostics.FileVersionInfo.GetVersionInfo(
                                       System.Reflection.Assembly.GetExecutingAssembly().Location).ProductVersion;
         private string SW_Version;
@@ -60,8 +60,9 @@ namespace Zenitel.Connect.Wamp.Sdk
             cmbxCallAction.Items.Add(WampClient.CallAction.answer.ToString());
 
             cmbxCallAction.SelectedIndex = 0;
-        }
 
+        }
+ 
 
         #region  ----------  Button Handling Methods  ----------
 
@@ -1631,41 +1632,6 @@ namespace Zenitel.Connect.Wamp.Sdk
                     addToLog("Subscribe Device Registration Events.");
                     wampClient.TraceDeviceRegistrationEvent();
                 }
-                try
-                {
-                    lbAudioMessages.Items.Clear();
-                    AudioMessageWrapper messageWrapper = wampClient.requestAudioMessages();
-                    if ((messageWrapper != null)&&
-                    	(messageWrapper.AudioMessages != null))
-                    {
-                        foreach (wamp_audio_messages_element msg in messageWrapper.AudioMessages)
-                        {
-                            string displayText = $"{msg.dirno} - {msg.filename}";
-                            lbAudioMessages.Items.Add(displayText);
-                        }
-                    }
-                }
-                catch (Exception ex)
-                {
-                    addToLog("Exception: " + ex.ToString());
-                }
-                try
-                {
-                    lbGroups.Items.Clear();
-                    List<wamp_group_element> group = wampClient.requestGroups("", false);
-                    if (group != null)
-                    {
-                        foreach (wamp_group_element gp in group )
-                        {
-                            string displayText = $"{gp.dirno} - {gp.displayname}";
-                            lbGroups.Items.Add(displayText);
-                        }
-                    }
-                }
-                catch (Exception ex)
-                {
-                    addToLog("Exception: " + ex.ToString());
-                }
             }
             else
             {
@@ -1842,6 +1808,7 @@ namespace Zenitel.Connect.Wamp.Sdk
         private async void btnRegisterCalleeServices_Click(object sender, EventArgs e)
         /***********************************************************************************************************************/
         {
+            // This method is just a template to shown how to register a service
             try
             {
                 if (wampClient.IsConnected)
@@ -1868,6 +1835,7 @@ namespace Zenitel.Connect.Wamp.Sdk
         private void btnNewUCTTime_Click(object sender, EventArgs e)
         /***********************************************************************************************************************/
         {
+            // This method is just a template to shown how to publish an event
             try
             {
                 if (wampClient.IsConnected)
@@ -1887,5 +1855,84 @@ namespace Zenitel.Connect.Wamp.Sdk
             }
         }
 
+
+        /***********************************************************************************************************************/
+        private void btnGETgroups_Click(object sender, EventArgs e)
+        /***********************************************************************************************************************/
+        {
+
+            try
+            {
+                if (wampClient.IsConnected)
+                {
+                    lbGroups.Items.Clear();
+                    List<wamp_group_element> group = wampClient.requestGroups("", false);
+                    if (group != null)
+                    {
+                        foreach (wamp_group_element gp in group)
+                        {
+                            string displayText = $"{gp.dirno} - {gp.displayname}";
+                            lbGroups.Items.Add(displayText);
+                        }
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("WAMP is NOT connected.");
+                }
+            }
+            catch (Exception ex)
+            {
+                addToLog("Exception: " + ex.ToString());
+            }
+        }
+
+        /***********************************************************************************************************************/
+        private void btnGETAudioMessages_Click(object sender, EventArgs e)
+        /***********************************************************************************************************************/
+        {
+            try
+            {
+                if (wampClient.IsConnected)
+                {
+                    lbAudioMessages.Items.Clear();
+                    AudioMessageWrapper messageWrapper = wampClient.requestAudioMessages();
+                    if ((messageWrapper != null) &&
+                        (messageWrapper.AudioMessages != null))
+                    {
+                        foreach (wamp_audio_messages_element msg in messageWrapper.AudioMessages)
+                        {
+                            string displayText = $"{msg.dirno} - {msg.filename}";
+                            lbAudioMessages.Items.Add(displayText);
+                        }
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("WAMP is NOT connected.");
+                }
+            }
+            catch (Exception ex)
+            {
+                addToLog("Exception: " + ex.ToString());
+            }
+
+        }
+
+
+        /***********************************************************************************************************************/
+        private void btnClearAudioMessagesList_Click(object sender, EventArgs e)
+        /***********************************************************************************************************************/
+        {
+            lbAudioMessages.Items.Clear();
+        }
+
+
+        /***********************************************************************************************************************/
+        private void btnClearGroupsList_Click(object sender, EventArgs e)
+        /***********************************************************************************************************************/
+        {
+            lbGroups.Items.Clear();
+        }
     }
 }

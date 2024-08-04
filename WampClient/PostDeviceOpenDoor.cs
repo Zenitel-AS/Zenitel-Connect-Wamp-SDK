@@ -54,7 +54,7 @@ namespace Wamp.Client
                     else
                     {
                         loopCount++;
-                        if (loopCount > 300) cont = false;
+                        if (loopCount > 30) cont = false;
                     }
                 }
 
@@ -74,7 +74,7 @@ namespace Wamp.Client
                 else
                 {
                     wampResp.WampResponse = ResponseType.WampNoResponce;
-                    wampResp.CompletionText = "PostOpenDoor failed. No response from WAMP.";
+                    wampResp.CompletionText = "PostOpenDoor: No response from WAMP.";
                 }
             }
             catch (Exception ex)

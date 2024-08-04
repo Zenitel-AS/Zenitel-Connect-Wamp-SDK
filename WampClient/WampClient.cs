@@ -237,6 +237,9 @@ namespace Wamp.Client
         }
 
 
+        private Timer RenewAccessTokenTimer = null;
+ 
+
         #region public methods
 
         /// <summary>
@@ -253,6 +256,26 @@ namespace Wamp.Client
         }
 
 
+        /***********************************************************************************************************************/
+        private void RenewAccessTokenTimer_Tick(object state)
+        /***********************************************************************************************************************/
+        {
+            OnChildLogString?.Invoke(this, "RenewAccessTokenTimer timeout encountered.");
+
+            if (RenewAccessTokenTimer != null)
+            {
+                //Delete timer
+                RenewAccessTokenTimer.Dispose();
+                RenewAccessTokenTimer = null;
+            }
+ 
+            if (IsConnected )
+            {
+                RequestNewAcessToken();
+            }
+        }
+
+
         /// <summary>Stops opened connection or reconnecting</summary>
        /***********************************************************************************************************************/
         public void Stop()
@@ -260,6 +283,13 @@ namespace Wamp.Client
         {
             StopReconnect();
             ResetChannel();
+
+            if (RenewAccessTokenTimer != null)
+            {
+                //Delete timer
+                RenewAccessTokenTimer.Dispose();
+                RenewAccessTokenTimer = null;
+            }
         }
 
         #endregion public methods
@@ -356,6 +386,72 @@ namespace Wamp.Client
             }
         }
 
+        /***********************************************************************************************************************/
+        private void RequestNewAcessToken()
+        /***********************************************************************************************************************/
+        {
+            try
+            {
+                bool useEncryption = WampPort.Equals(WampEncryptedPort);
+
+                // Authentication is HTTP / HTTPS 
+                string uri_str = ((useEncryption) ? ("https://" + WampServerAddr + ":" + HttpEncryptedPort) :
+                                                    ("http://" + WampServerAddr)) +
+                                                        "/api/auth/login";
+                Uri uri = new Uri(uri_str);
+
+                HttpWebRequest rq = (HttpWebRequest)WebRequest.Create(uri);
+                rq.Method = "POST";
+                rq.ContentType = "application/json";
+                rq.Accept = "application/json";
+                rq.Timeout = 5000;
+
+                string encoded = System.Convert.ToBase64String(
+                    Encoding.GetEncoding("ISO-8859-1").GetBytes(UserName + ":" + Password));
+
+                rq.Headers.Add("Authorization", "Basic " + encoded);
+
+                ServicePointManager.ServerCertificateValidationCallback += new RemoteCertificateValidationCallback(ValidateRemoteCertificate);
+                ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls13 | SecurityProtocolType.Tls12 | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls;
+
+
+                HttpWebResponse res = (HttpWebResponse)rq.GetResponse();
+                if (res.StatusCode == HttpStatusCode.OK)
+                {
+                    var resstring = new StreamReader(res.GetResponseStream()).ReadToEnd();
+
+                    json_login_result json_result = Newtonsoft.Json.JsonConvert.DeserializeObject<json_login_result>(resstring);
+
+                    if (json_result != null)
+                    {
+                        if (! string.IsNullOrEmpty(json_result.access_token))
+                        {
+                            OnChildLogString?.Invoke(this, "Access Token: " + json_result.access_token);
+                            SetConnectState(true, null, json_result.access_token);
+                        }
+                        else
+                        {
+                            SetConnectState(false, "http request error: " + res.StatusCode + " " + res.StatusDescription);
+                        }
+                    }
+                    else
+                    {
+                        SetConnectState(false, "http request error: " + res.StatusCode + " " + res.StatusDescription);
+                    }
+                }
+                else
+                {
+                    SetConnectState(false, "http request error: " + res.StatusCode + " " + res.StatusDescription);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                OnChildLogString?.Invoke(this, "WampConnection.StartReconnect(). Exception: " + ex.ToString());
+                SetConnectState(false, "http request exception: " + ex.Message);
+            }
+        }
+
 
         /***********************************************************************************************************************/
         private void StopReconnect()
@@ -407,6 +503,13 @@ namespace Wamp.Client
             }
             else
             {
+                if (RenewAccessTokenTimer != null)
+                {
+                    //Delete timer
+                    RenewAccessTokenTimer.Dispose();
+                    RenewAccessTokenTimer = null;
+                }
+
                 // reconnect continues...
                 ResetChannel();
 
@@ -475,14 +578,35 @@ namespace Wamp.Client
 
         #region real proxy event handlers
 
+        /***********************************************************************************************************************/
         private void Monitor_ConnectionEstablished(object sender, WampSessionCreatedEventArgs e)
+        /***********************************************************************************************************************/
         {
             // notify connection is established
             IsConnected = true;
             OnConnectChanged?.Invoke(this, true);
+
+            // Start the timer for renewal of the access token.
+
+            if (RenewAccessTokenTimer != null)
+            {
+                //Delete timer
+                RenewAccessTokenTimer.Dispose();
+                RenewAccessTokenTimer = null;
+            }
+
+            // Timeout in ZCP is 30 minutes
+            const Int32 minutes_29 = 29 * 60 * 1000; //ms
+
+            RenewAccessTokenTimer = new Timer(RenewAccessTokenTimer_Tick, null, minutes_29, minutes_29);
+
+            // Test: RenewAccessTokenTimer = new Timer(RenewAccessTokenTimer_Tick, null, 10000, 10000);
         }
 
+
+        /***********************************************************************************************************************/
         private void Monitor_ConnectionError(object sender, WampConnectionErrorEventArgs e)
+        /***********************************************************************************************************************/
         {
             // notify connection establishing error
             IsConnected = false;
@@ -490,7 +614,10 @@ namespace Wamp.Client
             // reconnect should be started
         }
 
+
+        /***********************************************************************************************************************/
         private void Monitor_ConnectionBroken(object sender, WampSessionCloseEventArgs e)
+        /***********************************************************************************************************************/
         {
             // notify established connection is broken
             IsConnected = false;
