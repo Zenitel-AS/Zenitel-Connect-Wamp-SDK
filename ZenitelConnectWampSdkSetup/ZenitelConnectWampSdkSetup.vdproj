@@ -177,7 +177,7 @@
         "DisplayName" = "8:Debug"
         "IsDebugOnly" = "11:TRUE"
         "IsReleaseOnly" = "11:FALSE"
-        "OutputFilename" = "8:Debug\\ZenitelConnectWampSdkSetup_V1.0.3.5.msi"
+        "OutputFilename" = "8:Debug\\ZenitelConnectWampSdkSetup_V1.0.3.6.msi"
         "PackageFilesAs" = "3:2"
         "PackageFileSize" = "3:-2147483648"
         "CabType" = "3:1"
@@ -209,7 +209,7 @@
         "DisplayName" = "8:Release"
         "IsDebugOnly" = "11:FALSE"
         "IsReleaseOnly" = "11:TRUE"
-        "OutputFilename" = "8:Release\\ZenitelConnectWampSdkSetup_V1.0.3.5.msi"
+        "OutputFilename" = "8:Release\\ZenitelConnectWampSdkSetup_V1.0.3.6.msi"
         "PackageFilesAs" = "3:2"
         "PackageFileSize" = "3:-2147483648"
         "CabType" = "3:1"
@@ -331,11 +331,6 @@
             "AssemblyAsmDisplayName" = "8:LogManager, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_3BE2FE831DA50B10951F6C7CCE0E634C"
-                    {
-                    "Name" = "8:LogManager.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:LogManager.dll"
             "TargetName" = "8:"
@@ -473,11 +468,6 @@
             "AssemblyAsmDisplayName" = "8:WampClient, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_71F01E4D7C68D72ADB49AB44D1AF2F7C"
-                    {
-                    "Name" = "8:WampClient.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:WampClient.dll"
             "TargetName" = "8:"
@@ -765,7 +755,7 @@
         "UseSystemSearchPath" = "11:TRUE"
         "TargetPlatform" = "3:0"
         "PreBuildEvent" = "8:"
-        "PostBuildEvent" = "8:cscript //nologo \"$(ProjectDir)WiRunSql.vbs\" \"$(BuiltOuputPath)\" \"UPDATE Property SET Value='1.0.3.5' WHERE Property='ProductVersion'\""
+        "PostBuildEvent" = "8:cscript //nologo \"$(ProjectDir)WiRunSql.vbs\" \"$(BuiltOuputPath)\" \"UPDATE Property SET Value='1.0.3.6' WHERE Property='ProductVersion'\""
         "RunPostBuildEvent" = "3:0"
         }
         "Registry"

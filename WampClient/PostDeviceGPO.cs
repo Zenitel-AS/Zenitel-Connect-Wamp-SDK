@@ -62,7 +62,7 @@ namespace Wamp.Client
                     else
                     {
                         loopCount++;
-                        if (loopCount > 300) cont = false;
+                        if (loopCount > 30) cont = false;
                     }
                 }
 
