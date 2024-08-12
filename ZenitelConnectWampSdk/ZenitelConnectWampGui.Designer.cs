@@ -115,13 +115,13 @@
             this.grpbxPublishEvent = new System.Windows.Forms.GroupBox();
             this.btnNewUCTTime = new System.Windows.Forms.Button();
             this.grpbBroadcasting = new System.Windows.Forms.GroupBox();
+            this.btnClearGroupsList = new System.Windows.Forms.Button();
             this.btnGETgroups = new System.Windows.Forms.Button();
             this.lbGroups = new System.Windows.Forms.ListBox();
             this.lbAudioMessages = new System.Windows.Forms.ListBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnGETAudioMessages = new System.Windows.Forms.Button();
-            this.btnClearGroupsList = new System.Windows.Forms.Button();
             this.btnClearAudioMessagesList = new System.Windows.Forms.Button();
+            this.btnGETAudioMessages = new System.Windows.Forms.Button();
             this.grbEvent.SuspendLayout();
             this.gbxCallControl.SuspendLayout();
             this.grpbxPOSTCalls.SuspendLayout();
@@ -368,9 +368,9 @@
             this.cbxDeviceGPIStatusEvent.Location = new System.Drawing.Point(23, 230);
             this.cbxDeviceGPIStatusEvent.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbxDeviceGPIStatusEvent.Name = "cbxDeviceGPIStatusEvent";
-            this.cbxDeviceGPIStatusEvent.Size = new System.Drawing.Size(263, 23);
+            this.cbxDeviceGPIStatusEvent.Size = new System.Drawing.Size(222, 23);
             this.cbxDeviceGPIStatusEvent.TabIndex = 31;
-            this.cbxDeviceGPIStatusEvent.Text = "Device GPI Status Event (n/a)";
+            this.cbxDeviceGPIStatusEvent.Text = "Device GPI Status Event";
             this.cbxDeviceGPIStatusEvent.UseVisualStyleBackColor = true;
             this.cbxDeviceGPIStatusEvent.CheckedChanged += new System.EventHandler(this.cbxDeviceGPIStatusEvent_CheckedChanged);
             // 
@@ -380,9 +380,9 @@
             this.cbxDeviceGPOStatusEvent.Location = new System.Drawing.Point(23, 177);
             this.cbxDeviceGPOStatusEvent.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbxDeviceGPOStatusEvent.Name = "cbxDeviceGPOStatusEvent";
-            this.cbxDeviceGPOStatusEvent.Size = new System.Drawing.Size(272, 23);
+            this.cbxDeviceGPOStatusEvent.Size = new System.Drawing.Size(231, 23);
             this.cbxDeviceGPOStatusEvent.TabIndex = 30;
-            this.cbxDeviceGPOStatusEvent.Text = "Device GPO Status Event (n/a)";
+            this.cbxDeviceGPOStatusEvent.Text = "Device GPO Status Event";
             this.cbxDeviceGPOStatusEvent.UseVisualStyleBackColor = true;
             this.cbxDeviceGPOStatusEvent.CheckedChanged += new System.EventHandler(this.cbxGPOStatusEvent_CheckedChanged);
             // 
@@ -1154,6 +1154,18 @@
             this.grpbBroadcasting.TabStop = false;
             this.grpbBroadcasting.Text = "Groups";
             // 
+            // btnClearGroupsList
+            // 
+            this.btnClearGroupsList.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClearGroupsList.Location = new System.Drawing.Point(257, 140);
+            this.btnClearGroupsList.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnClearGroupsList.Name = "btnClearGroupsList";
+            this.btnClearGroupsList.Size = new System.Drawing.Size(109, 39);
+            this.btnClearGroupsList.TabIndex = 26;
+            this.btnClearGroupsList.Text = "Clear List";
+            this.btnClearGroupsList.UseVisualStyleBackColor = true;
+            this.btnClearGroupsList.Click += new System.EventHandler(this.btnClearGroupsList_Click);
+            // 
             // btnGETgroups
             // 
             this.btnGETgroups.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1201,30 +1213,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Audio Messages";
             // 
-            // btnGETAudioMessages
-            // 
-            this.btnGETAudioMessages.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGETAudioMessages.Location = new System.Drawing.Point(9, 140);
-            this.btnGETAudioMessages.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnGETAudioMessages.Name = "btnGETAudioMessages";
-            this.btnGETAudioMessages.Size = new System.Drawing.Size(179, 39);
-            this.btnGETAudioMessages.TabIndex = 25;
-            this.btnGETAudioMessages.Text = "GET Audio Messages";
-            this.btnGETAudioMessages.UseVisualStyleBackColor = true;
-            this.btnGETAudioMessages.Click += new System.EventHandler(this.btnGETAudioMessages_Click);
-            // 
-            // btnClearGroupsList
-            // 
-            this.btnClearGroupsList.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClearGroupsList.Location = new System.Drawing.Point(257, 140);
-            this.btnClearGroupsList.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnClearGroupsList.Name = "btnClearGroupsList";
-            this.btnClearGroupsList.Size = new System.Drawing.Size(109, 39);
-            this.btnClearGroupsList.TabIndex = 26;
-            this.btnClearGroupsList.Text = "Clear List";
-            this.btnClearGroupsList.UseVisualStyleBackColor = true;
-            this.btnClearGroupsList.Click += new System.EventHandler(this.btnClearGroupsList_Click);
-            // 
             // btnClearAudioMessagesList
             // 
             this.btnClearAudioMessagesList.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1236,6 +1224,18 @@
             this.btnClearAudioMessagesList.Text = "Clear List";
             this.btnClearAudioMessagesList.UseVisualStyleBackColor = true;
             this.btnClearAudioMessagesList.Click += new System.EventHandler(this.btnClearAudioMessagesList_Click);
+            // 
+            // btnGETAudioMessages
+            // 
+            this.btnGETAudioMessages.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGETAudioMessages.Location = new System.Drawing.Point(9, 140);
+            this.btnGETAudioMessages.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnGETAudioMessages.Name = "btnGETAudioMessages";
+            this.btnGETAudioMessages.Size = new System.Drawing.Size(179, 39);
+            this.btnGETAudioMessages.TabIndex = 25;
+            this.btnGETAudioMessages.Text = "GET Audio Messages";
+            this.btnGETAudioMessages.UseVisualStyleBackColor = true;
+            this.btnGETAudioMessages.Click += new System.EventHandler(this.btnGETAudioMessages_Click);
             // 
             // ZenitelConnectWampGui
             // 
