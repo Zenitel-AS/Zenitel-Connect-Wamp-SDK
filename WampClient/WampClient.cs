@@ -238,7 +238,8 @@ namespace Wamp.Client
 
 
         private Timer RenewAccessTokenTimer = null;
- 
+        private bool RenewAccessTokenRequested = false;
+
 
         #region public methods
 
@@ -247,7 +248,7 @@ namespace Wamp.Client
         /// When token is obtained, tries open WAMP channel.
         /// HostAddr, WampRealm, UserName and Password must be set before Start.
         /// </summary>
-       /***********************************************************************************************************************/
+        /***********************************************************************************************************************/
         public void Start()
         /***********************************************************************************************************************/
         {
@@ -267,9 +268,10 @@ namespace Wamp.Client
                 //Delete timer
                 RenewAccessTokenTimer.Dispose();
                 RenewAccessTokenTimer = null;
+                RenewAccessTokenRequested = false;
             }
  
-            if (IsConnected )
+            if (IsConnected)
             {
                 RequestNewAcessToken();
             }
@@ -289,6 +291,7 @@ namespace Wamp.Client
                 //Delete timer
                 RenewAccessTokenTimer.Dispose();
                 RenewAccessTokenTimer = null;
+                RenewAccessTokenRequested = false;
             }
         }
 
@@ -426,6 +429,7 @@ namespace Wamp.Client
                     {
                         if (! string.IsNullOrEmpty(json_result.access_token))
                         {
+                            RenewAccessTokenRequested = true;
                             OnChildLogString?.Invoke(this, "Access Token: " + json_result.access_token);
                             SetConnectState(true, null, json_result.access_token);
                         }
@@ -491,8 +495,10 @@ namespace Wamp.Client
         private void SetConnectState(bool connected, string error, string token = null)
         /***********************************************************************************************************************/
         {
-            if (connected)
+             if (connected)
             {
+                OnChildLogString?.Invoke(this, "WampConnection.SetConnectState. Connected: True.");
+
                 StopReconnect();
 
                 // create authenticator
@@ -503,17 +509,21 @@ namespace Wamp.Client
             }
             else
             {
+                OnChildLogString?.Invoke(this, "WampConnection.SetConnectState. Connected: False. Error: " + error);
+
+                OnError?.Invoke(this, error);
+
                 if (RenewAccessTokenTimer != null)
                 {
                     //Delete timer
                     RenewAccessTokenTimer.Dispose();
                     RenewAccessTokenTimer = null;
+                    RenewAccessTokenRequested = false;
                 }
 
-                // reconnect continues...
+                // Start reconnect
                 ResetChannel();
-
-                OnError?.Invoke(this, error);
+                Start();
             }
         }
 
@@ -584,7 +594,15 @@ namespace Wamp.Client
         {
             // notify connection is established
             IsConnected = true;
-            OnConnectChanged?.Invoke(this, true);
+
+            if (RenewAccessTokenRequested)
+            {
+                RenewAccessTokenRequested = false;
+            }
+            else
+            {
+                OnConnectChanged?.Invoke(this, true);
+            }
 
             // Start the timer for renewal of the access token.
 
@@ -593,6 +611,7 @@ namespace Wamp.Client
                 //Delete timer
                 RenewAccessTokenTimer.Dispose();
                 RenewAccessTokenTimer = null;
+                RenewAccessTokenRequested = false;
             }
 
             // Timeout in ZCP is 30 minutes
@@ -600,7 +619,7 @@ namespace Wamp.Client
 
             RenewAccessTokenTimer = new Timer(RenewAccessTokenTimer_Tick, null, minutes_29, minutes_29);
 
-            // Test: RenewAccessTokenTimer = new Timer(RenewAccessTokenTimer_Tick, null, 10000, 10000);
+            // For Test: RenewAccessTokenTimer = new Timer(RenewAccessTokenTimer_Tick, null, 10000, 10000);
         }
 
 
@@ -611,7 +630,6 @@ namespace Wamp.Client
             // notify connection establishing error
             IsConnected = false;
             OnConnectChanged?.Invoke(this, false);
-            // reconnect should be started
         }
 
 
@@ -622,6 +640,7 @@ namespace Wamp.Client
             // notify established connection is broken
             IsConnected = false;
             OnConnectChanged?.Invoke(this, false);
+       
             // reconnect should be started
         }
 

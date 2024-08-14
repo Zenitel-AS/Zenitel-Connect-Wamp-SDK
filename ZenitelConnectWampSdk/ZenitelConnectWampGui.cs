@@ -1546,7 +1546,7 @@ namespace Zenitel.Connect.Wamp.Sdk
             }
             else
             {
-
+                addToLog("Wamp Client Errror Encountered.");
             }
         }
 
