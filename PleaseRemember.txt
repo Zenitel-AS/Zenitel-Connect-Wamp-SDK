@@ -1,5 +1,5 @@
 
-The solution has been developed using Visual Studio 2019
+The solution has been developed using Visual Studio 2022
 In case the source code has been installed using the msi-package and is to be compiled, it is recommended to move the project to a non-restricted area and 
 unpack the packages.zip to a “packages” directory in the project root
 
