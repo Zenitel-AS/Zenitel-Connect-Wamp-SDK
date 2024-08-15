@@ -327,6 +327,9 @@ namespace Wamp.Client
             public string door_name { get; set; }
         }
 
+        /// <summary>
+        /// The Zenitel Connect Pro software version 
+        /// </summary>
         public class wamp_platform_version
         {
             /// <summary>
@@ -375,40 +378,109 @@ namespace Wamp.Client
             }
         }
 
+
+        /// <summary>
+        /// WAMP group definition
+        /// </summary>
         public class wamp_group_element
         {
+            /// <summary>
+            /// Directory number of the group.
+            /// </summary>
             public string dirno { get; set; }
+
+            /// <summary>
+            /// Name of the group.
+            /// </summary>
             public string displayname { get; set; }
+
+            /// <summary>
+            /// Priority of the group.
+            /// </summary>
             public string priority { get; set; }
+
+            /// <summary>
+            /// List of all members the group consists of.
+            /// </summary>
             public string[] members { get; set; }
         }
 
+
+        /// <summary>
+        /// Class that wraps all configured audio messages.
+        /// </summary>
         public class AudioMessageWrapper
         {
+            /// <summary>
+            /// The class wraps all configured audio messages.
+            /// </summary>
+            /// <returns>A list of all configured audio messages.</returns>
             [JsonProperty("audio_messages")]
             public List<wamp_audio_messages_element> AudioMessages { get; set; }
 
+            /// <summary>
+            /// The method returns the available space left for audio messages.
+            /// </summary>
+            /// <returns>Available stores space for audio messages.</returns>
             [JsonProperty("available_space")]
             public int AvailableSpace { get; set; }
 
+            /// <summary>
+            /// The method returns the space occupied by the configured audio messages.
+            /// </summary>
+            /// <returns>Space occupied by the configured audio message.</returns>
             [JsonProperty("used_space")]
             public int? UsedSpace { get; set; }
         }
 
+
+        /// <summary>
+        /// Class that defines defines an audio message.
+        /// </summary>
         public class wamp_audio_messages_element
         {
+            /// <summary>
+            /// Directory number of the audio message.
+            /// </summary>
             public string dirno { get; set; }
+
+            /// <summary>
+            /// File name of the audio message.
+            /// </summary>
             public string filename { get; set; }
+
+
+            /// <summary>
+            /// File path of the audio message.
+            /// </summary>
             public string filepath { get; set; }
+
+            /// <summary>
+            /// File size of the audio message.
+            /// </summary>
             public int filesize { get; set; }
+
+            /// <summary>
+            /// Time used for replaying the audio message.
+            /// </summary>
             public int duration { get; set; }
         }
 
+
+        /// <summary>
+        /// Class that defines directory number as a digital number and a name.
+        /// </summary>
         public class wamp_directory_number_element
         {
+            /// <summary>
+            /// The directory number of the element
+            /// </summary>
             public string dirno { get; set; }
-            public string displayname { get; set; }
 
+            /// <summary>
+            /// The name of the element
+            /// </summary>
+            public string displayname { get; set; }
         }
     }
 }

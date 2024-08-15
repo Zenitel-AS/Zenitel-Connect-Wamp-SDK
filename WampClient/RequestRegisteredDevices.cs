@@ -165,6 +165,10 @@ namespace Wamp.Client
             }
         }
 
+        /// <summary>
+        /// This method requests the current software version of the Zenitel Connect Pro.
+        /// </summary>
+        /// <returns>The method returns the platform version class.</returns>
         /***********************************************************************************************************************/
         public wamp_platform_version requestPlatformVersion()
         /***********************************************************************************************************************/
