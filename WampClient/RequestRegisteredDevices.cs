@@ -116,14 +116,14 @@ namespace Wamp.Client
         /// <summary>
         /// This method requests a status list of General Purpose Outputs Ports.
         /// </summary>
-        /// <param name="device_id">This is the ID of the device having the General Outport Port</param>
-        /// <param name="id">This is the name of the General Purpose Outport Port</param>
+        /// <param name="dirNo">This is the ID of the device having the General Outport Port</param>
+        /// <param name="Id">This is the name of the General Purpose Outport Port</param>
         /// <returns>The method returns a list of GPO elements according to the filtering specified via the parameters.</returns>
         /***********************************************************************************************************************/
-        public List<wamp_device_gpio_element> requestDevicesGPOs(string device_id, string id)
+        public List<wamp_device_gpio_element> requestDevicesGPOs(string dirNo, string Id)
         /***********************************************************************************************************************/
         {
-            object res = GET_devices_gpos(device_id, id);
+            object res = GET_devices_gpos(dirNo, Id);
 
             if (res != null)
             {

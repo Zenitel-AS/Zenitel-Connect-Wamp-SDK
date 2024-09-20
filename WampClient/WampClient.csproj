@@ -288,6 +288,9 @@
     <Compile Include="PostDeviceOpenDoor.cs" />
     <Compile Include="PublishEvent.cs" />
     <Compile Include="RegisterCalleeServices.cs" />
+    <Compile Include="TraceAudioDataReceiving.cs" />
+    <Compile Include="TraceAudioDetectorAlive.cs" />
+    <Compile Include="TraceAudioEventDetection.cs" />
     <Compile Include="TraceCallLegStatusEvent.cs" />
     <Compile Include="TraceCallStatusEvent.cs" />
     <Compile Include="RequestRegisteredDevices.cs" />

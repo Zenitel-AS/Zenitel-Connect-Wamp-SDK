@@ -24,10 +24,10 @@ namespace Wamp.Client
         object GET_call_queues(string queue_dirno);
 
         [WampProcedure(WampClient.GetWampDevicesGpos)]
-        object GET_devices_gpos(string device_id, string id);
+        object GET_devices_gpos(string dirno, string id);
 
         [WampProcedure(WampClient.GetWampDevicesGpis)]
-        object GET_devices_gpis(string device_id, string id);
+        object GET_devices_gpis(string dirno, string id);
 
         [WampProcedure(WampClient.GetPlatformVersion)]
         object GetPlatformVersion();

@@ -153,6 +153,16 @@ namespace Wamp.Client
         /// <summary>Send request Zenitel Connect Software Version </summary>
         public const string GetPlatformVersion = "com.zenitel.system.platform.version";
 
+        /// <summary>Audio Event detected: AED Server -> Zenitel Connect Pro. ZCP acts as brooker</summary>
+        public const string TraceWampAudioEvents = "com.zenitel.public.audio_analytics";
+
+        /// <summary>Audio Event Detector receives audio Stream</summary>
+        public const string TraceWampAudioDataReceiving = "com.zenitel.public.audio_data_receiving";
+
+        /// <summary>Audio Event Detector is alive and running</summary>
+        public const string TraceWampAudioDetectorAlive = "com.zenitel.public.audio_detector_alive";
+
+
         /// <summary>
         /// 
         /// </summary>
@@ -165,6 +175,9 @@ namespace Wamp.Client
         /// 
         /// </summary>
         public const string UCT_Time_event = "com.zenitel.system.uct_time";
+
+
+
 
 
         private Timer _reconnectTimer;
