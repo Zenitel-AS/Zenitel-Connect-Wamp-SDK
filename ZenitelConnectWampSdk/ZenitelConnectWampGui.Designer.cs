@@ -122,6 +122,9 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnClearAudioMessagesList = new System.Windows.Forms.Button();
             this.btnGETAudioMessages = new System.Windows.Forms.Button();
+            this.cbxAudioEventDetectorAlive = new System.Windows.Forms.CheckBox();
+            this.cbxAudioDataReceiving = new System.Windows.Forms.CheckBox();
+            this.cbxAudioEventDetection = new System.Windows.Forms.CheckBox();
             this.grbEvent.SuspendLayout();
             this.gbxCallControl.SuspendLayout();
             this.grpbxPOSTCalls.SuspendLayout();
@@ -311,7 +314,7 @@
             // cbxCallLegStatusEvent
             // 
             this.cbxCallLegStatusEvent.AutoSize = true;
-            this.cbxCallLegStatusEvent.Location = new System.Drawing.Point(23, 79);
+            this.cbxCallLegStatusEvent.Location = new System.Drawing.Point(22, 68);
             this.cbxCallLegStatusEvent.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbxCallLegStatusEvent.Name = "cbxCallLegStatusEvent";
             this.cbxCallLegStatusEvent.Size = new System.Drawing.Size(200, 23);
@@ -323,7 +326,7 @@
             // cbxDeviceRegistrationEvent
             // 
             this.cbxDeviceRegistrationEvent.AutoSize = true;
-            this.cbxDeviceRegistrationEvent.Location = new System.Drawing.Point(23, 126);
+            this.cbxDeviceRegistrationEvent.Location = new System.Drawing.Point(22, 104);
             this.cbxDeviceRegistrationEvent.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbxDeviceRegistrationEvent.Name = "cbxDeviceRegistrationEvent";
             this.cbxDeviceRegistrationEvent.Size = new System.Drawing.Size(234, 23);
@@ -334,6 +337,9 @@
             // 
             // grbEvent
             // 
+            this.grbEvent.Controls.Add(this.cbxAudioEventDetectorAlive);
+            this.grbEvent.Controls.Add(this.cbxAudioDataReceiving);
+            this.grbEvent.Controls.Add(this.cbxAudioEventDetection);
             this.grbEvent.Controls.Add(this.cbxOpenDoorEvent);
             this.grbEvent.Controls.Add(this.cbxDeviceGPIStatusEvent);
             this.grbEvent.Controls.Add(this.cbxDeviceGPOStatusEvent);
@@ -353,7 +359,7 @@
             // cbxOpenDoorEvent
             // 
             this.cbxOpenDoorEvent.AutoSize = true;
-            this.cbxOpenDoorEvent.Location = new System.Drawing.Point(23, 279);
+            this.cbxOpenDoorEvent.Location = new System.Drawing.Point(23, 208);
             this.cbxOpenDoorEvent.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbxOpenDoorEvent.Name = "cbxOpenDoorEvent";
             this.cbxOpenDoorEvent.Size = new System.Drawing.Size(167, 23);
@@ -365,7 +371,7 @@
             // cbxDeviceGPIStatusEvent
             // 
             this.cbxDeviceGPIStatusEvent.AutoSize = true;
-            this.cbxDeviceGPIStatusEvent.Location = new System.Drawing.Point(23, 230);
+            this.cbxDeviceGPIStatusEvent.Location = new System.Drawing.Point(22, 172);
             this.cbxDeviceGPIStatusEvent.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbxDeviceGPIStatusEvent.Name = "cbxDeviceGPIStatusEvent";
             this.cbxDeviceGPIStatusEvent.Size = new System.Drawing.Size(222, 23);
@@ -377,7 +383,7 @@
             // cbxDeviceGPOStatusEvent
             // 
             this.cbxDeviceGPOStatusEvent.AutoSize = true;
-            this.cbxDeviceGPOStatusEvent.Location = new System.Drawing.Point(23, 177);
+            this.cbxDeviceGPOStatusEvent.Location = new System.Drawing.Point(22, 138);
             this.cbxDeviceGPOStatusEvent.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbxDeviceGPOStatusEvent.Name = "cbxDeviceGPOStatusEvent";
             this.cbxDeviceGPOStatusEvent.Size = new System.Drawing.Size(231, 23);
@@ -1237,6 +1243,43 @@
             this.btnGETAudioMessages.UseVisualStyleBackColor = true;
             this.btnGETAudioMessages.Click += new System.EventHandler(this.btnGETAudioMessages_Click);
             // 
+            // cbxAudioEventDetectorAlive
+            // 
+            this.cbxAudioEventDetectorAlive.AutoSize = true;
+            this.cbxAudioEventDetectorAlive.Location = new System.Drawing.Point(22, 317);
+            this.cbxAudioEventDetectorAlive.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cbxAudioEventDetectorAlive.Name = "cbxAudioEventDetectorAlive";
+            this.cbxAudioEventDetectorAlive.Size = new System.Drawing.Size(240, 23);
+            this.cbxAudioEventDetectorAlive.TabIndex = 35;
+            this.cbxAudioEventDetectorAlive.Text = "Audio Event Detector Alive";
+            this.cbxAudioEventDetectorAlive.UseVisualStyleBackColor = true;
+            this.cbxAudioEventDetectorAlive.CheckedChanged += new System.EventHandler(this.cbxAudioEventDetectorAlive_CheckedChanged);
+            // 
+            // cbxAudioDataReceiving
+            // 
+            this.cbxAudioDataReceiving.AutoSize = true;
+            this.cbxAudioDataReceiving.Location = new System.Drawing.Point(23, 278);
+            this.cbxAudioDataReceiving.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cbxAudioDataReceiving.Name = "cbxAudioDataReceiving";
+            this.cbxAudioDataReceiving.Size = new System.Drawing.Size(218, 23);
+            this.cbxAudioDataReceiving.TabIndex = 34;
+            this.cbxAudioDataReceiving.Text = "Audio Stream Receiving";
+            this.cbxAudioDataReceiving.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.cbxAudioDataReceiving.UseVisualStyleBackColor = true;
+            this.cbxAudioDataReceiving.CheckedChanged += new System.EventHandler(this.cbxAudioDataReceiving_CheckedChanged);
+            // 
+            // cbxAudioEventDetection
+            // 
+            this.cbxAudioEventDetection.AutoSize = true;
+            this.cbxAudioEventDetection.Location = new System.Drawing.Point(23, 241);
+            this.cbxAudioEventDetection.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cbxAudioEventDetection.Name = "cbxAudioEventDetection";
+            this.cbxAudioEventDetection.Size = new System.Drawing.Size(206, 23);
+            this.cbxAudioEventDetection.TabIndex = 33;
+            this.cbxAudioEventDetection.Text = "Audio Event Detection";
+            this.cbxAudioEventDetection.UseVisualStyleBackColor = true;
+            this.cbxAudioEventDetection.CheckedChanged += new System.EventHandler(this.cbxAudioEventDetection_CheckedChanged);
+            // 
             // ZenitelConnectWampGui
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1384,6 +1427,9 @@
         private System.Windows.Forms.Button btnGETAudioMessages;
         private System.Windows.Forms.Button btnClearGroupsList;
         private System.Windows.Forms.Button btnClearAudioMessagesList;
+        private System.Windows.Forms.CheckBox cbxAudioEventDetectorAlive;
+        private System.Windows.Forms.CheckBox cbxAudioDataReceiving;
+        private System.Windows.Forms.CheckBox cbxAudioEventDetection;
     }
 }
 

@@ -51,6 +51,11 @@ namespace Zenitel.Connect.Wamp.Sdk
             wampClient.OnWampDeviceGPIStatusEvent += wampClient_OnWampDeviceGPIStatusEvent;
             wampClient.OnWampDeviceGPOStatusEvent += wampClient_OnWampDeviceGPOStatusEvent;
 
+            wampClient.OnAudioEventDetection += wampClient_OnWampAudioEventDetection;
+            wampClient.OnAudioDataReceiving += WampClient_OnAudioDataReceiving;
+            wampClient.OnAudioDetectorAlive += WampClient_OnAudioDetectorAlive;
+
+
             UpdateConnectState();
 
             chbxEncrypted.Checked = true;
@@ -603,10 +608,15 @@ namespace Zenitel.Connect.Wamp.Sdk
             {
                 if (wampClient.IsConnected)
                 {
-                    string deviceId = "dirno=" + tbxGPODevice.Text;
-                    string gpoId = "id=relay1";
+                    string dirno = tbxGPODevice.Text.TrimEnd('\r', '\n');
+                    string id = "relay1";
+                    string operation = "set";
+                    Int32 time = 0;
 
-                    wampClient.PostDeviceGPO(deviceId, gpoId);
+                    wamp_response wampResp = wampClient.PostDeviceGPO(dirno, id, operation, time);
+
+                    addToLog("btnClearConnectionId_Click: Wamp Response  = " + wampResp.WampResponse.ToString());
+                    addToLog("btnClearConnectionId_Click: CompletionText = " + wampResp.CompletionText);
                 }
                 else
                 {
@@ -631,8 +641,10 @@ namespace Zenitel.Connect.Wamp.Sdk
                 {
                     List<WampClient.wamp_device_gpio_element> gpoElements;
 
-                    string devId = "dirno=" + tbxGPODevice.Text;
-                    gpoElements = wampClient.requestDevicesGPOs(devId, "");
+                    string dirno = tbxGPODevice.Text.TrimEnd('\r', '\n');
+                    string id = "relay1";
+
+                    gpoElements = wampClient.requestDevicesGPOs(dirno, id);
 
                     if (gpoElements != null)
                     {
@@ -674,8 +686,10 @@ namespace Zenitel.Connect.Wamp.Sdk
                 {
                     List<WampClient.wamp_device_gpio_element> gpiElements;
 
-                    string devId = "dirno=%3D" + tbxGPIDevice.Text;
-                    gpiElements = wampClient.requestDevicesGPIs(devId, "relay1");
+                    string dirno = tbxGPIDevice.Text.TrimEnd('\r', '\n');
+                    string id = "relay1";
+
+                    gpiElements = wampClient.requestDevicesGPIs(dirno, id);
 
 
                     if (gpiElements != null)
@@ -855,7 +869,7 @@ namespace Zenitel.Connect.Wamp.Sdk
                         addToLog("Enable Device GPO Status Event.");
                         if (wampClient.IsConnected)
                         {
-                            wampClient.TraceDeviceGPOStatusEvent(tbxGPODevice.Text);
+                            wampClient.TraceDeviceGPOStatusEvent(tbxGPODevice.Text.TrimEnd('\r', '\n'));
                         }
                         else
                         {
@@ -898,7 +912,7 @@ namespace Zenitel.Connect.Wamp.Sdk
                         addToLog("Enable Device GPI Status Event.");
                         if (wampClient.IsConnected)
                         {
-                            wampClient.TraceDeviceGPIStatusEvent(tbxGPIDevice.Text);
+                            wampClient.TraceDeviceGPIStatusEvent(tbxGPIDevice.Text.TrimEnd('\r', '\n'));
                         }
                         else
                         {
@@ -1517,6 +1531,60 @@ namespace Zenitel.Connect.Wamp.Sdk
         }
 
 
+        private delegate void _wampConnection_OnWampAudioEventDetectionCallBack(object sender, WampClient.wamp_audio_event_detection audioEvent);
+
+        /***********************************************************************************************************************/
+        private void wampClient_OnWampAudioEventDetection(object sender, WampClient.wamp_audio_event_detection audioEvent)
+        /***********************************************************************************************************************/
+        {
+            try
+            {
+                //                string txt = "Audio Event Detected: Dir-no: " + audioEvent.from_dirno + ". Name: " + audioEvent.from_name +
+                //                         ". Event: " + audioEvent.audio_event + ". Probability: " + audioEvent.probability + ". Time: " + audioEvent.UCT_time;
+                //                addToLog(txt);
+            }
+            catch (Exception ex)
+            {
+                string txt = "Exception in _wampConnection_OnWampCallStatusEvent: " + ex.ToString();
+                addToLog(txt);
+            }
+        }
+
+
+        /***********************************************************************************************************************/
+        private void WampClient_OnAudioDetectorAlive(object sender, WampClient.wamp_audio_detector_alive e)
+        /***********************************************************************************************************************/
+        {
+            try
+            {
+                string txt = "Audio Event Detector Alive: Dir-no: " + e.from_dirno + ". Name: " + e.from_name + ". Time: " + e.UCT_time;
+                addToLog(txt);
+            }
+            catch (Exception ex)
+            {
+                string txt = "Exception in WampClient_OnAudioDetectorAliv: " + ex.ToString();
+                addToLog(txt);
+            }
+        }
+
+
+        /***********************************************************************************************************************/
+        private void WampClient_OnAudioDataReceiving(object sender, WampClient.wamp_audio_data_receiving e)
+        /***********************************************************************************************************************/
+        {
+            try
+            {
+                string txt = "Audio Data Receiving Status: Dir-no: " + e.from_dirno + ". Name: " + e.from_name +
+                             ". Status: " + e.status + ". Time: " + e.UCT_time;
+                addToLog(txt);
+            }
+            catch (Exception ex)
+            {
+                string txt = "Exception in WampClient_OnAudioDataReceivin: " + ex.ToString();
+                addToLog(txt);
+            }
+        }
+
         /***********************************************************************************************************************/
         private void _wampConnection_OnChildLogString(object sender, string e)
         /***********************************************************************************************************************/
@@ -1592,10 +1660,9 @@ namespace Zenitel.Connect.Wamp.Sdk
 
                 btnGETCallLegs.Enabled = true;
 
-                // Currently not available
-                //btnPOSTDeviceGPO.Enabled = true;
-                //btnGETDeviceGPOs.Enabled = true;
-                //btnGETDeviceGPIOs.Enabled = true;
+                btnPOSTDeviceGPO.Enabled = true;
+                btnGETDeviceGPOs.Enabled = true;
+                btnGETDeviceGPIOs.Enabled = true;
 
                 //Clear Check Marks
                 cbxCallLegStatusEvent.Checked = false;
@@ -1617,6 +1684,10 @@ namespace Zenitel.Connect.Wamp.Sdk
 
                 cbxOpenDoorEvent.Enabled = true;
 
+                cbxAudioDataReceiving.Enabled = true;
+                cbxAudioEventDetection.Enabled = true;
+                cbxAudioEventDetectorAlive.Enabled = true;
+
                 if (cbxCallStatusEvent.Checked)
                 {
                     addToLog("Subscribe Call Events.");
@@ -1631,6 +1702,21 @@ namespace Zenitel.Connect.Wamp.Sdk
                 {
                     addToLog("Subscribe Device Registration Events.");
                     wampClient.TraceDeviceRegistrationEvent();
+                }
+                if (cbxAudioDataReceiving.Checked)
+                {
+                    addToLog("Subscribe Audio Data Receiving Events.");
+                    wampClient.TraceAudioDataReceiving();
+                }
+                if (cbxAudioEventDetection.Checked)
+                {
+                    addToLog("Subscribe Audio Event Detection.");
+                    wampClient.TraceAudioEventDetection();
+                }
+                if (cbxAudioEventDetectorAlive.Checked)
+                {
+                    addToLog("Subscribe Audio Detector Alive Event.");
+                    wampClient.TraceAudioDetectorAlive();
                 }
             }
             else
@@ -1661,6 +1747,10 @@ namespace Zenitel.Connect.Wamp.Sdk
                 cbxDeviceGPOStatusEvent.Enabled = false;
                 cbxDeviceGPIStatusEvent.Enabled = false;
                 cbxOpenDoorEvent.Enabled = false;
+
+                cbxAudioDataReceiving.Enabled = false;
+                cbxAudioEventDetection.Enabled = false;
+                cbxAudioEventDetectorAlive.Enabled = false;
             }
         }
 
@@ -1933,6 +2023,136 @@ namespace Zenitel.Connect.Wamp.Sdk
         /***********************************************************************************************************************/
         {
             lbGroups.Items.Clear();
+        }
+
+
+        /***********************************************************************************************************************/
+        private void cbxAudioEventDetection_CheckedChanged(object sender, EventArgs e)
+        /***********************************************************************************************************************/
+        {
+            try
+            {
+                if (cbxAudioEventDetection.Checked)
+                {
+                    addToLog("Audio Event Detection check mark is set.");
+
+                    if (!wampClient.TraceAudioEventDetectionIsEnabled())
+                    {
+                        addToLog("Enable Audio Event Detection.");
+                        if (wampClient.IsConnected)
+                        {
+                            wampClient.TraceAudioEventDetection();
+                        }
+                        else
+                        {
+                            cbxAudioEventDetection.Checked = false;
+                            MessageBox.Show("WAMP Connection not established.");
+                        }
+                    }
+                }
+                else
+                {
+                    addToLog("Audio Event Detection check mark is cleared.");
+
+                    if (wampClient.TraceAudioEventDetectionIsEnabled())
+                    {
+                        addToLog("Disable Audio Event Detection.");
+                        wampClient.TraceAudioEventDetectionDispose();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                string txt = "Exception in cbxAudioEventDetection_CheckedChanged: " + ex.ToString();
+                addToLog(txt);
+            }
+        }
+
+
+        /***********************************************************************************************************************/
+        private void cbxAudioDataReceiving_CheckedChanged(object sender, EventArgs e)
+        /***********************************************************************************************************************/
+        {
+            try
+            {
+                if (cbxAudioDataReceiving.Checked)
+                {
+                    addToLog("Audio Data Receiving Event check mark is set.");
+
+                    if (!wampClient.TraceAudioDataReceivingIsEnabled())
+                    {
+                        addToLog("Enable Audio Data Receiving Event.");
+                        if (wampClient.IsConnected)
+                        {
+                            wampClient.TraceAudioDataReceiving();
+                        }
+                        else
+                        {
+                            cbxAudioDataReceiving.Checked = false;
+                            MessageBox.Show("WAMP Connection not established.");
+                        }
+                    }
+                }
+                else
+                {
+                    addToLog("Audio Data Receiving Event check mark is cleared.");
+
+                    if (wampClient.TraceAudioDataReceivingIsEnabled())
+                    {
+                        addToLog("Disable Audio Data Receiving Event.");
+                        wampClient.TraceAudioDataReceivingDispose();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                string txt = "Exception in cbxAudioDataReceiving_CheckedChanged: " + ex.ToString();
+                addToLog(txt);
+            }
+        }
+
+
+        /***********************************************************************************************************************/
+        private void cbxAudioEventDetectorAlive_CheckedChanged(object sender, EventArgs e)
+        /***********************************************************************************************************************/
+        {
+            try
+            {
+                if (cbxAudioEventDetectorAlive.Checked)
+                {
+                    addToLog("Audio Event Detector Alive check mark is set.");
+
+                    if (!wampClient.TraceAudioDetectorAliveIsEnabled())
+                    {
+                        addToLog("Enable Audio Detector Alive Event.");
+                        if (wampClient.IsConnected)
+                        {
+                            wampClient.TraceAudioDetectorAlive();
+                        }
+                        else
+                        {
+                            cbxAudioEventDetectorAlive.Checked = false;
+                            MessageBox.Show("WAMP Connection not established.");
+                        }
+                    }
+                }
+                else
+                {
+                    addToLog("Audio Event Detection Alive Event mark is cleared.");
+
+                    if (wampClient.TraceAudioDetectorAliveIsEnabled())
+                    {
+                        addToLog("Disable Audio Detector Alive Event.");
+                        wampClient.TraceAudioDetectorAliveDispose();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                string txt = "Exception in AudioEventDetectorAlive_CheckedChanged: " + ex.ToString();
+                addToLog(txt);
+            }
+
         }
     }
 }

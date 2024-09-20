@@ -482,5 +482,57 @@ namespace Wamp.Client
             /// </summary>
             public string displayname { get; set; }
         }
+
+
+        /// <summary>  </summary>
+        public class wamp_audio_event_detection
+        {
+            /// <summary> </summary>
+            public string from_dirno { get; set; }
+
+            /// <summary> </summary>
+            public string from_name { get; set; }
+
+            /// <summary> </summary>
+            public string audio_event { get; set; }
+
+            /// <summary> </summary>
+            public string probability { get; set; }
+
+            /// <summary> </summary>
+            public string UCT_time { get; set; }
+        }
+
+
+            /// <summary> </summary>
+            public class wamp_audio_data_receiving
+        {
+            /// <summary> </summary>
+            public string from_dirno { get; set; }
+
+            /// <summary> </summary>
+            public string from_name { get; set; }
+
+            /// <summary> </summary>
+            public string status { get; set; }
+
+            /// <summary> </summary>
+            public string UCT_time { get; set; }
+        }
+
+
+        /// <summary> </summary>
+        public class wamp_audio_detector_alive
+        {
+            /// <summary> </summary>
+            public string from_dirno { get; set; }
+
+            /// <summary> </summary>
+            public string from_name { get; set; }
+
+            /// <summary> </summary>
+            public string UCT_time { get; set; }
+        }
+
     }
 }

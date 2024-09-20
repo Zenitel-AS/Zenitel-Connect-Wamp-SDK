@@ -15,19 +15,24 @@ namespace Wamp.Client
         /***********************************************************************************************************************/
 
         /// <summary>
-        /// This method sends a Device GPO (General Purpose Output) request to the connected Zenitel Connect Platform.
+        /// Change a single digital output controlled by a device. The gpo_id is made up of the type and the index starting from 1.
+        /// The index correspond to the array index in the device GPIO configuration, i.e the 'outputs' (relay) and 'gpio' arrays.
+        /// The number of outputs for each type may vary between device types. In order to set a GPIO by this URI, the corresponding
+        /// GPIO has to be configured as output. Example: id=relay2, id=gpio5.
         /// It will return the outcome of the request execution in the wamp_response class.
         /// </summary>
 
-        /// <param name="deviceId">This parameter specifies directory number of the selected device.</param>
-        /// <param name="gpoId">This parameter specifies the port name {relay1, relay2, gpio1 ...}.</param>
+        /// <param name="dirNo">This parameter specifies directory number of the selected device.</param>
+        /// <param name="Id">This parameter specifies the port name {relay1, relay2, gpio1 ...}.</param>
+        /// <param name="Operation">This parameter specifies directory number of the selected device.</param>
+        /// <param name="Time">This parameter specifies the time </param>
 
         /// <returns name="wamp_response">This class contains the result of the request execution and a describing text in case the
         /// request fails.
         /// </returns>
 
         /***********************************************************************************************************************/
-        public wamp_response PostDeviceGPO(string deviceId, string gpoId)
+        public wamp_response PostDeviceGPO(string dirNo, string Id, string Operation, Int32 Time)
         /***********************************************************************************************************************/
         {
             wamp_response wampResp = new wamp_response();
@@ -36,8 +41,10 @@ namespace Wamp.Client
             {
                 Dictionary<string, object> argumentsKeywords = new Dictionary<string, object>();
 
-                argumentsKeywords["device_id"] = deviceId;
-                argumentsKeywords["gpo_id"] = gpoId;
+                argumentsKeywords["dirno"] = dirNo;
+                argumentsKeywords["id"] = Id;
+                argumentsKeywords["operation"] = Operation;
+                argumentsKeywords["time"] = Time;
 
                 RPCCallback rpcCallback = new RPCCallback();
 

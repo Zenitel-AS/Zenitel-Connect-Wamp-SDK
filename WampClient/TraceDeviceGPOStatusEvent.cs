@@ -54,6 +54,8 @@ namespace Wamp.Client
 
                     string uri = TraceWampDeviceDirnoGpo.Replace("{dirno}", dirNo);
 
+                    OnChildLogString?.Invoke(this, "TraceDeviceGPOStatusEvent - uri: " + uri);
+
                     IWampTopicProxy topicProxy = _wampRealmProxy.TopicContainer.GetTopicByUri(uri);
 
                     tracerDeviceGPOStatusEvent = new TracerDeviceGPOStatusEvent();
